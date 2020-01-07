@@ -1,0 +1,3 @@
+takeoffAsync().join()
+moveToPositionAsync(-10,10,-10,5).join()
+hoverAsync().join()

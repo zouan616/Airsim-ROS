@@ -9,10 +9,16 @@
 import airsim
 import os
 import numpy as np
+import rospy
+import std_msgs
 
 cameraNumbers = 5
 imageTypes = 8
 imageTypesOffset = imageTypes+1
+
+pub = rospy.Publisher("airsimPose", std_msgs.msg.String, queue_size=1)
+rospy.init_node('airpub', anonymous=True)
+rate = rospy.Rate(10) # 10hz
 
 class RequestDataBits:
     state = 1
@@ -138,6 +144,9 @@ def parseAirsimMessage(inputString):
     """
     print(inputString)
     datas = inputString.split('biu')
+    rospy.loginfo(inputString)
+    pub.publish(inputString)
+    
     if len(datas) > 2:
         imu = datas[responseIndex.imu]
         gps = datas[responseIndex.gps]
