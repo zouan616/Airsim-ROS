@@ -6,7 +6,7 @@ import traceback
 # This code runs on Jetson board
 def main():
     try:
-        TCP_IP = '169.254.196.15'
+        TCP_IP = '172.16.21.209'
         TCP_PORT = 5005
         BUFFER_SIZE = 2048
 
@@ -84,6 +84,7 @@ def main():
                 s.close()
 
     except KeyboardInterrupt:
+        rospy.signal_shutdown("close communication")
         if inputs:
             for s in inputs:
                 s.close()
@@ -96,6 +97,7 @@ def main():
     except Exception as e:
         print(traceback.format_exc())
         print(str(e))
+        rospy.signal_shutdown("close communication")
         if inputs:
             for s in inputs:
                 s.close()

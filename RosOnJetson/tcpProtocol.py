@@ -16,7 +16,7 @@ cameraNumbers = 5
 imageTypes = 8
 imageTypesOffset = imageTypes+1
 
-pub = rospy.Publisher("airsimPose", std_msgs.msg.String, queue_size=1)
+pub = rospy.Publisher("airsimInfo", std_msgs.msg.String, queue_size=1)
 rospy.init_node('airpub', anonymous=True)
 rate = rospy.Rate(10) # 10hz
 
