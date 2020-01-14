@@ -6,6 +6,9 @@ This repository currently saves the communication protocols between Airsim on a 
 1. Install Airsim on a powerful computer
 2. Install airsim using pip and all its dependence. 
 
+## ROS on Jetson board
+1. Install ROS (I used kinetic version) on Jetson board
+
 # Usage
 ## Connection
 1. Connect host computer and Jetson board under same network. In our set-up we connect the two by a ethernet cable.
