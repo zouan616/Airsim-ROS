@@ -72,10 +72,6 @@ class responseIndex:
     back_center = 9
 
 
-# can get many data at same time
-# get imu,gps,front_center:scene,front_right:segmentation;infrared;depthVis,front_left:depthPlanner;depthVis
-# get front_center:scene;segmentation,front_left:depthPlanner;depthVis
-# get front_center:scene
 def setImageBit(name,types,message):
     """ write corresponding bits for command message
     """
@@ -98,6 +94,10 @@ def setImageBit(name,types,message):
         message[cameraBit+offset] = '1'
 
 
+# can get different kinds of data at same time
+# each data type is split by ","
+# for images, ":" splits camera and image types, ";" splits each image types
+# see exampleCommand.txt for examples
 def parseCommand(inputString):
     """ Parse input command from user,
     if it is "get" command, use protocol;
@@ -136,7 +136,6 @@ def parseAirsimMessage(inputString):
     """ Parse message from airsim,
     mainly for data converted from images
     """
-    print(inputString)
     datas = inputString.split('biu')
     if len(datas) > 2:
         imu = datas[responseIndex.imu]
@@ -153,6 +152,11 @@ def parseAirsimMessage(inputString):
         #img_rgba = img1d.reshape(response.height, response.width, 4)
         #airsim.write_png(os.path.normpath('camera.png'), img_rgba)
         #print("save image !")
+        for data in datas:
+            if data != "None":
+                print(data)
+    else:
+        print(inputString)
 
     return
 
