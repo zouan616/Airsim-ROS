@@ -19,7 +19,7 @@ This repository currently saves the communication protocols between Airsim on a 
 Put the two python files under same directory, change TCP_IP in serverOnJetson.py to **A**
 
 ## set-up on host computer
-1. Put the two python files under the repository airsim/PythonClient/multirotor
+1. Put the two python files under same directory
 2. Change TCP_IP in AirSimJetsonTcpWithProtocol.py to **A**
 
 ## Running
