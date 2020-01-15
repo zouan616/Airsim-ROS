@@ -9,3 +9,5 @@ get front_center:scene
 get front_center:scene;segmentation,front_left:depthPlanner;depthVis
 get imu,gps
 get imu,front_center:scene,front_right:segmentation;infrared;depthVis,front_left:depthPlanner;depthVis
+
+
