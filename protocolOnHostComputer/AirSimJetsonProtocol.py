@@ -109,7 +109,7 @@ def explainProtocol(inputString):
 		client.enableApiControl(False)
 		sys.exit(0)
 	else:
-		# do the instruction
+		# do the instruction and catch exception if not valid
 		command = "client." + inputString
 		print(command)
 		try:

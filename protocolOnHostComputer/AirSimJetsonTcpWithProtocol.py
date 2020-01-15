@@ -1,4 +1,3 @@
-import setup_path 
 import airsim
 
 import numpy as np
@@ -14,7 +13,7 @@ import AirSimJetsonProtocol as AJP
 
 # This code runs on desktop computer
 # set up tcp 
-TCP_IP = '169.254.196.15'
+TCP_IP = '172.16.21.209'
 TCP_PORT = 5005
 BUFFER_SIZE = 100
 
@@ -31,9 +30,6 @@ client.enableApiControl(True)
 client.armDisarm(True)
 
 AJP.setClient(client)
-# send vehicle state to jetson
-# state = client.getMultirotorState()
-# s = pprint.pformat(state)
 server.send("Connection from AirSim^".encode())
 
 try:
@@ -41,39 +37,13 @@ try:
 		# wait for instruction from jetson
 		inputString = server.recv(BUFFER_SIZE)
 		AJP.explainProtocol(inputString)
-		
-		# wait for signal to take-off
-		# data = server.recv(BUFFER_SIZE)
-		# client.takeoffAsync().join()
 
-		# # send vehicle state to jetson
-		# state = client.getMultirotorState()
-		# s = pprint.pformat(state)
-		# server.send(s)
-
-
-		# # wait for signal to fly to the position
-		# data = server.recv(BUFFER_SIZE)
-		# client.moveToPositionAsync(-10, 10, -10, 5).join()
-
-		# client.hoverAsync().join()
-
-		# # send vehicle state to jetson
-		# state = client.getMultirotorState()
-		# s = pprint.pformat(state)
-		# server.send(s)
-
-		# # wait for signal to fly back to origin
-		# data = server.recv(BUFFER_SIZE)
-		# client.armDisarm(False)
-		# client.reset()
 except KeyboardInterrupt:
 	server.close()
 	client.enableApiControl(False)
 	sys.exit(0)
 except Exception as e:
 	print(str(e))
-	#quit cleanly
 	server.close()
 	client.enableApiControl(False)
 	sys.exit(0)
