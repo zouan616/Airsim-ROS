@@ -10,7 +10,6 @@ import airsim
 import os
 import numpy as np
 import json
-import ast
 
 cameraNumbers = 5
 imageTypes = 8
@@ -141,14 +140,14 @@ def parseAirsimMessage(inputString):
     #print(inputString)
     datas = inputString.split('biu')
     if len(datas) > 2:
-        imu = datas[responseIndex.imu]
-        gps = datas[responseIndex.gps]
+        imu = json.loads(datas[responseIndex.imu])
+        gps = json.loads(datas[responseIndex.gps])
         fc = datas[responseIndex.front_center]
         fr = datas[responseIndex.front_right]
         fl = datas[responseIndex.front_left]
         bc = datas[responseIndex.bottom_center]
         backc = datas[responseIndex.back_center]
-        #print(imu)
+        #print(imu["time_stamp"])
         #print(fc)
         #response = fc[1:-1]
         #img1d = np.fromstring(response.image_data_uint8, dtype=np.uint8)
@@ -157,11 +156,7 @@ def parseAirsimMessage(inputString):
         #print("save image !")
         for data in datas:
             if len(data) > 5:
-                data = data.replace("<instance>","")
-                #y = json.loads(data)
-                y = ast.literal_eval(data)
-                print(y)
-                #print(data)
+                print(data)
     else:
         print(inputString)
 
