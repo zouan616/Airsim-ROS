@@ -9,6 +9,7 @@
 import airsim
 import os
 import numpy as np
+import json
 import rospy
 import std_msgs
 
@@ -142,14 +143,13 @@ def parseAirsimMessage(inputString):
     """ Parse message from airsim,
     mainly for data converted from images
     """
-    print(inputString)
     datas = inputString.split('biu')
     rospy.loginfo(inputString)
     pub.publish(inputString)
     
     if len(datas) > 2:
-        imu = datas[responseIndex.imu]
-        gps = datas[responseIndex.gps]
+        imu = json.loads(datas[responseIndex.imu])
+        gps = json.loads(datas[responseIndex.gps])
         fc = datas[responseIndex.front_center]
         fr = datas[responseIndex.front_right]
         fl = datas[responseIndex.front_left]
@@ -162,34 +162,10 @@ def parseAirsimMessage(inputString):
         #img_rgba = img1d.reshape(response.height, response.width, 4)
         #airsim.write_png(os.path.normpath('camera.png'), img_rgba)
         #print("save image !")
+        for data in datas:
+            if len(data) > 5:
+                print(data)
+    else:
+        print(inputString)
 
     return
-
-##data = None
-##with open('imageBinary.txt','r') as file:
-##    data = file.read()
-###print(data)
-##datas = data.split('\n')
-###for index,value in enumerate(datas):
-###    print(index,value)
-##
-##image_data = datas[11].split('\'image_data_uint8\':')[1][1:-1]
-##print(len(datas[11]))
-##print(len(image_data))
-##img1d = np.fromstring(image_data, dtype=np.uint8)
-##print(img1d)
-###width: 16
-###height: 9
-##height = int(datas[9].split('\'height\':')[1][1:-1])
-##width = int(datas[16].split('\'width\':')[1][1:-1])
-##print(height)
-##print(width)
-##img_rgba = img1d.reshape(height, width)
-##airsim.write_png(os.path.normpath('camera.png'), img_rgba)
-
-##response = input("Give the command:")
-###print(parseCommand(nextStep))
-##img1d = np.fromstring(response.image_data_uint8, dtype=np.uint8)
-##img_rgba = img1d.reshape(response.height, response.width, 4)
-##airsim.write_png(os.path.normpath('camera.png'), img_rgba)
-##print("save image !")

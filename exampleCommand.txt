@@ -1,10 +1,13 @@
-some flying commands in block environments
+#some flying commands in block environments
+#**Important**: give the command after the sentence "Give the command" shows up
 takeoffAsync().join()
 moveToPositionAsync(-10,10,-10,5).join()
-moveToPositionAsync(-10,10,-40,3).join()
+moveToPositionAsync(-10,40,-40,3).join()
 hoverAsync().join()
 
-some get sensor and images commands
+#some get sensor and images commands
+#each data type is split by ","
+#for images, ":" splits camera and image types, ";" splits each image types
 get state
 get kinematics
 get imu
@@ -15,7 +18,7 @@ get front_center:scene;segmentation,front_left:depthPlanner;depthVis
 get imu,front_center:scene,front_right:segmentation;infrared;depthVis,front_left:depthPlanner;depthVis
 
 
-command to end simulation
+#command to end simulation
 end
 
 

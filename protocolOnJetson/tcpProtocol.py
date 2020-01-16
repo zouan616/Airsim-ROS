@@ -140,8 +140,8 @@ def parseAirsimMessage(inputString):
     #print(inputString)
     datas = inputString.split('biu')
     if len(datas) > 2:
-        imu = json.loads(datas[responseIndex.imu])
-        gps = json.loads(datas[responseIndex.gps])
+        #imu = json.loads(datas[responseIndex.imu])
+        #gps = json.loads(datas[responseIndex.gps])
         fc = datas[responseIndex.front_center]
         fr = datas[responseIndex.front_right]
         fl = datas[responseIndex.front_left]
