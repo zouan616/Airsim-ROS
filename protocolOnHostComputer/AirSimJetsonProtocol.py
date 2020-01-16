@@ -8,7 +8,7 @@
 # bits 43-51: 43th bit indicate if need image from back_center, ...
 import airsim
 import sys
-import numpy as np
+import json
 
 cameraNumbers = 5
 imageTypes = 8
@@ -102,7 +102,7 @@ def explainProtocol(inputString):
 				AllData.insert(index+1,"biu")
 
 		message = "".join(AllData)
-		message = message + "^"
+		message = message + "^" # this symbol is the end indicator for a message
 		tcpServer.send(message.encode())
 	elif inputString == "end":
 		tcpServer.close()
@@ -124,19 +124,24 @@ def explainProtocol(inputString):
 def getData(inputString,AllData):
 	print("get sensor data")
 	if inputString[RequestDataBits.state] == '1':
-		AllData[responseIndex.state] = str(client.getMultirotorState())
+		state_data = client.getMultirotorState()
+		AllData[responseIndex.state] = json.dumps(state_data, default=lambda x: x.__dict__)
 
 	if inputString[RequestDataBits.kinematics] == '1':
-		AllData[responseIndex.kinematics] = str(client.getMultirotorState().kinematics_estimated)
+		kinematics_data = client.getMultirotorState().kinematics_estimated
+		AllData[responseIndex.kinematics] = json.dumps(kinematics_data, default=lambda x: x.__dict__)
 
 	if inputString[RequestDataBits.imu] == '1':
-		AllData[responseIndex.imu] = str(client.getImuData())
+		imu_data = client.getImuData()
+		AllData[responseIndex.imu] = json.dumps(imu_data, default=lambda x: x.__dict__)
 
 	if inputString[RequestDataBits.lidar] == '1':
-		AllData[responseIndex.lidar] = str(client.getLidarData())
+		lidar_data = client.getLidarData()
+		AllData[responseIndex.lidar] = json.dumps(lidar_data, default=lambda x: x.__dict__)
 
 	if inputString[RequestDataBits.gps] == '1':
-		AllData[responseIndex.gps] = str(client.getGpsData())
+		gps_data = client.getGpsData()
+		AllData[responseIndex.gps] = json.dumps(gps_data, default=lambda x: x.__dict__)
 
 	if inputString[RequestDataBits.image] == '1':
 		getImage(inputString,AllData)
