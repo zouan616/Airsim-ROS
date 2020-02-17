@@ -6,7 +6,7 @@ import traceback
 # This code runs on Jetson board
 def main():
     try:
-        TCP_IP = '172.16.21.209'
+        TCP_IP = '172.16.21.54'
         TCP_PORT = 5005
         BUFFER_SIZE = 2048
 
