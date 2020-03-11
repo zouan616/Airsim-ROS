@@ -8,8 +8,8 @@ import socket
 import AirSimJetsonProtocol as AJP
 
 # This code runs on desktop computer
-# set up tcp 
-TCP_IP = '172.16.21.209'
+# set up tcp, the address is the ip-address for jetson board
+TCP_IP = '172.16.21.54'
 TCP_PORT = 5005
 BUFFER_SIZE = 100
 
@@ -43,4 +43,3 @@ except Exception as e:
 	server.close()
 	client.enableApiControl(False)
 	sys.exit(0)
-
