@@ -25,7 +25,9 @@ end
 
 moveToPositionAsync(0,10,-15,0.5).join()
 
-moveToPositionAsync(30,20,-5,0.5).join()
+moveToPositionAsync(30,20,-5,5).join()
 
 rotateToYawAsync(45,3,5).join()
 rotateByYawRateAsync(15,2).join()
+
+Goal: move to 30,20,-5 in NED (which is 20,30,5 in ENU)

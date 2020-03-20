@@ -9,7 +9,7 @@ import AirSimJetsonProtocol as AJP
 
 # This code runs on desktop computer
 # set up tcp, the address is the ip-address for jetson board
-TCP_IP = '172.16.21.54'
+TCP_IP = '172.16.102.142'
 TCP_PORT = 5005
 BUFFER_SIZE = 100
 
