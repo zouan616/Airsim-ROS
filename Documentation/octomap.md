@@ -27,3 +27,6 @@ This finishes the set up, to start this example, you need to:
 5. Uncheck all other things in RVIZ, wait some seconds, and you should see the generated octomap in RVIZ.
 
 To save the map, type **rosrun octomap_server octomap_saver airsim_example.bt**
+
+The ros graph of building octomap with airsim-ros-wrapper is here:
+![Image of airsim and octomap](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/octomap_airsim.png)
