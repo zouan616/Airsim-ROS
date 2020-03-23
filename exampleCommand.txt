@@ -1,7 +1,7 @@
 #some flying commands in block environments
 #**Important**: give the command after the sentence "Give the command" shows up
 takeoffAsync().join()
-moveToPositionAsync(0,20,-10,0.5).join()
+moveToPositionAsync(15,20,-10,2).join()
 moveToPositionAsync(-10,40,-40,3).join()
 moveToPositionAsync(10,-20,-30,3).join()
 moveToPositionAsync(10,25,-20,3).join()
@@ -23,11 +23,8 @@ get imu,front_center:scene,front_right:segmentation;infrared;depthVis,front_left
 #command to end simulation
 end
 
-moveToPositionAsync(0,10,-15,0.5).join()
+moveToPositionAsync(35,25,-5,1)
 
-moveToPositionAsync(30,20,-5,5).join()
-
-rotateToYawAsync(45,3,5).join()
-rotateByYawRateAsync(15,2).join()
+rotateByYawRateAsync(-20,1).join()
 
 Goal: move to 30,20,-5 in NED (which is 20,30,5 in ENU)
