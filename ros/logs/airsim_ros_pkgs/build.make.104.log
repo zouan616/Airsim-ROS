@@ -1,0 +1,151 @@
+[ 21%] Built target MavLinkCom
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_TakeoffGroup
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetLocalPosition
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleEulerCmd
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_LandGroup
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Reset
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetGPSPosition
+[ 21%] Built target std_msgs_generate_messages_py
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Takeoff
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Land
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmd
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmdGroup
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GPSYaw
+[ 21%] Built target geometry_msgs_generate_messages_py
+[ 21%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleQuatCmd
+[ 21%] Built target geometry_msgs_generate_messages_lisp
+[ 21%] Built target std_msgs_generate_messages_eus
+[ 21%] Built target geometry_msgs_generate_messages_eus
+[ 31%] Built target rpc
+[ 31%] Built target mav_planning_msgs_generate_messages_nodejs
+[ 31%] Built target std_msgs_generate_messages_lisp
+[ 31%] Built target mav_planning_msgs_generate_messages_lisp
+[ 31%] Built target mav_planning_msgs_generate_messages_eus
+[ 31%] Built target visualization_msgs_generate_messages_nodejs
+[ 31%] Built target visualization_msgs_generate_messages_py
+[ 31%] Built target visualization_msgs_generate_messages_eus
+[ 31%] Built target trajectory_msgs_generate_messages_py
+[ 31%] Built target trajectory_msgs_generate_messages_nodejs
+[ 31%] Built target geographic_msgs_generate_messages_cpp
+[ 31%] Built target mavros_msgs_generate_messages_py
+[ 31%] Built target std_msgs_generate_messages_nodejs
+[ 31%] Built target rosgraph_msgs_generate_messages_lisp
+[ 31%] Built target geometry_msgs_generate_messages_nodejs
+[ 31%] Built target mav_planning_msgs_generate_messages_py
+[ 31%] Built target rosgraph_msgs_generate_messages_eus
+[ 31%] Built target rosgraph_msgs_generate_messages_cpp
+[ 31%] Built target mavros_msgs_generate_messages_cpp
+[ 31%] Built target trajectory_msgs_generate_messages_cpp
+[ 31%] Built target std_msgs_generate_messages_cpp
+[ 31%] Built target rosgraph_msgs_generate_messages_nodejs
+[ 31%] Built target geometry_msgs_generate_messages_cpp
+[ 31%] Built target visualization_msgs_generate_messages_lisp
+[ 31%] Built target geographic_msgs_generate_messages_lisp
+[ 31%] Built target mavros_msgs_generate_messages_eus
+[ 31%] Built target nav_msgs_generate_messages_cpp
+[ 31%] Built target roscpp_generate_messages_lisp
+[ 31%] Built target std_srvs_generate_messages_eus
+[ 31%] Built target sensor_msgs_generate_messages_lisp
+[ 31%] Built target uuid_msgs_generate_messages_lisp
+[ 31%] Built target mavros_msgs_generate_messages_nodejs
+[ 31%] Built target mav_planning_msgs_generate_messages_cpp
+[ 31%] Built target actionlib_msgs_generate_messages_nodejs
+[ 31%] Built target trajectory_msgs_generate_messages_eus
+[ 31%] Built target uuid_msgs_generate_messages_py
+[ 31%] Built target roscpp_generate_messages_py
+[ 31%] Built target sensor_msgs_generate_messages_nodejs
+[ 31%] Built target actionlib_generate_messages_cpp
+[ 31%] Built target nav_msgs_generate_messages_nodejs
+[ 31%] Built target sensor_msgs_generate_messages_py
+[ 31%] Built target roscpp_generate_messages_nodejs
+[ 31%] Built target mavros_msgs_generate_messages_lisp
+[ 31%] Built target sensor_msgs_generate_messages_eus
+[ 31%] Built target sensor_msgs_generate_messages_cpp
+[ 31%] Built target geographic_msgs_generate_messages_eus
+[ 31%] Built target actionlib_generate_messages_nodejs
+[ 31%] Built target mav_msgs_generate_messages_py
+[ 31%] Built target geographic_msgs_generate_messages_py
+[ 31%] Built target roscpp_generate_messages_cpp
+[ 31%] Built target uuid_msgs_generate_messages_eus
+[ 31%] Built target uuid_msgs_generate_messages_cpp
+[ 31%] Built target uuid_msgs_generate_messages_nodejs
+[ 31%] Built target nav_msgs_generate_messages_lisp
+[ 31%] Built target actionlib_msgs_generate_messages_cpp
+[ 31%] Built target std_srvs_generate_messages_cpp
+[ 31%] Built target roscpp_generate_messages_eus
+[ 31%] Built target actionlib_msgs_generate_messages_eus
+[ 31%] Built target mav_msgs_generate_messages_cpp
+[ 31%] Built target actionlib_msgs_generate_messages_lisp
+[ 31%] Built target rosgraph_msgs_generate_messages_py
+[ 31%] Built target std_srvs_generate_messages_lisp
+[ 31%] Built target std_srvs_generate_messages_nodejs
+[ 31%] Built target actionlib_msgs_generate_messages_py
+[ 31%] Built target geographic_msgs_generate_messages_nodejs
+[ 31%] Built target actionlib_generate_messages_lisp
+[ 31%] Built target std_srvs_generate_messages_py
+[ 31%] Built target tf2_msgs_generate_messages_cpp
+[ 31%] Built target visualization_msgs_generate_messages_cpp
+[ 31%] Built target tf2_msgs_generate_messages_eus
+[ 31%] Built target nav_msgs_generate_messages_eus
+[ 31%] Built target nav_msgs_generate_messages_py
+[ 31%] Built target tf2_msgs_generate_messages_lisp
+[ 31%] Built target tf2_msgs_generate_messages_nodejs
+[ 31%] Built target actionlib_generate_messages_eus
+[ 31%] Built target mav_msgs_generate_messages_lisp
+[ 31%] Built target actionlib_generate_messages_py
+[ 31%] Built target mav_msgs_generate_messages_eus
+[ 31%] Built target mav_msgs_generate_messages_nodejs
+[ 31%] Built target tf2_msgs_generate_messages_py
+[ 34%] Built target MavLinkTest
+[ 34%] Built target trajectory_msgs_generate_messages_lisp
+[ 45%] Built target airsim_ros_pkgs_generate_messages_py
+[ 54%] Built target airsim_ros_pkgs_generate_messages_lisp
+[ 64%] Built target airsim_ros_pkgs_generate_messages_eus
+[ 72%] Built target airsim_ros_pkgs_generate_messages_nodejs
+[ 82%] Built target airsim_ros_pkgs_generate_messages_cpp
+[ 82%] Built target airsim_ros_pkgs_generate_messages
+[ 83%] Built target pd_position_controller_simple
+[ 91%] Built target AirLib
+[ 92%] Built target airsim_settings_parser
+[ 93%] Built target airsim_ros
+[35m[1mScanning dependencies of target common_mav[0m
+[ 95%] Built target pd_position_controller_simple_node
+[ 96%] Built target airsim_node
+[ 97%] [32mBuilding CXX object CMakeFiles/common_mav.dir/src/common_mav.cpp.o[0m
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:[m[K In function ‘[01m[Kbool out_of_bound(const graph::node&)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:20:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kmin_x[m[K’ was not declared in this scope
+     return (pos.x < [01;31m[Kmin_x[m[K - offset
+                     [01;31m[K^~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:20:21:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kminor[m[K’
+     return (pos.x < [01;36m[Kmin_x[m[K - offset
+                     [01;36m[K^~~~~[m[K
+                     [32m[Kminor[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:21:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_x[m[K’ was not declared in this scope
+         || pos.x > [01;31m[Kmax_x[m[K + offset
+                    [01;31m[K^~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:22:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kmin_y[m[K’ was not declared in this scope
+         || pos.y < [01;31m[Kmin_y[m[K - offset
+                    [01;31m[K^~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:22:20:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kminor[m[K’
+         || pos.y < [01;36m[Kmin_y[m[K - offset
+                    [01;36m[K^~~~~[m[K
+                    [32m[Kminor[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:23:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_y[m[K’ was not declared in this scope
+         || pos.y > [01;31m[Kmax_y[m[K + offset
+                    [01;31m[K^~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:24:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kmin_z[m[K’ was not declared in this scope
+         || pos.z < [01;31m[Kmin_z[m[K - offset
+                    [01;31m[K^~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:24:20:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kminor[m[K’
+         || pos.z < [01;36m[Kmin_z[m[K - offset
+                    [01;36m[K^~~~~[m[K
+                    [32m[Kminor[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:25:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_z[m[K’ was not declared in this scope
+         || pos.z > [01;31m[Kmax_z[m[K + offset);
+                    [01;31m[K^~~~~[m[K
+CMakeFiles/common_mav.dir/build.make:62: recipe for target 'CMakeFiles/common_mav.dir/src/common_mav.cpp.o' failed
+make[2]: *** [CMakeFiles/common_mav.dir/src/common_mav.cpp.o] Error 1
+CMakeFiles/Makefile2:196: recipe for target 'CMakeFiles/common_mav.dir/all' failed
+make[1]: *** [CMakeFiles/common_mav.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2
