@@ -20,27 +20,6 @@ int main(int argc, char ** argv)
         airsim_ros_wrapper.lidar_async_spinner_.start();
     }
 
-    // std::cout << "Press Enter to takeoff" << std::endl; std::cin.get();
-    // float takeoffTimeout = 5;
-    // airsim_ros_wrapper.takeoff_jin();
-
-    // std::cout << "Press Enter to move to position (-10,10,-10) in velocity 5" << std::endl; std::cin.get();
-    // float x = -10;
-    // float y = 10;
-    // float z = -10;
-    // float velocity = 5;
-    // airsim_ros_wrapper.moveTo(x,y,z,velocity);
-
-    // std::cout << "Press Enter to move on path in velocity 3" << std::endl; std::cin.get();
-    // velocity = 3;
-    // vector<Vector3r> path;
-    // path.push_back(Vector3r(-10,40,-40));
-    // path.push_back(Vector3r(-10,30,-35));
-    // path.push_back(Vector3r(-15,20,-35));
-    // airsim_ros_wrapper.moveOnPath(path,velocity);
-
-    // std::cout << "Press Enter to end task" << std::endl; std::cin.get();
-    // bool exit = airsim_ros_wrapper.end();
     ros::spin();
 
     return 0;

@@ -1,0 +1,8 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:24:10:[m[K [01;31m[Kfatal error: [m[Koctomap_world/octomap_world.h: No such file or directory
+ #include [01;31m[K<octomap_world/octomap_world.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/motion_planner.dir/src/motion_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/motion_planner.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2

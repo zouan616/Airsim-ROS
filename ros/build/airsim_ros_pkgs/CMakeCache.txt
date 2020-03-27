@@ -275,6 +275,15 @@ MavLinkTest_SOURCE_DIR:STATIC=/home/airsim/project/AirSim/cmake/MavLinkCom/MavLi
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
+//Path to a library.
+OMPLAPPBASE_LIBRARY:FILEPATH=OMPLAPPBASE_LIBRARY-NOTFOUND
+
+//Path to a library.
+OMPLAPP_LIBRARY:FILEPATH=OMPLAPP_LIBRARY-NOTFOUND
+
+//Path to a library.
+OMPL_LIBRARIES:FILEPATH=/home/airsim/lib/libompl.so
+
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/opencv4
 
@@ -503,6 +512,12 @@ nav_msgs_DIR:PATH=/opt/ros/melodic/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for nlopt.
 nlopt_DIR:PATH=/home/airsim/project/AirSim/ros/devel/share/nlopt/cmake
+
+//The directory containing a CMake configuration file for octomap.
+octomap_DIR:PATH=/opt/ros/melodic/share/octomap
+
+//The directory containing a CMake configuration file for ompl.
+ompl_DIR:PATH=/home/airsim/share/ompl/cmake
 
 //Dependencies for target
 pd_position_controller_simple_LIB_DEPENDS:STATIC=
@@ -752,6 +767,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.1.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.17()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding ompl
+FIND_PACKAGE_MESSAGE_DETAILS_ompl:INTERNAL=[/home/airsim/include][/home/airsim/lib/libompl.so][v()]
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock

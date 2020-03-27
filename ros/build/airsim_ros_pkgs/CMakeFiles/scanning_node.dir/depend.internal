@@ -27,7 +27,6 @@ CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o
  /home/airsim/project/AirSim/ros/devel/.private/glog_catkin/include/glog/log_severity.h
  /home/airsim/project/AirSim/ros/devel/.private/glog_catkin/include/glog/logging.h
  /home/airsim/project/AirSim/ros/devel/.private/glog_catkin/include/glog/vlog_is_on.h
- /home/airsim/project/AirSim/ros/devel/.private/mavros_msgs/include/mavros_msgs/State.h
  /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/binary.h
  /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/dll.h
  /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/emitter.h
@@ -666,8 +665,6 @@ CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o
  /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/graph.h
  /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/math_common.h
  /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp
- /home/airsim/project/AirSim/ros/src/mav_comm/mav_msgs/include/mav_msgs/common.h
- /home/airsim/project/AirSim/ros/src/mav_comm/mav_msgs/include/mav_msgs/eigen_mav_msgs.h
  /home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/convolution.h
  /home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/extremum.h
  /home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/impl/polynomial_optimization_linear_impl.h
@@ -708,6 +705,9 @@ CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o
  /opt/ros/melodic/include/kdl/frames.inl
  /opt/ros/melodic/include/kdl/utilities/kdl-config.h
  /opt/ros/melodic/include/kdl/utilities/utility.h
+ /opt/ros/melodic/include/mav_msgs/common.h
+ /opt/ros/melodic/include/mav_msgs/eigen_mav_msgs.h
+ /opt/ros/melodic/include/mavros_msgs/State.h
  /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h

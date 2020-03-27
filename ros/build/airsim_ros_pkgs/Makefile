@@ -1481,6 +1481,19 @@ std_srvs_generate_messages_nodejs/fast:
 .PHONY : std_srvs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named motion_planner
+
+# Build rule for target.
+motion_planner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 motion_planner
+.PHONY : motion_planner
+
+# fast build rule for target.
+motion_planner/fast:
+	$(MAKE) -f CMakeFiles/motion_planner.dir/build.make CMakeFiles/motion_planner.dir/build
+.PHONY : motion_planner/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -1939,6 +1952,33 @@ src/common_mav.cpp.s:
 	$(MAKE) -f CMakeFiles/common_mav.dir/build.make CMakeFiles/common_mav.dir/src/common_mav.cpp.s
 .PHONY : src/common_mav.cpp.s
 
+src/motion_planner.o: src/motion_planner.cpp.o
+
+.PHONY : src/motion_planner.o
+
+# target to build an object file
+src/motion_planner.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_planner.dir/build.make CMakeFiles/motion_planner.dir/src/motion_planner.cpp.o
+.PHONY : src/motion_planner.cpp.o
+
+src/motion_planner.i: src/motion_planner.cpp.i
+
+.PHONY : src/motion_planner.i
+
+# target to preprocess a source file
+src/motion_planner.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_planner.dir/build.make CMakeFiles/motion_planner.dir/src/motion_planner.cpp.i
+.PHONY : src/motion_planner.cpp.i
+
+src/motion_planner.s: src/motion_planner.cpp.s
+
+.PHONY : src/motion_planner.s
+
+# target to generate assembly for a file
+src/motion_planner.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_planner.dir/build.make CMakeFiles/motion_planner.dir/src/motion_planner.cpp.s
+.PHONY : src/motion_planner.cpp.s
+
 src/pd_position_controller_simple.o: src/pd_position_controller_simple.cpp.o
 
 .PHONY : src/pd_position_controller_simple.o
@@ -2134,6 +2174,7 @@ help:
 	@echo "... mav_msgs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_nodejs"
+	@echo "... motion_planner"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... geographic_msgs_generate_messages_nodejs"
@@ -2173,6 +2214,9 @@ help:
 	@echo "... src/common_mav.o"
 	@echo "... src/common_mav.i"
 	@echo "... src/common_mav.s"
+	@echo "... src/motion_planner.o"
+	@echo "... src/motion_planner.i"
+	@echo "... src/motion_planner.s"
 	@echo "... src/pd_position_controller_simple.o"
 	@echo "... src/pd_position_controller_simple.i"
 	@echo "... src/pd_position_controller_simple.s"

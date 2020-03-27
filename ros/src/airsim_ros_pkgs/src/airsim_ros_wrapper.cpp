@@ -143,7 +143,6 @@ void AirsimROSWrapper::moveOnPath(const vector<Vector3r>& path, float velocity)
 
 bool AirsimROSWrapper::end()
 {
-    //airsim_client_.landAsync()->waitOnLastTask();
     airsim_client_.armDisarm(false);
     airsim_client_.enableApiControl(false);
     return true;

@@ -20,6 +20,10 @@ set(OpenCV_INCLUDE_DIRS "/usr/include/opencv4;/usr/include")
 find_package(Boost REQUIRED)
 find_package(OpenCV REQUIRED)
 
+find_package(octomap REQUIRED)
+include_directories(${OCTOMAP_INCLUDE_DIRS})
+find_package(ompl REQUIRED)
+
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   image_transport
@@ -104,6 +108,9 @@ target_link_libraries(pd_position_controller_simple_node pd_position_controller_
 
 add_executable(scanning_node src/scanning_node.cpp)
 target_link_libraries(scanning_node airsim_ros ${catkin_LIBRARIES} AirLib common_mav)
+
+add_executable(motion_planner src/motion_planner.cpp)
+target_link_libraries(motion_planner airsim_ros ${catkin_LIBRARIES} libompl.so ${OCTOMAP_LIBRARIES})
 
 install(TARGETS
     #list of nodes

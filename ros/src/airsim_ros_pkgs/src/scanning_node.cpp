@@ -8,9 +8,6 @@
 
 double max_x = 0, max_y = 0, max_z = 0, min_x = 0, min_y = 0, min_z = 0;
 enum State { setup, waiting, flying, completed, invalid };
-double max_velocity = 5;
-double max_accelaration = 5;
-
 
 // get the scanning width, length and number of lanes
 void get_goal(int& width, int& length, int& lanes, int& height) {

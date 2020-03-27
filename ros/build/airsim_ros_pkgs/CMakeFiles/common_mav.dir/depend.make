@@ -26,7 +26,6 @@ CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/glog_catkin/include/glog/log_severity.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/glog_catkin/include/glog/logging.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/glog_catkin/include/glog/vlog_is_on.h
-CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/mavros_msgs/include/mavros_msgs/State.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/binary.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/dll.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/emitter.h
@@ -665,8 +664,6 @@ CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/graph.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/math_common.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp
-CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/mav_comm/mav_msgs/include/mav_msgs/common.h
-CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/mav_comm/mav_msgs/include/mav_msgs/eigen_mav_msgs.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/convolution.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/extremum.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/impl/polynomial_optimization_linear_impl.h
@@ -707,6 +704,9 @@ CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/kdl/fra
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/kdl/frames.inl
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/kdl/utilities/kdl-config.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/kdl/utilities/utility.h
+CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/mav_msgs/common.h
+CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/mav_msgs/eigen_mav_msgs.h
+CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/mavros_msgs/State.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/nav_msgs/Odometry.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/ros/advertise_options.h
 CMakeFiles/common_mav.dir/src/common_mav.cpp.o: /opt/ros/melodic/include/ros/advertise_service_options.h

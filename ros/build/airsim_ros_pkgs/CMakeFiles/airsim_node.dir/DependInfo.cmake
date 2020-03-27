@@ -19,6 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include"
+  "/opt/ros/melodic/include"
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include"
   "/home/airsim/project/AirSim/ros/devel/.private/mavros_msgs/include"
   "/home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include"
@@ -34,7 +35,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/airsim/project/AirSim/ros/src/mavros/mavros_msgs/include"
   "/home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation/include"
   "/home/airsim/project/AirSim/ros/src/mav_trajectory_generation/mav_trajectory_generation_ros/include"
-  "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
   "/usr/include/opencv4"

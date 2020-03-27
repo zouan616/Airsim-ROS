@@ -1,0 +1,8 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:29:10:[m[K [01;31m[Kfatal error: [m[Kmav_trajectory_generation_ros/trajectory_sampling.h: No such file or directory
+ #include [01;31m[K<mav_trajectory_generation_ros/trajectory_sampling.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/motion_planner.dir/src/motion_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/motion_planner.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2

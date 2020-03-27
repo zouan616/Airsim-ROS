@@ -21,7 +21,6 @@ CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ro
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/TakeoffResponse.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmd.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmdGroup.h
-CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/mavros_msgs/include/mavros_msgs/State.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/binary.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/dll.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include/yaml-cpp/emitter.h
@@ -688,6 +687,7 @@ CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/kdl/f
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/kdl/frames.inl
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/kdl/utilities/kdl-config.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/kdl/utilities/utility.h
+CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/mavros_msgs/State.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/nav_msgs/Odometry.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/ros/advertise_options.h
 CMakeFiles/airsim_node.dir/src/airsim_node.cpp.o: /opt/ros/melodic/include/ros/advertise_service_options.h
