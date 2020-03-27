@@ -1,0 +1,13 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common.cpp:[m[K In function ‘[01m[Kvoid follow_trajectory(AirsimROSWrapper&, trajectory_t*, trajectory_t*, yaw_strategy_t, bool, float, float)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common.cpp:54:28:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator-[m[K’
+             v_x += 0.2*([01;31m[Kp.x-pos.x[m[K);
+                         [01;31m[K~~~^~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common.cpp:55:28:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator-[m[K’
+             v_y += 0.2*([01;31m[Kp.y-pos.y[m[K);
+                         [01;31m[K~~~^~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common.cpp:56:28:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’ to binary ‘[01m[Koperator-[m[K’
+             v_z += 0.5*([01;31m[Kp.z-pos.z[m[K);
+                         [01;31m[K~~~^~~~~~[m[K
+make[2]: *** [CMakeFiles/common.dir/src/common.cpp.o] Error 1
+make[1]: *** [CMakeFiles/common.dir/all] Error 2
+make: *** [all] Error 2

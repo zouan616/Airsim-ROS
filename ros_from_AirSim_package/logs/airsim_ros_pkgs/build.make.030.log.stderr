@@ -1,0 +1,23 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:[m[K In function ‘[01m[Ktrajectory_t get_multiDOF_trajectory(mav_trajectory_generation::Trajectory)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:217:31:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::deque<multiDOFpoint>::push_back(trajectory_msgs::MultiDOFJointTrajectoryPoint&)[m[K’
+         result.push_back(point[01;31m[K)[m[K;
+                               [01;31m[K^[m[K
+In file included from [01m[K/usr/include/c++/7/deque:64:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/external/rpclib/rpclib-2.2.1/include/rpc/msgpack/v1/adaptor/deque.hpp:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/external/rpclib/rpclib-2.2.1/include/rpc/msgpack/adaptor/deque.hpp:13[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/external/rpclib/rpclib-2.2.1/include/rpc/msgpack/type.hpp:6[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/external/rpclib/rpclib-2.2.1/include/rpc/msgpack.hpp:31[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/external/rpclib/rpclib-2.2.1/include/rpc/rpc_error.h:8[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:6[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:2[m[K:
+[01m[K/usr/include/c++/7/bits/stl_deque.h:1542:7:[m[K [01;36m[Knote: [m[Kcandidate: void std::deque<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = multiDOFpoint; _Alloc = std::allocator<multiDOFpoint>; std::deque<_Tp, _Alloc>::value_type = multiDOFpoint]
+       [01;36m[Kpush_back[m[K(const value_type& __x)
+       [01;36m[K^~~~~~~~~[m[K
+[01m[K/usr/include/c++/7/bits/stl_deque.h:1542:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktrajectory_msgs::MultiDOFJointTrajectoryPoint {aka trajectory_msgs::MultiDOFJointTrajectoryPoint_<std::allocator<void> >}[m[K’ to ‘[01m[Kconst value_type& {aka const multiDOFpoint&}[m[K’
+[01m[K/usr/include/c++/7/bits/stl_deque.h:1557:7:[m[K [01;36m[Knote: [m[Kcandidate: void std::deque<_Tp, _Alloc>::push_back(std::deque<_Tp, _Alloc>::value_type&&) [with _Tp = multiDOFpoint; _Alloc = std::allocator<multiDOFpoint>; std::deque<_Tp, _Alloc>::value_type = multiDOFpoint]
+       [01;36m[Kpush_back[m[K(value_type&& __x)
+       [01;36m[K^~~~~~~~~[m[K
+[01m[K/usr/include/c++/7/bits/stl_deque.h:1557:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktrajectory_msgs::MultiDOFJointTrajectoryPoint {aka trajectory_msgs::MultiDOFJointTrajectoryPoint_<std::allocator<void> >}[m[K’ to ‘[01m[Kstd::deque<multiDOFpoint>::value_type&& {aka multiDOFpoint&&}[m[K’
+make[2]: *** [CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/scanning_node.dir/all] Error 2
+make: *** [all] Error 2

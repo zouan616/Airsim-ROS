@@ -1,0 +1,12 @@
+Symlinking /home/airsim/project/AirSim/ros/devel/./local_setup.sh
+Symlinking /home/airsim/project/AirSim/ros/devel/./setup.bash
+Symlinking /home/airsim/project/AirSim/ros/devel/./_setup_util.py
+Symlinking /home/airsim/project/AirSim/ros/devel/./cmake.lock
+Symlinking /home/airsim/project/AirSim/ros/devel/./local_setup.zsh
+Symlinking /home/airsim/project/AirSim/ros/devel/./setup.sh
+Symlinking /home/airsim/project/AirSim/ros/devel/./local_setup.bash
+Symlinking /home/airsim/project/AirSim/ros/devel/./setup.zsh
+Symlinking /home/airsim/project/AirSim/ros/devel/./env.sh
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/airsim/project/AirSim/ros/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/airsim/project/AirSim/ros/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

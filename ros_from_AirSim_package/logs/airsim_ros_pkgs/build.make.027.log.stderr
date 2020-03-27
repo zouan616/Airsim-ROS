@@ -1,0 +1,11 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:[m[K In function ‘[01m[Ktrajectory_t get_multiDOF_trajectory(mav_trajectory_generation::Trajectory)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:181:32:[m[K [01;31m[Kerror: [m[K‘[01m[KsampleWholeTrajectory[m[K’ is not a member of ‘[01m[Kmav_trajectory_generation[m[K’
+     mav_trajectory_generation::[01;31m[KsampleWholeTrajectory[m[K(scanning_trajectory, interval, &states);
+                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:181:32:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[KdrawMavSampledTrajectory[m[K’
+     mav_trajectory_generation::[01;36m[KsampleWholeTrajectory[m[K(scanning_trajectory, interval, &states);
+                                [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+                                [32m[KdrawMavSampledTrajectory[m[K
+make[2]: *** [CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/scanning_node.dir/all] Error 2
+make: *** [all] Error 2

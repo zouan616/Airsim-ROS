@@ -1,0 +1,6 @@
+devel_space: /home/airsim/project/AirSim/ros/devel
+install: false
+install_space: /home/airsim/project/AirSim/ros/install
+profile: default
+source_space: /home/airsim/project/AirSim/ros/src
+workspace: /home/airsim/project/AirSim/ros

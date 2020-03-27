@@ -1,0 +1,7 @@
+In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:1:0[m[K:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:125:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Knamespace[m[K’
+     [01;31m[Knamespace[m[K std;
+     [01;31m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/airsim_ros.dir/src/airsim_ros_wrapper.cpp.o] Error 1
+make[1]: *** [CMakeFiles/airsim_ros.dir/all] Error 2
+make: *** [all] Error 2

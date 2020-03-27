@@ -1,0 +1,7 @@
+In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common.cpp:1:0[m[K:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common.h:23:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeque[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type
+ typedef std::[01;31m[Kdeque[m[K<multiDOFpoint> trajectory_t;
+              [01;31m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/common.dir/src/common.cpp.o] Error 1
+make[1]: *** [CMakeFiles/common.dir/all] Error 2
+make: *** [all] Error 2

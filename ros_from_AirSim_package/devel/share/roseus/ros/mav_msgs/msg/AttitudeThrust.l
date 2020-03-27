@@ -1,0 +1,1 @@
+/home/airsim/project/AirSim/ros/devel/.private/mav_msgs/share/roseus/ros/mav_msgs/msg/AttitudeThrust.l

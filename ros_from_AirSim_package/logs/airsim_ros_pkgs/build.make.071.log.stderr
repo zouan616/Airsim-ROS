@@ -1,0 +1,11 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:[m[K In member function ‘[01m[Kgeometry_msgs::Pose AirsimROSWrapper::pose()[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:50:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass msr::airlib::MultirotorRpcLibClient[m[K’ has no member named ‘[01m[KgetPosition[m[K’
+     auto p = airsim_client_.[01;31m[KgetPosition[m[K();
+                             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:51:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass msr::airlib::MultirotorRpcLibClient[m[K’ has no member named ‘[01m[KgetOrientation[m[K’; did you mean ‘[01m[KgetClientVersion[m[K’?
+     auto q = airsim_client_.[01;31m[KgetOrientation[m[K();
+                             [01;31m[K^~~~~~~~~~~~~~[m[K
+                             [32m[KgetClientVersion[m[K
+make[2]: *** [CMakeFiles/airsim_ros.dir/src/airsim_ros_wrapper.cpp.o] Error 1
+make[1]: *** [CMakeFiles/airsim_ros.dir/all] Error 2
+make: *** [all] Error 2

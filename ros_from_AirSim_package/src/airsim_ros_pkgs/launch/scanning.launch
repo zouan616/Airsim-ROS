@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="airsim_ros_pkgs" name="scanning_node" type="scanning_node" output="screen" />
+  <node pkg="rviz" type="rviz" name="rviz"/>
+
+</launch>

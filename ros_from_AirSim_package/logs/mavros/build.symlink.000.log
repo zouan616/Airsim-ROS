@@ -1,0 +1,8 @@
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/libmavros.so
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/libmavros_plugins.so
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/pkgconfig/mavros.pc
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/python2.7/dist-packages/mavros/__init__.py
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/mavros/gcs_bridge
+Symlinking /home/airsim/project/AirSim/ros/devel/lib/mavros/mavros_node
+Symlinking /home/airsim/project/AirSim/ros/devel/share/mavros/cmake/mavrosConfig-version.cmake
+Symlinking /home/airsim/project/AirSim/ros/devel/share/mavros/cmake/mavrosConfig.cmake

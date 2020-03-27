@@ -1,0 +1,27 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:[m[K In function ‘[01m[Ktrajectory_msgs::MultiDOFJointTrajectory get_multiDOF_trajectory(mav_trajectory_generation::Trajectory)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:177:5:[m[K [01;31m[Kerror: [m[K‘[01m[KMultiDOFJointTrajectory[m[K’ was not declared in this scope
+     [01;31m[KMultiDOFJointTrajectory[m[K result_trajectory;
+     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:177:5:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common.h:6:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:10[m[K:
+[01m[K/opt/ros/melodic/include/trajectory_msgs/MultiDOFJointTrajectory.h:60:76:[m[K [01;36m[Knote: [m[K  ‘[01m[Ktrajectory_msgs::MultiDOFJointTrajectory[m[K’
+ typedef ::trajectory_msgs::MultiDOFJointTrajectory_<std::allocator<void> > [01;36m[KMultiDOFJointTrajectory[m[K;
+                                                                            [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:218:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult_trajectory[m[K’ was not declared in this scope
+         [01;31m[Kresult_trajectory[m[K.points.push_back(point);
+         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:218:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kscanning_trajectory[m[K’
+         [01;36m[Kresult_trajectory[m[K.points.push_back(point);
+         [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+         [32m[Kscanning_trajectory[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:224:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult_trajectory[m[K’ was not declared in this scope
+     return [01;31m[Kresult_trajectory[m[K;
+            [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:224:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kscanning_trajectory[m[K’
+     return [01;36m[Kresult_trajectory[m[K;
+            [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+            [32m[Kscanning_trajectory[m[K
+make[2]: *** [CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/scanning_node.dir/all] Error 2
+make: *** [all] Error 2

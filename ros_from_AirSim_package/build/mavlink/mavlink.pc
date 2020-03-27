@@ -1,0 +1,8 @@
+prefix=/home/airsim/project/AirSim/ros/devel
+exec_prefix=/home/airsim/project/AirSim/ros/devel
+includedir=${prefix}/include
+
+Name: mavlink
+Description: MAVLink micro air vehicle marshalling / communication library
+Version: 2020.2.2
+Cflags: -I${includedir}

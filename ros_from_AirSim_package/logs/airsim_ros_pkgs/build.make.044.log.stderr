@@ -1,0 +1,6 @@
+CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o: In function `create_trajectory(trajectory_msgs::MultiDOFJointTrajectory_<std::allocator<void> > const&, bool)':
+scanning_node.cpp:(.text+0x1a0d): undefined reference to `yawFromQuat(geometry_msgs::Quaternion_<std::allocator<void> >)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/scanning_node] Error 1
+make[1]: *** [CMakeFiles/scanning_node.dir/all] Error 2
+make: *** [all] Error 2

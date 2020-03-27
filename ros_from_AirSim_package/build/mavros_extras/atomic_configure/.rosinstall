@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/airsim/project/AirSim/ros/devel/.private/mavros_extras/setup.sh

@@ -1,0 +1,7 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:[m[K In function ‘[01m[Kmsr::airlib::Vector3r getPosition()[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:76:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kairsim_client_[m[K’ was not declared in this scope
+     return [01;31m[Kairsim_client_[m[K.getMultirotorState().getPosition();
+            [01;31m[K^~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/airsim_ros.dir/src/airsim_ros_wrapper.cpp.o] Error 1
+make[1]: *** [CMakeFiles/airsim_ros.dir/all] Error 2
+make: *** [all] Error 2

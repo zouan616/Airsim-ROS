@@ -1,0 +1,8 @@
+prefix=/home/airsim/project/AirSim/ros/devel/.private/mavros_msgs
+
+Name: mavros_msgs
+Description: Description of mavros_msgs
+Version: 0.26.3
+Cflags: -I/home/airsim/project/AirSim/ros/devel/.private/mavros_msgs/include -I/home/airsim/project/AirSim/ros/src/mavros/mavros_msgs/include
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs sensor_msgs geographic_msgs message_runtime std_msgs
