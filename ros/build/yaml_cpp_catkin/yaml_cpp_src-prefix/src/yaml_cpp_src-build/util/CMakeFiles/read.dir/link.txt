@@ -1,1 +1,0 @@
-/usr/bin/c++  -O2  -rdynamic CMakeFiles/read.dir/read.cpp.o  -o read -lyaml-cpp 

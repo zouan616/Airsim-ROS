@@ -1,1 +1,0 @@
-/home/airsim/project/AirSim/ros/devel/.private/mav_trajectory_generation/share/mav_trajectory_generation/cmake/mav_trajectory_generationConfig.cmake

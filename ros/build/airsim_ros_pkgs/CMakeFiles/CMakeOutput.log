@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/airsim/project/AirSim/ro
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9a1a5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9a1a5.dir/build.make CMakeFiles/cmTC_9a1a5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_83caf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_83caf.dir/build.make CMakeFiles/cmTC_83caf.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9a1a5.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_9a1a5.dir/testCCompiler.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_9a1a5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a1a5.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_9a1a5.dir/testCCompiler.c.o  -o cmTC_9a1a5 
+Building C object CMakeFiles/cmTC_83caf.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_83caf.dir/testCCompiler.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_83caf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83caf.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_83caf.dir/testCCompiler.c.o  -o cmTC_83caf 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_62551/fast"
-/usr/bin/make -f CMakeFiles/cmTC_62551.dir/build.make CMakeFiles/cmTC_62551.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d044c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d044c.dir/build.make CMakeFiles/cmTC_d044c.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_62551
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62551.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o  -o cmTC_62551 
+Building C object CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_d044c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d044c.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o  -o cmTC_d044c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,9 +61,9 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_62551' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCFPFEu.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_62551 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_62551' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d044c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjk7jTI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d044c /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d044c' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -71,14 +71,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_62551/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_62551.dir/build.make CMakeFiles/cmTC_62551.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_d044c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_d044c.dir/build.make CMakeFiles/cmTC_d044c.dir/build]
   ignore line: [make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_62551]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62551.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o  -o cmTC_62551 ]
+  ignore line: [Building C object CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_d044c]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d044c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o  -o cmTC_d044c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_62551' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCFPFEu.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_62551 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d044c' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjk7jTI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d044c /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccCFPFEu.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccjk7jTI.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -114,7 +114,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_62551] ==> ignore
+    arg [cmTC_d044c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -126,7 +126,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_62551.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_d044c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -158,14 +158,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ebbc8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ebbc8.dir/build.make CMakeFiles/cmTC_ebbc8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_92a9d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_92a9d.dir/build.make CMakeFiles/cmTC_92a9d.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ebbc8.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ebbc8.dir/feature_tests.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ebbc8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebbc8.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_ebbc8.dir/feature_tests.c.o  -o cmTC_ebbc8 
+Building C object CMakeFiles/cmTC_92a9d.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_92a9d.dir/feature_tests.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_92a9d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92a9d.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_92a9d.dir/feature_tests.c.o  -o cmTC_92a9d 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -178,14 +178,14 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d6b8f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d6b8f.dir/build.make CMakeFiles/cmTC_d6b8f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d3111/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d3111.dir/build.make CMakeFiles/cmTC_d3111.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d6b8f.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_d6b8f.dir/feature_tests.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.c
-Linking C executable cmTC_d6b8f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6b8f.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_d6b8f.dir/feature_tests.c.o  -o cmTC_d6b8f 
+Building C object CMakeFiles/cmTC_d3111.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_d3111.dir/feature_tests.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d3111
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3111.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_d3111.dir/feature_tests.c.o  -o cmTC_d3111 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -198,14 +198,14 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ae312/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ae312.dir/build.make CMakeFiles/cmTC_ae312.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_416c2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_416c2.dir/build.make CMakeFiles/cmTC_416c2.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ae312.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_ae312.dir/feature_tests.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ae312
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae312.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_ae312.dir/feature_tests.c.o  -o cmTC_ae312 
+Building C object CMakeFiles/cmTC_416c2.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_416c2.dir/feature_tests.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_416c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_416c2.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_416c2.dir/feature_tests.c.o  -o cmTC_416c2 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -216,28 +216,28 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_307d5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_307d5.dir/build.make CMakeFiles/cmTC_307d5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_32338/fast"
+/usr/bin/make -f CMakeFiles/cmTC_32338.dir/build.make CMakeFiles/cmTC_32338.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_307d5.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_307d5.dir/testCXXCompiler.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_307d5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_307d5.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_307d5.dir/testCXXCompiler.cxx.o  -o cmTC_307d5 
+Building CXX object CMakeFiles/cmTC_32338.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_32338.dir/testCXXCompiler.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_32338
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32338.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_32338.dir/testCXXCompiler.cxx.o  -o cmTC_32338 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4002e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4002e.dir/build.make CMakeFiles/cmTC_4002e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1e293/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1e293.dir/build.make CMakeFiles/cmTC_1e293.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_4002e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4002e.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4002e 
+Building CXX object CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_1e293
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e293.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_1e293 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -249,9 +249,9 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4002e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3GGJCX.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4002e /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4002e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1e293' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPGpCt8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1e293 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1e293' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -259,14 +259,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_4002e/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_4002e.dir/build.make CMakeFiles/cmTC_4002e.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_1e293/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_1e293.dir/build.make CMakeFiles/cmTC_1e293.dir/build]
   ignore line: [make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_4002e]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4002e.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4002e ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_1e293]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e293.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_1e293 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -278,13 +278,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4002e' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3GGJCX.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4002e /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1e293' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPGpCt8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1e293 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc3GGJCX.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccPGpCt8.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -302,7 +302,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_4002e] ==> ignore
+    arg [cmTC_1e293] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -314,7 +314,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_4002e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_1e293.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -342,14 +342,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cd800/fast"
-/usr/bin/make -f CMakeFiles/cmTC_cd800.dir/build.make CMakeFiles/cmTC_cd800.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_758ff/fast"
+/usr/bin/make -f CMakeFiles/cmTC_758ff.dir/build.make CMakeFiles/cmTC_758ff.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_cd800.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_cd800.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_cd800
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd800.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_cd800.dir/feature_tests.cxx.o  -o cmTC_cd800 
+Building CXX object CMakeFiles/cmTC_758ff.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_758ff.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_758ff
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_758ff.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_758ff.dir/feature_tests.cxx.o  -o cmTC_758ff 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -415,14 +415,14 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_85767/fast"
-/usr/bin/make -f CMakeFiles/cmTC_85767.dir/build.make CMakeFiles/cmTC_85767.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c82a2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c82a2.dir/build.make CMakeFiles/cmTC_c82a2.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_85767.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_85767.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_85767
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85767.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_85767.dir/feature_tests.cxx.o  -o cmTC_85767 
+Building CXX object CMakeFiles/cmTC_c82a2.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_c82a2.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c82a2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c82a2.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_c82a2.dir/feature_tests.cxx.o  -o cmTC_c82a2 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -488,14 +488,14 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1fc83/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1fc83.dir/build.make CMakeFiles/cmTC_1fc83.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_482c1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_482c1.dir/build.make CMakeFiles/cmTC_482c1.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1fc83.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_1fc83.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_1fc83
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fc83.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_1fc83.dir/feature_tests.cxx.o  -o cmTC_1fc83 
+Building CXX object CMakeFiles/cmTC_482c1.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_482c1.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_482c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_482c1.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_482c1.dir/feature_tests.cxx.o  -o cmTC_482c1 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -561,14 +561,14 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dfbf9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dfbf9.dir/build.make CMakeFiles/cmTC_dfbf9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_93f91/fast"
+/usr/bin/make -f CMakeFiles/cmTC_93f91.dir/build.make CMakeFiles/cmTC_93f91.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_dfbf9.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_dfbf9.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_dfbf9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dfbf9.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_dfbf9.dir/feature_tests.cxx.o  -o cmTC_dfbf9 
+Building CXX object CMakeFiles/cmTC_93f91.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_93f91.dir/feature_tests.cxx.o -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_93f91
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93f91.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_93f91.dir/feature_tests.cxx.o  -o cmTC_93f91 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
@@ -632,28 +632,28 @@ make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkg
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c956d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c956d.dir/build.make CMakeFiles/cmTC_c956d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_fcd83/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fcd83.dir/build.make CMakeFiles/cmTC_fcd83.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c956d.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_c956d.dir/CheckIncludeFile.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_c956d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c956d.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_c956d.dir/CheckIncludeFile.c.o  -o cmTC_c956d 
+Building C object CMakeFiles/cmTC_fcd83.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fcd83.dir/CheckIncludeFile.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fcd83
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fcd83.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_fcd83.dir/CheckIncludeFile.c.o  -o cmTC_fcd83 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_82fbf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_82fbf.dir/build.make CMakeFiles/cmTC_82fbf.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_513d8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_513d8.dir/build.make CMakeFiles/cmTC_513d8.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_82fbf.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_82fbf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_82fbf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82fbf.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_82fbf.dir/CheckFunctionExists.c.o  -o cmTC_82fbf -lpthread 
+Building C object CMakeFiles/cmTC_513d8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_513d8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_513d8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_513d8.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_513d8.dir/CheckFunctionExists.c.o  -o cmTC_513d8 -lpthread 
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
 
 

@@ -1,6 +1,0 @@
-catkin_simple
-/home/airsim/project/AirSim/ros/devel/.private/catkin_simple/cmake.lock /home/airsim/project/AirSim/ros/devel/./cmake.lock
-/home/airsim/project/AirSim/ros/devel/.private/catkin_simple/lib/pkgconfig/catkin_simple.pc /home/airsim/project/AirSim/ros/devel/lib/pkgconfig/catkin_simple.pc
-/home/airsim/project/AirSim/ros/devel/.private/catkin_simple/share/catkin_simple/cmake/catkin_simpleConfig.cmake /home/airsim/project/AirSim/ros/devel/share/catkin_simple/cmake/catkin_simpleConfig.cmake
-/home/airsim/project/AirSim/ros/devel/.private/catkin_simple/share/catkin_simple/cmake/catkin_simpleConfig-version.cmake /home/airsim/project/AirSim/ros/devel/share/catkin_simple/cmake/catkin_simpleConfig-version.cmake
-/home/airsim/project/AirSim/ros/devel/.private/catkin_simple/share/catkin_simple/cmake/catkin_simple-extras.cmake /home/airsim/project/AirSim/ros/devel/share/catkin_simple/cmake/catkin_simple-extras.cmake

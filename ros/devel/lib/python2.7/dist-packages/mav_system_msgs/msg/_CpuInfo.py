@@ -1,1 +1,0 @@
-/home/airsim/project/AirSim/ros/devel/.private/mav_system_msgs/lib/python2.7/dist-packages/mav_system_msgs/msg/_CpuInfo.py

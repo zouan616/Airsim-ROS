@@ -20,9 +20,16 @@ set(OpenCV_INCLUDE_DIRS "/usr/include/opencv4;/usr/include")
 find_package(Boost REQUIRED)
 find_package(OpenCV REQUIRED)
 
-find_package(octomap REQUIRED)
-include_directories(${OCTOMAP_INCLUDE_DIRS})
-find_package(ompl REQUIRED)
+# package add by feiyang jin
+# pcl is for octomap_server
+  find_package( PCL REQUIRED )
+  include_directories(  ${catkin_INCLUDE_DIRS}  ${PCL_INCLUDE_DIRS} )
+  link_directories(${PCL_LIBRARY_DIRS})
+  add_definitions(${PCL_DEFINITIONS})
+
+  find_package(octomap REQUIRED)
+  find_package(octomap_server REQUIRED)
+  find_package(ompl REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
@@ -49,6 +56,9 @@ add_message_files(
   GPSYaw.msg
   VelCmd.msg
   VelCmdGroup.msg
+  multiDOF.msg
+  multiDOF_array.msg
+  BoolPlusHeader.msg
 )
 
 add_service_files(
@@ -60,12 +70,14 @@ add_service_files(
   LandGroup.srv
   Reset.srv
   SetLocalPosition.srv
+  get_trajectory.srv
 )
 
 generate_messages(
   DEPENDENCIES
   std_msgs
   geometry_msgs
+  trajectory_msgs
 )
 
 catkin_package(
@@ -97,8 +109,9 @@ add_library(airsim_ros src/airsim_ros_wrapper.cpp)
 add_dependencies(airsim_ros ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(airsim_ros ${catkin_LIBRARIES} ${OpenCV_LIBS} yaml-cpp AirLib airsim_settings_parser)
 
-add_library(common_mav src/common_mav.cpp)
-target_link_libraries(common_mav airsim_ros ${catkin_LIBRARIES} ${OpenCV_LIBS} yaml-cpp AirLib airsim_settings_parser)
+  # library created by feiyang jin
+  add_library(common_mav src/common_mav.cpp)
+  target_link_libraries(common_mav airsim_ros ${catkin_LIBRARIES} ${OpenCV_LIBS} yaml-cpp AirLib airsim_settings_parser)
 
 add_executable(airsim_node src/airsim_node.cpp)
 target_link_libraries(airsim_node airsim_ros ${catkin_LIBRARIES} AirLib)
@@ -106,11 +119,21 @@ target_link_libraries(airsim_node airsim_ros ${catkin_LIBRARIES} AirLib)
 add_executable(pd_position_controller_simple_node src/pd_position_controller_simple_node.cpp)
 target_link_libraries(pd_position_controller_simple_node pd_position_controller_simple airsim_ros ${catkin_LIBRARIES} AirLib)
 
-add_executable(scanning_node src/scanning_node.cpp)
-target_link_libraries(scanning_node airsim_ros ${catkin_LIBRARIES} AirLib common_mav)
+  # executable add by feiyang jin
+  add_executable(scanning_test src/scanning_test.cpp)
+  target_link_libraries(scanning_test ${catkin_LIBRARIES})
 
-add_executable(motion_planner src/motion_planner.cpp)
-target_link_libraries(motion_planner airsim_ros ${catkin_LIBRARIES} libompl.so ${OCTOMAP_LIBRARIES})
+  add_executable(scanning_node src/scanning_node.cpp)
+  target_link_libraries(scanning_node airsim_ros ${catkin_LIBRARIES} AirLib common_mav)
+
+  add_executable(package_delivery_node src/package_delivery_node.cpp)
+  target_link_libraries(package_delivery_node airsim_ros ${catkin_LIBRARIES} AirLib common_mav)
+
+  add_executable(motion_planner_test src/motion_planner_test.cpp)
+  target_link_libraries(motion_planner_test ${catkin_LIBRARIES} libompl.so ${OCTOMAP_LIBRARIES})
+
+  add_executable(motion_planner src/motion_planner.cpp)
+  target_link_libraries(motion_planner airsim_ros ${catkin_LIBRARIES} libompl.so ${OCTOMAP_LIBRARIES})
 
 install(TARGETS
     #list of nodes

@@ -1,6 +1,8 @@
 (cl:defpackage airsim_ros_pkgs-msg
   (:use )
   (:export
+   "<BOOLPLUSHEADER>"
+   "BOOLPLUSHEADER"
    "<GPSYAW>"
    "GPSYAW"
    "<GIMBALANGLEEULERCMD>"
@@ -11,5 +13,9 @@
    "VELCMD"
    "<VELCMDGROUP>"
    "VELCMDGROUP"
+   "<MULTIDOF>"
+   "MULTIDOF"
+   "<MULTIDOF_ARRAY>"
+   "MULTIDOF_ARRAY"
   ))
 

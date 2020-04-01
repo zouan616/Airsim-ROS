@@ -1,0 +1,153 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:[m[K In function ‘[01m[Kvoid postprocess(piecewise_trajectory&)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:237:45:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kbool collision(octomap::OcTree*, const graph::node&, const graph::node&, graph::node*)[m[K’
+             if (!collision(octree, *it, *it2[01;31m[K)[m[K) {
+                                             [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:86:8:[m[K [01;36m[Knote: [m[Kdeclared here
+   bool [01;36m[Kcollision[m[K(octomap::OcTree * octree, const graph::node& n1, const graph::node& n2, graph::node * end_ptr)
+        [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:[m[K In function ‘[01m[Ksmooth_trajectory smoothen_the_shortest_path(piecewise_trajectory&, octomap::OcTree*, Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:305:110:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Kstd::vector<double> mav_trajectory_generation::estimateSegmentTimes(const Vector&, double, double)[m[K’
+       auto segment_times = estimateSegmentTimes(vertices, v_max__global, a_max__global, magic_fabian_constant[01;31m[K)[m[K;
+                                                                                                              [01;31m[K^[m[K
+In file included from [01m[K/home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/trajectory.h:26:0[m[K,
+                 from [01m[K/home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/polynomial_optimization_linear.h:32[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:11[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/vertex.h:122:21:[m[K [01;36m[Knote: [m[Kdeclared here
+ std::vector<double> [01;36m[KestimateSegmentTimes[m[K(const Vertex::Vector& vertices,
+                     [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:339:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kout_of_bounds[m[K’ was not declared in this scope
+             if ([01;31m[Kout_of_bounds[m[K(n1) || out_of_bounds(n2) || collision(octree, n1, n2)) {
+                 [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:339:83:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kbool collision(octomap::OcTree*, const graph::node&, const graph::node&, graph::node*)[m[K’
+             if (out_of_bounds(n1) || out_of_bounds(n2) || collision(octree, n1, n2[01;31m[K)[m[K) {
+                                                                                   [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:86:8:[m[K [01;36m[Knote: [m[Kdeclared here
+   bool [01;36m[Kcollision[m[K(octomap::OcTree * octree, const graph::node& n1, const graph::node& n2, graph::node * end_ptr)
+        [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:[m[K At global scope:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:371:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpackage_delivery[m[K’ has not been declared
+ bool get_trajectory_fun([01;31m[Kpackage_delivery[m[K::get_trajectory::Request &req, package_delivery::get_trajectory::Response &res)
+                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:371:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kreq[m[K’ was not declared in this scope
+ bool get_trajectory_fun(package_delivery::get_trajectory::Request &[01;31m[Kreq[m[K, package_delivery::get_trajectory::Response &res)
+                                                                    [01;31m[K^~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:371:73:[m[K [01;31m[Kerror: [m[K‘[01m[Kpackage_delivery[m[K’ has not been declared
+ bool get_trajectory_fun(package_delivery::get_trajectory::Request &req, [01;31m[Kpackage_delivery[m[K::get_trajectory::Response &res)
+                                                                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:371:117:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope
+ bool get_trajectory_fun(package_delivery::get_trajectory::Request &req, package_delivery::get_trajectory::Response &[01;31m[Kres[m[K)
+                                                                                                                     [01;31m[K^~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:371:120:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K-fpermissive[m[K]
+ bool get_trajectory_fun(package_delivery::get_trajectory::Request &req, package_delivery::get_trajectory::Response &res[01;31m[K)[m[K
+                                                                                                                        [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::NodeHandle::advertiseService(const char [19], bool&)[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;31m[K)[m[K;
+                                                                                              [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), T*)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), T *obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), T*)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), T *obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), const boost::shared_ptr<X>&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), const boost::shared_ptr<T>& obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), const boost::shared_ptr<X>&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), const boost::shared_ptr<T>& obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(MReq&, MRes&))
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(MReq&, MRes&))
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(ros::ServiceEvent<MReq, MRes>&))
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(ServiceEvent<MReq, MRes>&))
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(MReq&, MRes&)>&, const VoidConstPtr&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(MReq&, MRes&)>& callback,
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(MReq&, MRes&)>[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class S> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(S&)>&, const VoidConstPtr&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(S&)>& callback,
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:501:94:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(S&)>[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun[01;36m[K)[m[K;
+                                                                                              [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[Kcandidate: ros::ServiceServer ros::NodeHandle::advertiseService(ros::AdvertiseServiceOptions&)
+   ServiceServer [01;36m[KadvertiseService[m[K(AdvertiseServiceOptions& ops);
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+In file included from [01m[K/opt/ros/melodic/include/octomap_server/OctomapServer.h:49:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:24[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+make[2]: *** [CMakeFiles/motion_planner.dir/src/motion_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/motion_planner.dir/all] Error 2
+make: *** [all] Error 2

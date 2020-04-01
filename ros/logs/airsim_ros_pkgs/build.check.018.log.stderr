@@ -1,0 +1,26 @@
+** WARNING ** io features related to ensenso will be disabled
+** WARNING ** io features related to davidSDK will be disabled
+** WARNING ** io features related to dssdk will be disabled
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+** WARNING ** io features related to libusb-1.0 will be disabled
+** WARNING ** visualization features related to ensenso will be disabled
+** WARNING ** visualization features related to davidSDK will be disabled
+** WARNING ** visualization features related to dssdk will be disabled
+** WARNING ** visualization features related to rssdk will be disabled
+[31m[1mCMake Error[0m at /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/cmake/airsim_ros_pkgs-genmsg.cmake:3 (message):
+  Could not find messages which
+  '/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv'
+  depends on.  Did you forget to specify generate_messages(DEPENDENCIES ...)?
+
+  Cannot locate message [MultiDOFJointTrajectory]: unknown package
+  [trajectory_msgs] on search path [{{'airsim_ros_pkgs':
+  ['/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg'], 'std_msgs':
+  ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'geometry_msgs':
+  ['/opt/ros/melodic/share/geometry_msgs/cmake/../msg']}}]
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/melodic/share/genmsg/cmake/genmsg-extras.cmake:307 (include)
+  CMakeLists.txt:73 (generate_messages)
+
+
+make: *** [cmake_check_build_system] Error 1

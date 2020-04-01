@@ -1,7 +1,0 @@
-[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:[m[K In member function ‘[01m[Kgeometry_msgs::Pose AirsimROSWrapper::pose()[m[K’:
-[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/airsim_ros_wrapper.cpp:50:19:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[KgetPosition[m[K’ in ‘[01m[K(AirsimROSWrapper*)this[m[K’, which is of pointer type ‘[01m[KAirsimROSWrapper*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
-     auto p = this.[01;31m[KgetPosition[m[K();
-                   [01;31m[K^~~~~~~~~~~[m[K
-make[2]: *** [CMakeFiles/airsim_ros.dir/src/airsim_ros_wrapper.cpp.o] Error 1
-make[1]: *** [CMakeFiles/airsim_ros.dir/all] Error 2
-make: *** [all] Error 2

@@ -1,1 +1,0 @@
-/home/airsim/project/AirSim/ros/devel/.private/mav_state_machine_msgs/lib/python2.7/dist-packages/mav_state_machine_msgs/srv/_RunTaskService.py

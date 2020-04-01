@@ -1,7 +1,0 @@
-[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:[m[K In function ‘[01m[Ktrajectory_t create_trajectory(const MultiDOFJointTrajectory&, bool)[m[K’:
-[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/scanning_node.cpp:252:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommon[m[K’ has not been declared
-             mdp.yaw = [01;31m[Kcommon[m[K::yawFromQuat(it->transforms[0].rotation);
-                       [01;31m[K^~~~~~[m[K
-make[2]: *** [CMakeFiles/scanning_node.dir/src/scanning_node.cpp.o] Error 1
-make[1]: *** [CMakeFiles/scanning_node.dir/all] Error 2
-make: *** [all] Error 2

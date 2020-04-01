@@ -1,8 +1,0 @@
-prefix=/home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin
-
-Name: yaml_cpp_catkin
-Description: Description of yaml_cpp_catkin
-Version: 0.5.90
-Cflags: -I/home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/include
-Libs: -L${prefix}/lib -lyaml-cpp0.5
-Requires: 

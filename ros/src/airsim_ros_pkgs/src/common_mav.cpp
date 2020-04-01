@@ -156,7 +156,6 @@ trajectory_t create_trajectory(const trajectory_msgs::MultiDOFJointTrajectory& t
 
         result.push_back(mdp);
     }
-
     return result;
 }
 

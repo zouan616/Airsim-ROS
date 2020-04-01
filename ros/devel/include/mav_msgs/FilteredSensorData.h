@@ -1,1 +1,0 @@
-/home/airsim/project/AirSim/ros/devel/.private/mav_msgs/include/mav_msgs/FilteredSensorData.h

@@ -135,6 +135,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/GPSYaw.msg"
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg"
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmdGroup.msg"
+    "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg"
+    "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF_array.msg"
+    "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/BoolPlusHeader.msg"
     )
 endif()
 
@@ -147,6 +150,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/LandGroup.srv"
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/Reset.srv"
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/SetLocalPosition.srv"
+    "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
     )
 endif()
 
@@ -209,7 +213,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/airsim_ros_pkgs/pd_position_controller_simple_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/airsim_ros_pkgs/pd_position_controller_simple_node"
-         OLD_RPATH "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib:/opt/ros/melodic/lib:/home/airsim/project/AirSim/ros/devel/.private/mav_trajectory_generation_ros/lib:/home/airsim/project/AirSim/ros/devel/.private/mav_trajectory_generation/lib:/home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/lib:/home/airsim/project/AirSim/ros/devel/.private/glog_catkin/lib:/home/airsim/project/AirSim/ros/devel/.private/gflags_catkin/lib:/home/airsim/project/AirSim/ros/devel/.private/nlopt/lib:/home/airsim/project/AirSim/ros/devel/.private/mav_visualization/lib:/home/airsim/project/AirSim/ros/devel/.private/eigen_checks/lib:/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/output/lib:"
+         OLD_RPATH "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib:/opt/ros/melodic/lib:/home/airsim/catkin_ws2/devel/lib:/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/output/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/airsim_ros_pkgs/pd_position_controller_simple_node")
@@ -229,7 +233,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libairsim_ros.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libairsim_ros.so"
-         OLD_RPATH "/opt/ros/melodic/lib:/home/airsim/project/AirSim/ros/devel/.private/mav_trajectory_generation_ros/lib:/home/airsim/project/AirSim/ros/devel/.private/mav_trajectory_generation/lib:/home/airsim/project/AirSim/ros/devel/.private/yaml_cpp_catkin/lib:/home/airsim/project/AirSim/ros/devel/.private/glog_catkin/lib:/home/airsim/project/AirSim/ros/devel/.private/gflags_catkin/lib:/home/airsim/project/AirSim/ros/devel/.private/nlopt/lib:/home/airsim/project/AirSim/ros/devel/.private/mav_visualization/lib:/home/airsim/project/AirSim/ros/devel/.private/eigen_checks/lib:/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib:/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/output/lib:"
+         OLD_RPATH "/opt/ros/melodic/lib:/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib:/home/airsim/catkin_ws2/devel/lib:/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/output/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libairsim_ros.so")

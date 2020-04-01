@@ -49,17 +49,8 @@ Not searching for unused variables given on the command line.
 [36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
 [36m--[0m catkin 0.7.23
 [36m--[0m BUILD_SHARED_LIBS is on
-[31m[1mCMake Error[0m at /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake:113 (message):
-  Project 'cv_bridge' specifies '/usr/include/opencv' as an include dir,
-  which is not found.  It does neither exist as an absolute directory nor in
-  '${{prefix}}//usr/include/opencv'.  Check the issue tracker
-  'https://github.com/ros-perception/vision_opencv/issues' and consider
-  creating a ticket if the problem has not been reported yet.
-[36mCall Stack (most recent call first):[0m
-  /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
-  CMakeLists.txt:23 (find_package)
-
-
-[36m--[0m Configuring incomplete, errors occurred!
-See also "/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeOutput.log".
-See also "/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeError.log".
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[36m--[0m airsim_ros_pkgs: 5 messages, 7 services
+[36m--[0m Configuring done
+[36m--[0m Generating done
+[36m--[0m Build files have been written to: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs

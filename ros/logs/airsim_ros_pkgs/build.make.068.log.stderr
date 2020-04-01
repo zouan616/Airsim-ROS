@@ -1,7 +1,0 @@
-In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/Drone.cpp:1:0[m[K:
-[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/Drone.h:1:0:[m[K [01;31m[Kerror: [m[Kunterminated #ifndef
- #ifndef DRONE_H
- 
-make[2]: *** [CMakeFiles/Drone.dir/src/Drone.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Drone.dir/all] Error 2
-make: *** [all] Error 2
