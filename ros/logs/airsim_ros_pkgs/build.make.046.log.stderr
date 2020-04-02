@@ -1,0 +1,19 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:163:33:[m[K [01;31m[Kerror: [m[K‘[01m[KmultiDOF[m[K’ was not declared in this scope
+                 airsim_ros_pkgs:[01;31m[KmultiDOF[m[K point_msg;
+                                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:163:33:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:6:0[m[K:
+[01m[K/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF.h:98:61:[m[K [01;36m[Knote: [m[K  ‘[01m[Kairsim_ros_pkgs::multiDOF[m[K’
+ typedef ::airsim_ros_pkgs::multiDOF_<std::allocator<void> > [01;36m[KmultiDOF[m[K;
+                                                             [01;36m[K^~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:164:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kpoint_msg[m[K’ was not declared in this scope
+                 [01;31m[Kpoint_msg[m[K.x = point.x;
+                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:164:17:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kpoints[m[K’
+                 [01;36m[Kpoint_msg[m[K.x = point.x;
+                 [01;36m[K^~~~~~~~~[m[K
+                 [32m[Kpoints[m[K
+make[2]: *** [CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/package_delivery_node.dir/all] Error 2
+make: *** [all] Error 2

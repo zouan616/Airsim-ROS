@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/msg/_GimbalAngleEulerCmd.py"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/msg/_BoolPlusHeader.py"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_Land.py"
+  "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_follow_trajectory_status_srv.py"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_get_trajectory.py"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_Takeoff.py"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_TakeoffGroup.py"

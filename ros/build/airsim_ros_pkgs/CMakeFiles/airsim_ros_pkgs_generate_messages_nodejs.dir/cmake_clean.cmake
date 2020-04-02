@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/GimbalAngleEulerCmd.js"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/BoolPlusHeader.js"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/Land.js"
+  "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.js"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/get_trajectory.js"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/Takeoff.js"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/TakeoffGroup.js"

@@ -71,6 +71,7 @@ add_service_files(
   Reset.srv
   SetLocalPosition.srv
   get_trajectory.srv
+  follow_trajectory_status_srv.srv
 )
 
 generate_messages(
@@ -134,6 +135,9 @@ target_link_libraries(pd_position_controller_simple_node pd_position_controller_
 
   add_executable(motion_planner src/motion_planner.cpp)
   target_link_libraries(motion_planner airsim_ros ${catkin_LIBRARIES} libompl.so ${OCTOMAP_LIBRARIES})
+
+  add_executable(follow_trajectory src/follow_trajectory_node.cpp)
+  target_link_libraries(follow_trajectory airsim_ros ${catkin_LIBRARIES} AirLib common_mav)
 
 install(TARGETS
     #list of nodes

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "airsim_ros_pkgs: 8 messages, 8 services")
+message(STATUS "airsim_ros_pkgs: 8 messages, 9 services")
 
 set(MSG_I_FLAGS "-Iairsim_ros_pkgs:/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Itrajectory_msgs:/opt/ros/melodic/share/trajectory_msgs/cmake/../msg")
 
@@ -30,6 +30,11 @@ add_custom_target(_airsim_ros_pkgs_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" NAME_WE)
 add_custom_target(_airsim_ros_pkgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "airsim_ros_pkgs" "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" "geometry_msgs/Twist:geometry_msgs/Vector3"
+)
+
+get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" NAME_WE)
+add_custom_target(_airsim_ros_pkgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "airsim_ros_pkgs" "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" "std_msgs/Bool:geometry_msgs/Twist:geometry_msgs/Vector3"
 )
 
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg" NAME_WE)
@@ -160,6 +165,12 @@ _generate_srv_cpp(airsim_ros_pkgs
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/airsim_ros_pkgs
 )
 _generate_srv_cpp(airsim_ros_pkgs
+  "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/airsim_ros_pkgs
+)
+_generate_srv_cpp(airsim_ros_pkgs
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectoryPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Transform.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectory.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -219,6 +230,8 @@ add_dependencies(airsim_ros_pkgs_generate_messages_cpp _airsim_ros_pkgs_generate
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/GPSYaw.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_cpp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" NAME_WE)
+add_dependencies(airsim_ros_pkgs_generate_messages_cpp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_cpp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_cpp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
@@ -313,6 +326,12 @@ _generate_srv_eus(airsim_ros_pkgs
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/airsim_ros_pkgs
 )
 _generate_srv_eus(airsim_ros_pkgs
+  "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/airsim_ros_pkgs
+)
+_generate_srv_eus(airsim_ros_pkgs
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectoryPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Transform.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectory.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -372,6 +391,8 @@ add_dependencies(airsim_ros_pkgs_generate_messages_eus _airsim_ros_pkgs_generate
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/GPSYaw.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_eus _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" NAME_WE)
+add_dependencies(airsim_ros_pkgs_generate_messages_eus _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_eus _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_eus _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
@@ -466,6 +487,12 @@ _generate_srv_lisp(airsim_ros_pkgs
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/airsim_ros_pkgs
 )
 _generate_srv_lisp(airsim_ros_pkgs
+  "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/airsim_ros_pkgs
+)
+_generate_srv_lisp(airsim_ros_pkgs
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectoryPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Transform.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectory.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -525,6 +552,8 @@ add_dependencies(airsim_ros_pkgs_generate_messages_lisp _airsim_ros_pkgs_generat
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/GPSYaw.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_lisp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" NAME_WE)
+add_dependencies(airsim_ros_pkgs_generate_messages_lisp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_lisp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_lisp _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
@@ -619,6 +648,12 @@ _generate_srv_nodejs(airsim_ros_pkgs
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/airsim_ros_pkgs
 )
 _generate_srv_nodejs(airsim_ros_pkgs
+  "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/airsim_ros_pkgs
+)
+_generate_srv_nodejs(airsim_ros_pkgs
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectoryPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Transform.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectory.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -678,6 +713,8 @@ add_dependencies(airsim_ros_pkgs_generate_messages_nodejs _airsim_ros_pkgs_gener
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/GPSYaw.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_nodejs _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" NAME_WE)
+add_dependencies(airsim_ros_pkgs_generate_messages_nodejs _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_nodejs _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_nodejs _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
@@ -772,6 +809,12 @@ _generate_srv_py(airsim_ros_pkgs
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/airsim_ros_pkgs
 )
 _generate_srv_py(airsim_ros_pkgs
+  "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/airsim_ros_pkgs
+)
+_generate_srv_py(airsim_ros_pkgs
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectoryPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Transform.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/trajectory_msgs/cmake/../msg/MultiDOFJointTrajectory.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -831,6 +874,8 @@ add_dependencies(airsim_ros_pkgs_generate_messages_py _airsim_ros_pkgs_generate_
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/GPSYaw.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_py _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/VelCmd.msg" NAME_WE)
+add_dependencies(airsim_ros_pkgs_generate_messages_py _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_py _airsim_ros_pkgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/msg/multiDOF.msg" NAME_WE)
 add_dependencies(airsim_ros_pkgs_generate_messages_py _airsim_ros_pkgs_generate_messages_check_deps_${_filename})

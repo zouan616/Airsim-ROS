@@ -43,6 +43,16 @@ AirsimROSWrapper::AirsimROSWrapper(const ros::NodeHandle& nh, const ros::NodeHan
     // gimbal_cmd_ = GimbalCmd();
 }
 
+float AirsimROSWrapper::maxYawRate()
+{
+    return max_yaw_rate;
+}
+
+float AirsimROSWrapper::maxYawRateDuringFlight()
+{
+    return max_yaw_rate_during_flight;
+}
+
 geometry_msgs::Pose AirsimROSWrapper::pose()
 {
     geometry_msgs::Pose result;

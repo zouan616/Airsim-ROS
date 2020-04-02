@@ -1,0 +1,7 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:285:43:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K.[m[K’ token
+             }else if (dist(airsim_ros_pkgs[01;31m[K.[m[KgetPosition(), goal) < goal_s_error_margin) {
+                                           [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/package_delivery_node.dir/all] Error 2
+make: *** [all] Error 2

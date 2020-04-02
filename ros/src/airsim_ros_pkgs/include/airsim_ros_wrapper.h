@@ -129,19 +129,25 @@ public:
     void initialize_airsim();
     void initialize_ros();
 
-    // function added by feiyang jin
-        //function from drone.h in MavBench
+    
+    //function from drone.h in MavBench
         geometry_msgs::Pose pose();
+
         float get_yaw();
         bool fly_velocity(double vx, double vy, double vz, float yaw = YAW_UNCHANGED, double duration = 3);
+        // *** F:DN Drone parameters functions
+        float maxYawRate();
+        float maxYawRateDuringFlight();
 
 
-    void takeoff_jin();
-    void moveTo(float x, float y, float z, float velocity);
-    void moveOnPath(const std::vector<Vector3r>& path, float velocity);
-    void hover();
-    bool end();
-    Vector3r getPosition();
+    // function added by feiyang jin
+        void takeoff_jin();
+        void moveTo(float x, float y, float z, float velocity);
+        void moveOnPath(const std::vector<Vector3r>& path, float velocity);
+        void hover();
+        bool end();
+        Vector3r getPosition();
+        
 
     // std::vector<ros::CallbackQueue> callback_queues_;
     ros::AsyncSpinner img_async_spinner_;
@@ -149,10 +155,11 @@ public:
     bool is_used_lidar_timer_cb_queue_;
     bool is_used_img_timer_cb_queue_;
 
-    // from drone.h
-    float max_yaw_rate_during_flight = 90.0;
-
 private:
+    // from drone.h
+        float max_yaw_rate = 90.0;
+        float max_yaw_rate_during_flight = 90.0;
+
     /// ROS timer callbacks
     void img_response_timer_cb(const ros::TimerEvent& event); // update images from airsim_client_ every nth sec
     void drone_state_timer_cb(const ros::TimerEvent& event); // update drone state from airsim_client_ every nth sec

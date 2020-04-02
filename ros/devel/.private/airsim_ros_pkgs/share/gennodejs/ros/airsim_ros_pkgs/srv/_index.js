@@ -1,6 +1,7 @@
 
 "use strict";
 
+let follow_trajectory_status_srv = require('./follow_trajectory_status_srv.js')
 let SetLocalPosition = require('./SetLocalPosition.js')
 let SetGPSPosition = require('./SetGPSPosition.js')
 let TakeoffGroup = require('./TakeoffGroup.js')
@@ -11,6 +12,7 @@ let Reset = require('./Reset.js')
 let LandGroup = require('./LandGroup.js')
 
 module.exports = {
+  follow_trajectory_status_srv: follow_trajectory_status_srv,
   SetLocalPosition: SetLocalPosition,
   SetGPSPosition: SetGPSPosition,
   TakeoffGroup: TakeoffGroup,

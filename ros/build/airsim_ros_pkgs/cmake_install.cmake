@@ -151,6 +151,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/Reset.srv"
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/SetLocalPosition.srv"
     "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/get_trajectory.srv"
+    "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/srv/follow_trajectory_status_srv.srv"
     )
 endif()
 

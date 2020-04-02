@@ -51,6 +51,7 @@ CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o
  /home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/trajectory.h
  /home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/trajectory_sampling.h
  /home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/vertex.h
+ /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/BoolPlusHeader.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GPSYaw.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GimbalAngleEulerCmd.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GimbalAngleQuatCmd.h
@@ -71,9 +72,14 @@ CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/TakeoffResponse.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmd.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmdGroup.h
+ /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srv.h
+ /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srvRequest.h
+ /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srvResponse.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectory.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectoryRequest.h
  /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectoryResponse.h
+ /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF.h
+ /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF_array.h
  /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/api/RpcLibClientBase.hpp
  /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/api/VehicleApiBase.hpp
  /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/api/WorldSimApiBase.hpp
@@ -781,6 +787,7 @@ CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o
  /opt/ros/melodic/include/sensor_msgs/RegionOfInterest.h
  /opt/ros/melodic/include/sensor_msgs/distortion_models.h
  /opt/ros/melodic/include/sensor_msgs/image_encodings.h
+ /opt/ros/melodic/include/std_msgs/Bool.h
  /opt/ros/melodic/include/std_msgs/ColorRGBA.h
  /opt/ros/melodic/include/std_msgs/Empty.h
  /opt/ros/melodic/include/std_msgs/Header.h

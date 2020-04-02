@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GimbalAngleEulerCmd.h"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/BoolPlusHeader.h"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/Land.h"
+  "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srv.h"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectory.h"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/Takeoff.h"
   "/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/TakeoffGroup.h"

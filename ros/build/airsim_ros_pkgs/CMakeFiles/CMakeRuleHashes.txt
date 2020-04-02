@@ -12,6 +12,7 @@ bf0ff90652a8125a221a24465f8a8209 /home/airsim/project/AirSim/ros/devel/.private/
 43db50746ccf5065797e34772d222d4f /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/TakeoffGroup.h
 85fb6365ef8b1201818a121bf71a47b7 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmd.h
 0c9ff3ffeb7d0440ee7c6d4223d1ffda /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmdGroup.h
+a35ac541977d17bc0172761a0ffd5c67 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srv.h
 2ee328bf4ce84a3ae183f87cbaa6b053 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectory.h
 de712b3a609903ca31d31b2dfe93a394 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF.h
 d2d017c055c176d54727c6848fa0b9a1 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF_array.h
@@ -32,6 +33,7 @@ b7045d3c47fda2969aa5601b6230dcb5 /home/airsim/project/AirSim/ros/devel/.private/
 5c7a2e179dcfc1f5145e20254e69c0ad /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_Takeoff.py
 847328accdefd829f18bda771c6c02bc /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_TakeoffGroup.py
 56f89e865a256911457d03eb1eb97dd3 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/__init__.py
+4fb2c958d30b1a5e8b78746c111296cd /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_follow_trajectory_status_srv.py
 2c22005526323dae3a2609618f8289cb /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_get_trajectory.py
 a36178e41a0bfeeee77b9129191b752f /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/msg/BoolPlusHeader.lisp
 1ed338b632a0878741ff4bb7509336c4 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/msg/GPSYaw.lisp
@@ -48,6 +50,7 @@ c633eeb8759c91eaec2dd088b8ed9446 /home/airsim/project/AirSim/ros/devel/.private/
 1ff834be0bbdeb0e7bcf3616be895af1 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/SetLocalPosition.lisp
 e3126162a9cfe4df7565c92365589e69 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/Takeoff.lisp
 49ebd63bee4e4ca4afd69223eb20b485 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/TakeoffGroup.lisp
+2732c1098f0d89fff992c65d55e6233a /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.lisp
 7e50afcb905ae24c57c78b0ef7358c8c /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/get_trajectory.lisp
 23cef494d148e3d6df0679737d34b26c /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/BoolPlusHeader.js
 c8e8122a5742db1288f9fde1a9c0c04c /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/GPSYaw.js
@@ -64,6 +67,7 @@ eccc651ddd6a60af73636cb75a8fd073 /home/airsim/project/AirSim/ros/devel/.private/
 06d01d1a48503915b9628ce25fb23383 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/SetLocalPosition.js
 da63677ebebc67eceb3ccb1ebf2e35ff /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/Takeoff.js
 d531ebf0bddf0a9736b1d9d5b838d3f0 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/TakeoffGroup.js
+c8bf8fcc211ba26b0dd9fe0ea8bc7c81 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.js
 5efe40e00a8b191f195ff2d5241ba3a9 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/get_trajectory.js
 4d17ca23b82ae98f404436e8f6d43f7b /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/manifest.l
 336475b7851b77edf000a84df326acfe /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/msg/BoolPlusHeader.l
@@ -81,6 +85,7 @@ c12eb997ad7e755d3b999da652ec4b72 /home/airsim/project/AirSim/ros/devel/.private/
 6042e234435c20e793c262ddbe2db248 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/SetLocalPosition.l
 2fa9ec4b785c20758a4365e7121673ce /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/Takeoff.l
 9bf00448c83bd5d2d1351d41fdd057c1 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/TakeoffGroup.l
+8cc7f481db39c5d0caf77426955cf9b3 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.l
 005bec450512919608166264d2269183 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/get_trajectory.l
 9de4ab9ff6cb1896100feef85e18b27e CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_BoolPlusHeader
 de51974b2b356bee9788647f34883d10 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_GPSYaw
@@ -95,6 +100,7 @@ fc949a75677fbbe7dc91fe8de50a3752 CMakeFiles/_airsim_ros_pkgs_generate_messages_c
 46f9293ca8e262b3173961d98a08cced CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_TakeoffGroup
 88a3451a3baafa38877ee7ac3ac69dc4 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_VelCmd
 ceef1d39fca2ed61f1093b3eb6da629f CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_VelCmdGroup
+c80879ebd9ec498da9aa897734bb03c5 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
 4f80566aef604dec7ead76e73ae86bd1 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_get_trajectory
 aca8b7cf6fe32b28c165e7a3cb7247d5 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_multiDOF
 54a8da8b2c78b30546be11161bd28b99 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_multiDOF_array

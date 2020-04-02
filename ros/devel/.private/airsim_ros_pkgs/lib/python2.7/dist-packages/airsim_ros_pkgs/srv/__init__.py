@@ -5,4 +5,5 @@ from ._SetGPSPosition import *
 from ._SetLocalPosition import *
 from ._Takeoff import *
 from ._TakeoffGroup import *
+from ._follow_trajectory_status_srv import *
 from ._get_trajectory import *

@@ -1,0 +1,28 @@
+In file included from [01m[K/opt/ros/melodic/include/octomap_server/OctomapServer.h:49:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner_test.cpp:24[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:[m[K In function ‘[01m[Ktrajectory_t create_slam_loss_trajectory(AirsimROSWrapper&, trajectory_t&, const trajectory_t&)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:261:28:[m[K [01;31m[Kerror: [m[Kcannot resolve overloaded function ‘[01m[Kx[m[K’ based on conversion to type ‘[01m[Kdouble[m[K’
+     scan_p.x = current_pos.[01;31m[Kx[m[K;
+                            [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:262:28:[m[K [01;31m[Kerror: [m[Kcannot resolve overloaded function ‘[01m[Ky[m[K’ based on conversion to type ‘[01m[Kdouble[m[K’
+     scan_p.y = current_pos.[01;31m[Ky[m[K;
+                            [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:263:28:[m[K [01;31m[Kerror: [m[Kcannot resolve overloaded function ‘[01m[Kz[m[K’ based on conversion to type ‘[01m[Kdouble[m[K’
+     scan_p.z = current_pos.[01;31m[Kz[m[K;
+                            [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/common_mav.dir/src/common_mav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/common_mav.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+In file included from [01m[K/opt/ros/melodic/include/octomap_server/OctomapServer.h:49:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:24[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+make: *** [all] Error 2

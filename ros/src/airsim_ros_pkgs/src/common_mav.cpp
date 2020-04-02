@@ -14,6 +14,14 @@
 #include <std_msgs/Bool.h>
 #include <std_srvs/Trigger.h>
 
+
+template <class T>
+static T magnitude(T a, T b, T c) {
+    return std::sqrt(a*a + b*b + c*c);
+}
+
+static trajectory_t append_trajectory (trajectory_t first, const trajectory_t& second);
+
 static multiDOFpoint reverse_point(multiDOFpoint mdp) {
     multiDOFpoint result = mdp;
 
@@ -24,6 +32,11 @@ static multiDOFpoint reverse_point(multiDOFpoint mdp) {
     return result;
 }
 
+static trajectory_t append_trajectory (trajectory_t first, const trajectory_t& second) {
+    first.insert(first.end(), second.begin(), second.end());
+    return first;
+}
+
 // check if we finish flying with the trajectory
 bool trajectory_done(trajectory_t& trajectory) {
     return trajectory.size() == 0;
@@ -31,7 +44,7 @@ bool trajectory_done(trajectory_t& trajectory) {
 
 // Follows trajectory, popping commands off the front of it and returning those commands in reverse order
 void follow_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t * traj,trajectory_t * reverse_traj, yaw_strategy_t yaw_strategy, bool check_position, float max_speed, float time){
-
+    ROS_INFO("follow trajectory !");
 	trajectory_t reversed_commands;
 
     static double max_speed_so_far = 0;
@@ -103,9 +116,9 @@ void follow_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t * traj
     }
 
 
-    // if (reverse_traj != nullptr){
-    //     *reverse_traj = append_trajectory(reversed_commands, *reverse_traj);
-    // }
+    if (reverse_traj != nullptr){
+        *reverse_traj = append_trajectory(reversed_commands, *reverse_traj);
+    }
 
 }
 
@@ -209,4 +222,114 @@ trajectory_msgs::MultiDOFJointTrajectory get_multiDOF_trajectory(mav_trajectory_
 
 
     return result_trajectory;
+}
+
+trajectory_t create_panic_trajectory(AirsimROSWrapper& airsim_ros_wrapper, const geometry_msgs::Vector3& panic_velocity)
+{
+    multiDOFpoint p;
+
+    p.yaw = airsim_ros_wrapper.get_yaw();
+
+    p.vx = panic_velocity.x * std::cos(M_PI/90 - p.yaw*M_PI/180);
+    p.vy = panic_velocity.y * std::cos(p.yaw*M_PI/180);
+    p.vz = panic_velocity.z + 0.1; // Counter-act AirSim's slight downward drift
+
+    p.duration = std::numeric_limits<double>::infinity();
+
+    trajectory_t result;
+    result.push_back(p);
+
+    return result;
+}
+
+
+trajectory_t create_slam_loss_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t& normal_traj, const trajectory_t& rev_normal_traj)
+{
+    trajectory_t result;
+    float current_yaw = airsim_ros_wrapper.get_yaw();
+    auto current_pos = airsim_ros_wrapper.getPosition();
+
+    // Add pause to trajectory
+    multiDOFpoint pause_p;
+    pause_p.x = current_pos.x();
+    pause_p.y = current_pos.y();
+    pause_p.z = current_pos.z();
+    pause_p.vx = pause_p.vy = pause_p.vz = 0;
+    pause_p.duration = 2.0;
+    pause_p.yaw = current_yaw;
+
+    result.push_back(pause_p);
+
+    // Add spinning around to trajectory
+    const float scanning_width = 45;
+
+    multiDOFpoint scan_p;
+    scan_p.x = current_pos.x();
+    scan_p.y = current_pos.y();
+    scan_p.z = current_pos.z();
+    scan_p.vx = scan_p.vy = scan_p.vz = 0;
+    scan_p.duration = scanning_width / airsim_ros_wrapper.maxYawRateDuringFlight();
+
+    float yaws[] = {current_yaw - scanning_width, current_yaw, current_yaw + scanning_width, current_yaw};
+
+    for (float y : yaws) {
+        scan_p.yaw = y;
+        result.push_back(scan_p);
+    }
+
+    // Add backtrack to trajectory
+    double distance_left = 500.0; // TODO: make this a reasonable number
+    const double safe_v = 1.0;
+
+    for (multiDOFpoint p : rev_normal_traj) {
+        double v = magnitude(p.vx, p.vy, p.vz);
+
+        if (v*p.duration > distance_left) {
+            p.duration = distance_left / v;
+        }
+
+        distance_left -= v*p.duration;
+        
+        double scale = v > safe_v ? safe_v/v : 1;
+
+        p.vx *= scale;
+        p.vy *= scale;
+        p.vz *= scale;
+        p.duration /= scale;
+
+        result.push_back(p);
+
+        if (distance_left <= 0)
+            break;
+    }
+
+    // Add one last pause
+    multiDOFpoint last_pause_p;
+    last_pause_p.x = result.back().x;
+    last_pause_p.y = result.back().y;
+    last_pause_p.z = result.back().z;
+    last_pause_p.vx = last_pause_p.vy = last_pause_p.vz = 0;
+    last_pause_p.duration = 2.0;
+    last_pause_p.yaw = YAW_UNCHANGED;
+
+    result.push_back(last_pause_p);
+
+    // Slow down normal_traj
+    const double max_a = 1.0;
+    double max_v = safe_v;
+
+    for (multiDOFpoint& p : normal_traj) {
+        double v = magnitude(p.vx, p.vy, p.vz);
+
+        double scale = v > max_v ? max_v/v : 1;
+
+        p.vx *= scale;
+        p.vy *= scale;
+        p.vz *= scale;
+        p.duration /= scale;
+
+        max_v += max_a*p.duration;
+    }
+
+    return result;
 }

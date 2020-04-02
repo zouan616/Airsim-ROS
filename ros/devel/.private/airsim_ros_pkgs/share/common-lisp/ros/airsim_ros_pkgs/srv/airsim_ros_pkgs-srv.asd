@@ -3,6 +3,7 @@
 
 (defsystem "airsim_ros_pkgs-srv"
   :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
+               :std_msgs-msg
                :trajectory_msgs-msg
 )
   :components ((:file "_package")
@@ -20,6 +21,8 @@
     (:file "_package_Takeoff" :depends-on ("_package"))
     (:file "TakeoffGroup" :depends-on ("_package_TakeoffGroup"))
     (:file "_package_TakeoffGroup" :depends-on ("_package"))
+    (:file "follow_trajectory_status_srv" :depends-on ("_package_follow_trajectory_status_srv"))
+    (:file "_package_follow_trajectory_status_srv" :depends-on ("_package"))
     (:file "get_trajectory" :depends-on ("_package_get_trajectory"))
     (:file "_package_get_trajectory" :depends-on ("_package"))
   ))

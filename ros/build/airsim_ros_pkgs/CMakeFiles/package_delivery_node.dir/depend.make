@@ -50,6 +50,7 @@ CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airs
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/trajectory.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/trajectory_sampling.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/vertex.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/BoolPlusHeader.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GPSYaw.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GimbalAngleEulerCmd.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/GimbalAngleQuatCmd.h
@@ -70,9 +71,14 @@ CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airs
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/TakeoffResponse.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmd.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/VelCmdGroup.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srv.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srvRequest.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/follow_trajectory_status_srvResponse.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectory.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectoryRequest.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectoryResponse.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF_array.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/api/RpcLibClientBase.hpp
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/api/VehicleApiBase.hpp
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/api/WorldSimApiBase.hpp
@@ -780,6 +786,7 @@ CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/m
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/sensor_msgs/RegionOfInterest.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/sensor_msgs/distortion_models.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/sensor_msgs/image_encodings.h
+CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/std_msgs/Bool.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/std_msgs/ColorRGBA.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/std_msgs/Empty.h
 CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o: /opt/ros/melodic/include/std_msgs/Header.h

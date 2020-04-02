@@ -1,0 +1,11 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:[m[K In function ‘[01m[Kvoid follow_trajectory(AirsimROSWrapper&, trajectory_t*, trajectory_t*, yaw_strategy_t, bool, float, float)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:114:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kappend_trajectory[m[K’ was not declared in this scope
+         *reverse_traj = [01;31m[Kappend_trajectory[m[K(reversed_commands, *reverse_traj);
+                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:114:25:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kcreate_trajectory[m[K’
+         *reverse_traj = [01;36m[Kappend_trajectory[m[K(reversed_commands, *reverse_traj);
+                         [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+                         [32m[Kcreate_trajectory[m[K
+make[2]: *** [CMakeFiles/common_mav.dir/src/common_mav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/common_mav.dir/all] Error 2
+make: *** [all] Error 2

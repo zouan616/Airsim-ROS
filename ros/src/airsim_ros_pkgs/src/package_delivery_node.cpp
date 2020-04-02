@@ -3,8 +3,69 @@
 #include "common_mav.h"
 #include <visualization_msgs/Marker.h>
 #include "airsim_ros_pkgs/get_trajectory.h"
+#include <airsim_ros_pkgs/multiDOF.h>
+#include <airsim_ros_pkgs/multiDOF_array.h>
+#include <airsim_ros_pkgs/BoolPlusHeader.h>
+#include <airsim_ros_pkgs/follow_trajectory_status_srv.h>
+
 
 enum State { setup, waiting, flying, trajectory_completed, failed, invalid };
+
+std::string g_mission_status = "time_out";
+ros::Time col_coming_time_stamp; 
+long long g_pt_cld_to_pkg_delivery_commun_acc = 0;
+int g_col_com_ctr = 0;
+
+bool should_panic = false;
+bool slam_lost = false;
+bool col_coming = false;
+bool clcted_col_coming_data = true;
+
+long long g_accumulate_loop_time = 0; //it is in ms
+long long g_panic_rlzd_t_accumulate = 0;
+int g_main_loop_ctr = 0;
+int g_panic_ctr = 0;
+bool g_start_profiling = false; 
+
+double v_max__global = 5, a_max__global = 5, g_fly_trajectory_time_out = 1;
+float g_max_yaw_rate= 90;
+float g_max_yaw_rate_during_flight = 90;
+long long g_planning_time_including_ros_overhead_acc = 0;
+int  g_planning_ctr = 0; 
+bool clct_data = true;
+ros::Time g_traj_time_stamp;
+
+geometry_msgs::Vector3 panic_velocity;
+string ip_addr__global;
+string localization_method;
+string stats_file_addr;
+string ns;
+std::string g_supervisor_mailbox; //file to write to when completed
+bool CLCT_DATA;
+bool DEBUG;
+
+
+double dist(Vector3r t, geometry_msgs::Point m)
+{
+    // We must convert between the two coordinate systems
+    return std::sqrt((t.x()-m.y)*(t.x()-m.y) + (t.y()-m.x)*(t.y()-m.x) + (t.z()+m.z)*(t.z()+m.z));
+}
+
+void col_coming_callback(const airsim_ros_pkgs::BoolPlusHeader::ConstPtr& msg) {
+    col_coming = msg->data;
+    if (CLCT_DATA){ 
+        col_coming_time_stamp = msg->header.stamp;
+        g_pt_cld_to_pkg_delivery_commun_acc += (ros::Time::now() - msg->header.stamp).toSec()*1e9;
+        g_col_com_ctr++;
+    }
+
+}
+
+
+void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
+    slam_lost = msg->data;
+}
+
 
 geometry_msgs::Point get_start() {
     geometry_msgs::Point start;
@@ -62,21 +123,45 @@ int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "package_delivery", ros::init_options::NoSigintHandler);
     ros::NodeHandle nh;
-	cout << "hello" << endl;
+    ros::NodeHandle n_private("~");
+    AirsimROSWrapper airsim_ros_wrapper(nh, n_private);
 	
 	// variables
-	trajectory_t normal_traj;
-    const float goal_s_error_margin = 3.0;
-    geometry_msgs::Point start, goal;
+		geometry_msgs::Point start, goal;
+	    airsim_ros_pkgs::follow_trajectory_status_srv follow_trajectory_status_srv_inst;
+	    int fail_ctr = 0;
+	   	int fail_threshold = 50;
 
+		trajectory_t normal_traj;
+	    const float goal_s_error_margin = 3.0;
+	    
+	    bool srv_call_status = false;
+
+	    std::string mission_status = "time_out";
+
+    	geometry_msgs::Twist twist;
+	    twist.linear.x = twist.linear.y = twist.linear.z = 1;
+	    geometry_msgs::Twist acceleration;
+	    acceleration.linear.x = acceleration.linear.y = acceleration.linear.z = 1; 
+		ros::Rate pub_rate(80);
 
     // publisher and subscribers
-    ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("scanning_visualization_marker", 100);
-	ros::ServiceClient get_trajectory_client = nh.serviceClient<airsim_ros_pkgs::get_trajectory>("get_trajectory_srv");
+		ros::ServiceClient get_trajectory_client = nh.serviceClient<airsim_ros_pkgs::get_trajectory>("get_trajectory_srv");
+	    
+        ros::Subscriber slam_lost_sub = nh.subscribe<std_msgs::Bool>("/slam_lost", 1, slam_loss_callback);
 
+	    ros::ServiceClient follow_trajectory_status_client = 
+      		nh.serviceClient<airsim_ros_pkgs::follow_trajectory_status_srv>("/follow_trajectory_status", true);
 
-	uint32_t shape = visualization_msgs::Marker::CUBE;
+	    ros::Publisher trajectory_pub = nh.advertise <airsim_ros_pkgs::multiDOF_array>("normal_traj", 1);
+
+        ros::Subscriber col_coming_sub = 
+        	nh.subscribe<airsim_ros_pkgs::BoolPlusHeader>("col_coming", 1, col_coming_callback);
+    
+    	ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("scanning_visualization_marker", 100);
+
 	// visulization
+		uint32_t shape = visualization_msgs::Marker::CUBE;
         visualization_msgs::Marker points, line_strip, line_list, drone_point;
         points.header.frame_id = line_strip.header.frame_id = line_list.header.frame_id = drone_point.header.frame_id = "world_enu";
         points.header.stamp = line_strip.header.stamp = line_list.header.stamp = drone_point.header.stamp = ros::Time::now();
@@ -118,12 +203,22 @@ int main(int argc, char **argv)
         line_list.color.r = 1.0;
         line_list.color.a = 1.0;
 
-	geometry_msgs::Twist twist;
-    twist.linear.x = twist.linear.y = twist.linear.z = 1;
-    geometry_msgs::Twist acceleration;
-    acceleration.linear.x = acceleration.linear.y = acceleration.linear.z = 1; 
-	ros::Rate pub_rate(80);
-	for (State state = setup; ros::ok(); ) {
+    // airsim_ros_wrapper setup
+        if (airsim_ros_wrapper.is_used_img_timer_cb_queue_)
+        {
+            airsim_ros_wrapper.img_async_spinner_.start();
+        }
+
+        if (airsim_ros_wrapper.is_used_lidar_timer_cb_queue_)
+        {
+            airsim_ros_wrapper.lidar_async_spinner_.start();
+        }
+
+        //airsim_ros_wrapper.takeoff_jin();
+
+
+	for (State state = setup; ros::ok(); ) 
+    {
 		pub_rate.sleep();
         ros::spinOnce();
         
@@ -153,21 +248,104 @@ int main(int argc, char **argv)
                 p.z += 1.0;
                 line_list.points.push_back(p);
             }
+
+            airsim_ros_pkgs::multiDOF_array array_of_point_msg;
+            for (auto point : normal_traj){
+                airsim_ros_pkgs::multiDOF point_msg;
+                point_msg.x = point.x;
+                point_msg.y = point.y;
+                point_msg.z = point.z;
+                point_msg.vx = point.vx;
+                point_msg.vy = point.vy;
+                point_msg.vz = point.vz;
+                point_msg.ax = point.ax;
+                point_msg.ay = point.ay;
+                point_msg.az = point.az;
+                point_msg.yaw = point.yaw;
+                point_msg.duration = point.duration;
+                array_of_point_msg.points.push_back(point_msg); 
+
+            }
+            trajectory_pub.publish(array_of_point_msg);
+
+            if (!normal_traj.empty())
+                next_state = flying;
+            else {
+                next_state = trajectory_completed;
+            }
+            
         }
         else if(state == flying){
-        	//cout << "flying" << endl;
-        	next_state = flying;
-        	points.header.stamp = line_strip.header.stamp = line_list.header.stamp = drone_point.header.stamp = ros::Time::now();
+            // visulization
+                points.header.stamp = line_strip.header.stamp = line_list.header.stamp = drone_point.header.stamp = ros::Time::now();
+                auto current_pos = airsim_ros_wrapper.getPosition();
+                drone_point.pose.position.x = current_pos.y();
+                drone_point.pose.position.y = current_pos.x();
+                drone_point.pose.position.z = (-1)*current_pos.z();
+                marker_pub.publish(points);
+                marker_pub.publish(line_strip);
+                marker_pub.publish(line_list);
+                marker_pub.publish(drone_point);
+
+            // Choose next state (failure, completion, or more flying)
+            srv_call_status = follow_trajectory_status_client.call(follow_trajectory_status_srv_inst);
+
+            if(!srv_call_status){
+                ROS_INFO_STREAM("could not make a service all to trajectory done");
+                next_state = flying;
+            }else if (follow_trajectory_status_srv_inst.response.success.data) {
+                ROS_INFO_STREAM("trajectory completed");
+                next_state = trajectory_completed; 
+                twist = follow_trajectory_status_srv_inst.response.twist;
+                acceleration = follow_trajectory_status_srv_inst.response.acceleration;
+            }
+            else if (col_coming){
+                ROS_INFO_STREAM("collisoin coming");
+                next_state = trajectory_completed; 
+                twist = follow_trajectory_status_srv_inst.response.twist;
+                acceleration = follow_trajectory_status_srv_inst.response.acceleration;
+                col_coming = false; 
+            }
+            else{
+                next_state = flying;
+            }
+
+        }
+        else if(state == trajectory_completed){
+            fail_ctr = normal_traj.empty() ? fail_ctr+1 : 0; 
             
-            marker_pub.publish(points);
-            marker_pub.publish(line_strip);
-            marker_pub.publish(line_list);
-            marker_pub.publish(drone_point);
+            if (normal_traj.empty()){
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+            if (fail_ctr >fail_threshold) {
+                next_state = failed;
+                mission_status = "planning_failed_too_many_times";
+            }else if (dist(airsim_ros_wrapper.getPosition(), start) < goal_s_error_margin) {
+                ROS_INFO("Delivered the package and returned!");
+                mission_status = "completed"; 
+                g_mission_status = mission_status;            
+                
+                next_state = setup;
+                ros::shutdown();
+            } else { //If we've drifted too far off from the destination
+                //ROS_WARN("We're a little off...");
+                start = get_start();
+                next_state = waiting;
+            }
+        }
+        else if (state == failed) {
+            ROS_ERROR("Failed to reach destination");
+            g_mission_status = mission_status;
+            next_state = setup;
         }
         else if(state == invalid){
         	cout << "invalid state !" << endl;
+        	break;
         }
+
         state = next_state;
+
 	}
+
 	return 0;
 }

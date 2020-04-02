@@ -168,6 +168,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named follow_trajectory
+
+# Build rule for target.
+follow_trajectory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 follow_trajectory
+.PHONY : follow_trajectory
+
+# fast build rule for target.
+follow_trajectory/fast:
+	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/build
+.PHONY : follow_trajectory/fast
+
+#=============================================================================
+# Target rules for targets named package_delivery_node
+
+# Build rule for target.
+package_delivery_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 package_delivery_node
+.PHONY : package_delivery_node
+
+# fast build rule for target.
+package_delivery_node/fast:
+	$(MAKE) -f CMakeFiles/package_delivery_node.dir/build.make CMakeFiles/package_delivery_node.dir/build
+.PHONY : package_delivery_node/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1091,6 +1117,19 @@ nav_msgs_generate_messages_eus/fast:
 .PHONY : nav_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
+
+# Build rule for target.
+_airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
+.PHONY : _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
+
+# fast build rule for target.
+_airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv/fast:
+	$(MAKE) -f CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv.dir/build.make CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv.dir/build
+.PHONY : _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv/fast
+
+#=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_lisp
 
 # Build rule for target.
@@ -1988,19 +2027,6 @@ trajectory_msgs_generate_messages_eus/fast:
 .PHONY : trajectory_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named package_delivery_node
-
-# Build rule for target.
-package_delivery_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 package_delivery_node
-.PHONY : package_delivery_node
-
-# fast build rule for target.
-package_delivery_node/fast:
-	$(MAKE) -f CMakeFiles/package_delivery_node.dir/build.make CMakeFiles/package_delivery_node.dir/build
-.PHONY : package_delivery_node/fast
-
-#=============================================================================
 # Target rules for targets named trajectory_msgs_generate_messages_py
 
 # Build rule for target.
@@ -2563,6 +2589,33 @@ src/common_mav.cpp.s:
 	$(MAKE) -f CMakeFiles/common_mav.dir/build.make CMakeFiles/common_mav.dir/src/common_mav.cpp.s
 .PHONY : src/common_mav.cpp.s
 
+src/follow_trajectory_node.o: src/follow_trajectory_node.cpp.o
+
+.PHONY : src/follow_trajectory_node.o
+
+# target to build an object file
+src/follow_trajectory_node.cpp.o:
+	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.o
+.PHONY : src/follow_trajectory_node.cpp.o
+
+src/follow_trajectory_node.i: src/follow_trajectory_node.cpp.i
+
+.PHONY : src/follow_trajectory_node.i
+
+# target to preprocess a source file
+src/follow_trajectory_node.cpp.i:
+	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.i
+.PHONY : src/follow_trajectory_node.cpp.i
+
+src/follow_trajectory_node.s: src/follow_trajectory_node.cpp.s
+
+.PHONY : src/follow_trajectory_node.s
+
+# target to generate assembly for a file
+src/follow_trajectory_node.cpp.s:
+	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.s
+.PHONY : src/follow_trajectory_node.cpp.s
+
 src/motion_planner.o: src/motion_planner.cpp.o
 
 .PHONY : src/motion_planner.o
@@ -2761,6 +2814,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... follow_trajectory"
+	@echo "... package_delivery_node"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... topic_tools_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_lisp"
@@ -2835,6 +2890,7 @@ help:
 	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... nodelet_generate_messages_py"
@@ -2904,7 +2960,6 @@ help:
 	@echo "... mav_msgs_generate_messages_py"
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... package_delivery_node"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... mav_planning_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_eus"
@@ -2953,6 +3008,9 @@ help:
 	@echo "... src/common_mav.o"
 	@echo "... src/common_mav.i"
 	@echo "... src/common_mav.s"
+	@echo "... src/follow_trajectory_node.o"
+	@echo "... src/follow_trajectory_node.i"
+	@echo "... src/follow_trajectory_node.s"
 	@echo "... src/motion_planner.o"
 	@echo "... src/motion_planner.i"
 	@echo "... src/motion_planner.s"

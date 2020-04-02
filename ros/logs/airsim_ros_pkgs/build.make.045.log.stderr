@@ -1,0 +1,54 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:75:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kpackage_delivery[m[K’ was not declared in this scope
+     ros::Publisher trajectory_pub = nh.advertise <[01;31m[Kpackage_delivery[m[K::multiDOF_array>("normal_traj", 1);
+                                                   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:75:40:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+     ros::Publisher trajectory_pub = nh.[01;31m[Kadvertise <package_delivery::multiDOF_array>[m[K("normal_traj", 1);
+                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:75:101:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::NodeHandle::advertise<<expression error> >(const char [12], int)[m[K’
+     ros::Publisher trajectory_pub = nh.advertise <package_delivery::multiDOF_array>("normal_traj", 1[01;31m[K)[m[K;
+                                                                                                     [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:249:15:[m[K [01;36m[Knote: [m[Kcandidate: template<class M> ros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, bool)
+     Publisher [01;36m[Kadvertise[m[K(const std::string& topic, uint32_t queue_size, bool latch = false)
+               [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:249:15:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:75:101:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+     ros::Publisher trajectory_pub = nh.advertise <package_delivery::multiDOF_array>("normal_traj", 1[01;31m[K)[m[K;
+                                                                                                     [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:315:13:[m[K [01;36m[Knote: [m[Kcandidate: template<class M> ros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, const SubscriberStatusCallback&, const SubscriberStatusCallback&, const VoidConstPtr&, bool)
+   Publisher [01;36m[Kadvertise[m[K(const std::string& topic, uint32_t queue_size,
+             [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:315:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:75:101:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+     ros::Publisher trajectory_pub = nh.advertise <package_delivery::multiDOF_array>("normal_traj", 1[01;31m[K)[m[K;
+                                                                                                     [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:158:30:[m[K [01;31m[Kerror: [m[K‘[01m[KmultiDOF_array[m[K’ is not a member of ‘[01m[Kairsim_ros_pkgs[m[K’
+             airsim_ros_pkgs::[01;31m[KmultiDOF_array[m[K array_of_point_msg;
+                              [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:160:33:[m[K [01;31m[Kerror: [m[K‘[01m[KmultiDOF[m[K’ was not declared in this scope
+                 airsim_ros_pkgs:[01;31m[KmultiDOF[m[K point_msg;
+                                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:160:33:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[KmultiDOFpoint[m[K’
+                 airsim_ros_pkgs:[01;36m[KmultiDOF[m[K point_msg;
+                                 [01;36m[K^~~~~~~~[m[K
+                                 [32m[KmultiDOFpoint[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:161:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kpoint_msg[m[K’ was not declared in this scope
+                 [01;31m[Kpoint_msg[m[K.x = point.x;
+                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:161:17:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kpoints[m[K’
+                 [01;36m[Kpoint_msg[m[K.x = point.x;
+                 [01;36m[K^~~~~~~~~[m[K
+                 [32m[Kpoints[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:172:17:[m[K [01;31m[Kerror: [m[K‘[01m[Karray_of_point_msg[m[K’ was not declared in this scope
+                 [01;31m[Karray_of_point_msg[m[K.points.push_back(point_msg);
+                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:175:36:[m[K [01;31m[Kerror: [m[K‘[01m[Karray_of_point_msg[m[K’ was not declared in this scope
+             trajectory_pub.publish([01;31m[Karray_of_point_msg[m[K);
+                                    [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/package_delivery_node.dir/all] Error 2
+make: *** [all] Error 2

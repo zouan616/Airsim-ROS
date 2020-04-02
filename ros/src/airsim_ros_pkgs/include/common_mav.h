@@ -47,4 +47,10 @@ trajectory_t create_trajectory(const trajectory_msgs::MultiDOFJointTrajectory& t
 trajectory_msgs::MultiDOFJointTrajectory get_multiDOF_trajectory(mav_trajectory_generation::Trajectory scanning_trajectory);
 
 
+// Recovery methods
+trajectory_t create_panic_trajectory(AirsimROSWrapper& airsim_ros_wrapper, const geometry_msgs::Vector3& panic_dir);
+trajectory_t create_future_col_trajectory(const trajectory_t& normal_traj, double stopping_distance);
+trajectory_t create_slam_loss_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t& normal_traj, const trajectory_t& rev_normal_traj);
+
+
 #endif
