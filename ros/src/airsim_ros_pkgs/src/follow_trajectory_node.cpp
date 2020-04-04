@@ -20,7 +20,7 @@ using namespace std;
 
 // add by feiyang jin
 	bool mission_finished = false;
-
+	bool fly_back = false;
 
 bool slam_lost = false;
 bool col_imminent = false; //col = collision
@@ -48,12 +48,15 @@ void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
 }
 
 void panic_callback(const std_msgs::Bool::ConstPtr& msg) {
-	ROS_INFO("panic callback");
+	//ROS_INFO("panic callback");
     should_panic = msg->data;
+    if(should_panic){
+    	ROS_INFO("should panic in follow trajectory");
+    }
 }
 
 void panic_velocity_callback(const geometry_msgs::Vector3::ConstPtr& msg) {
-	ROS_INFO("panic velocity callback");
+	//ROS_INFO("panic velocity callback");
     panic_velocity = *msg;
 }
 
@@ -65,7 +68,8 @@ void col_imminent_callback(const std_msgs::Bool::ConstPtr& msg) {
 
 void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
 {
-	mission_finished = false;
+	//mission_finished = false;
+	//fly_back = false;
 	ROS_INFO("call back trajectory");
     // if (CLCT_DATA){ 
     //     g_recieved_traj_t = ros::Time::now();  
@@ -105,7 +109,7 @@ bool trajectory_done(const trajectory_t& trajectory) {
 bool follow_trajectory_status_cb(airsim_ros_pkgs::follow_trajectory_status_srv::Request &req, 
     airsim_ros_pkgs::follow_trajectory_status_srv::Response &res)
 {
-	ROS_INFO("follow_trajectory_status_cb");
+	//ROS_INFO("follow_trajectory_status_cb");
     res.success.data = g_trajectory_done;// || col_coming;
 
     const multiDOFpoint& current_point =
@@ -197,13 +201,13 @@ int main(int argc, char **argv)
                                //this allows us to activate all the
                                //functionaliy in follow_trajecotry accordingly
 
-    bool fly_back = false;
+    
     
     while (ros::ok()) {
     	ros::spinOnce();
-    	if(mission_finished){
-    		continue;
-    	}
+    	// if(mission_finished){
+    	// 	continue;
+    	// }
 
         trajectory_t * forward_traj = nullptr;
         trajectory_t * rev_traj = nullptr;
@@ -212,7 +216,10 @@ int main(int argc, char **argv)
 
         // panic
 	        if (should_panic) {
-	            // ROS_ERROR("Panicking!");
+	            ROS_INFO("Panicking!");
+	            ROS_INFO("Panicking!");
+	            ROS_INFO("Panicking!");
+	            ROS_INFO("Panicking!");
 	            panic_traj = create_panic_trajectory(airsim_ros_wrapper, panic_velocity);
 	            normal_traj.clear(); // Replan a path once we're done
 	        } 
@@ -255,18 +262,21 @@ int main(int argc, char **argv)
 
         if(app_started){
             // Back up if no trajectory was found
-            if (!forward_traj->empty())
+            if (!forward_traj->empty()){
+            	yaw_strategy_t forwardy = face_forward;
+                follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, forwardy, check_position, g_v_max);
 
-                follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, yaw_strategy, 
-                    check_position, g_v_max);
+                // follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, yaw_strategy, 
+                //     check_position, g_v_max);
+            }
             else {
-            	fly_back = true;
-            	follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
-                //follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, 1);
+            	//fly_back = true;
+            	//follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
             }
 
-            if (forward_traj->size() > 0)
+            if (forward_traj->size() > 0){
                 next_steps_pub.publish(next_steps_msg(*forward_traj));
+            }
         }
 
 
@@ -274,11 +284,12 @@ int main(int argc, char **argv)
             ROS_INFO_STREAM("slam loss");
             g_localization_status = 0; 
         }
-        else if(fly_back && trajectory_done(rev_normal_traj)){
-        	ROS_INFO_STREAM("mission completed");
-        	g_trajectory_done = true;
-        	mission_finished = true;
-        }
+        // else if(fly_back && trajectory_done(rev_normal_traj)){
+        // 	ROS_INFO_STREAM("mission completed");
+        // 	g_trajectory_done = true;
+        // 	mission_finished = true;
+        // 	fly_back = false;
+        // }
         else if (trajectory_done(*forward_traj)){
             loop_rate.sleep();
         }

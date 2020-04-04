@@ -44,7 +44,7 @@ bool trajectory_done(trajectory_t& trajectory) {
 
 // Follows trajectory, popping commands off the front of it and returning those commands in reverse order
 void follow_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t * traj,trajectory_t * reverse_traj, yaw_strategy_t yaw_strategy, bool check_position, float max_speed, float time){
-    ROS_INFO("follow trajectory !");
+    //ROS_INFO("follow trajectory !");
 	trajectory_t reversed_commands;
 
     static double max_speed_so_far = 0;
@@ -332,4 +332,8 @@ trajectory_t create_slam_loss_trajectory(AirsimROSWrapper& airsim_ros_wrapper, t
     }
 
     return result;
+}
+
+float distance(float x, float y, float z) {
+  return std::sqrt(x*x + y*y + z*z);
 }

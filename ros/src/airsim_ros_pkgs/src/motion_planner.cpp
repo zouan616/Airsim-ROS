@@ -48,8 +48,8 @@ using PointCloud = pcl::PointCloud<pcl::PointXYZ>;
 namespace ob = ompl::base;
 namespace og = ompl::geometric;
 
-double x__low_bound__global = -100, x__high_bound__global = 100;
-double y__low_bound__global = -100 , y__high_bound__global = 100;
+double x__low_bound__global = -200, x__high_bound__global = 200;
+double y__low_bound__global = -200 , y__high_bound__global = 200;
 double z__low_bound__global = 0, z__high_bound__global = 50;
 double sampling_interval__global = 0.1;
 double v_max__global = 5, a_max__global = 5;
@@ -57,6 +57,14 @@ float g_planning_budget = 1;
 std::string motion_planning_core_str;
 
 octomap::OcTree * octree = nullptr;
+trajectory_msgs::MultiDOFJointTrajectory traj_topic;
+bool g_requested_trajectory = false;
+bool path_found = false;
+
+
+
+
+
 
 std::function<piecewise_trajectory (geometry_msgs::Point, geometry_msgs::Point, int, int , int, octomap::OcTree *)> motion_planning_core;
 
@@ -131,7 +139,7 @@ piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point g
       // The drone is modeled as a cylinder.
       // Angles are in radians and lengths are in meters.
       
-      double height = 1; 
+      double height = 0.6; 
       double radius = 1; 
 
       const double angle_step = pi/4;
@@ -181,6 +189,12 @@ bool out_of_bounds(const graph::node& pos) {
 bool occupied(octomap::OcTree * octree, double x, double y, double z){
   const double OCC_THRESH = 0.5;
   octomap::OcTreeNode * otn = octree->search(x, y, z);
+  // if(otn == nullptr){
+  //   return false;
+  // }
+  // else{
+  //   return otn->getOccupancy() >= OCC_THRESH;
+  // }
     // Debug
     // cout << x << "  " << y << " " << z << "   ";
     // if(otn != nullptr){
@@ -294,7 +308,7 @@ void postprocess(piecewise_trajectory& path)
 // function for generating octree from octomap msgs
 void generate_octomap(const octomap_msgs::Octomap& msg)
 {
-    cout << "we are generating octomap from octomap binary" << endl;
+    //cout << "we are generating octomap from octomap binary" << endl;
     if (octree != nullptr) {
         delete octree;
     }
@@ -411,7 +425,7 @@ smooth_trajectory smoothen_the_shortest_path(piecewise_trajectory& piecewise_pat
 
 bool get_trajectory_fun(airsim_ros_pkgs::get_trajectory::Request &req, airsim_ros_pkgs::get_trajectory::Response &res)
 {
-
+    g_requested_trajectory = true;
     x__low_bound__global = std::min(x__low_bound__global, req.start.x);
     x__high_bound__global = std::max(x__high_bound__global, req.start.x);
     y__low_bound__global = std::min(y__low_bound__global, req.start.y);
@@ -439,12 +453,12 @@ bool get_trajectory_fun(airsim_ros_pkgs::get_trajectory::Request &req, airsim_ro
     req.start.y += req.twist.linear.y*g_planning_budget;
     req.start.z += req.twist.linear.z*g_planning_budget;
 
-    //TODO: implement the motion planning core
     piecewise_path = motion_planning_core(req.start, req.goal, req.width, req.length ,req.n_pts_per_dir, octree);
 
     if (piecewise_path.size() == 0) {
         ROS_ERROR("Empty path returned");
         res.path_found = false;
+        path_found = false;
         return true;
     }
 
@@ -464,7 +478,11 @@ bool get_trajectory_fun(airsim_ros_pkgs::get_trajectory::Request &req, airsim_ro
   
     create_response(res, smooth_path);
 
-    res.path_found = true; 
+    // Publish the trajectory (for debugging purposes)
+    traj_topic = res.multiDOFtrajectory;
+    traj_topic.header.stamp = ros::Time::now();
+    res.path_found = true;
+    path_found = true;  
     return true;
 }
 
@@ -545,9 +563,40 @@ int main(int argc, char ** argv)
 
     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun);
     ros::Subscriber octomap_sub = nh.subscribe("octomap_binary", 1, generate_octomap);
+    ros::Publisher traj_pub = nh.advertise<trajectory_msgs::MultiDOFJointTrajectory>("multidoftraj", 1);
 
 
+    enum State {publish_trajectory, idle};
+    State state, next_state;
+    next_state = state = idle;
 
+    ros::Rate pub_rate(30);
+    while (ros::ok())
+    {
+      if(state == idle){
+        ros::spinOnce();
+        if (g_requested_trajectory) {
+            next_state = publish_trajectory;
+        }
+      }
+      else if(state == publish_trajectory){
+            if (path_found) { 
+                traj_pub.publish(traj_topic);
+            } 
+            g_requested_trajectory = false;
+            next_state = idle;
+        
+            // if (DEBUG__global) { //if debug, publish markers to be seen by rviz
+            //     smooth_traj_vis_pub.publish(smooth_traj_markers);
+            //     piecewise_traj_vis_pub.publish(piecewise_traj_markers);
+            //     graph_conn_pub.publish(graph_conn_list);
+            //     octo_pub.publish(omp);
+            //     pcl_pub.publish(pcl_ptr);
+            // }
+      }
+        state = next_state;
+        pub_rate.sleep();
+    }
     ros::spin();
     return 0;
 }

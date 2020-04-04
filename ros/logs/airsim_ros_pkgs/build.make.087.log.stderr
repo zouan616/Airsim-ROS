@@ -1,0 +1,32 @@
+In file included from [01m[K/opt/ros/melodic/include/octomap_server/OctomapServer.h:49:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner_test.cpp:24[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:262:64:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KObstacleSensor<pcl::PointCloud<pcl::PointXYZ> >::ObstacleSensor(ros::NodeHandle&, std::__cxx11::string&)[m[K’
+     ObstacleSensor<PointCloud> obstacle_sensor(nh, point_topics[01;31m[K)[m[K;
+                                                                [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:65:5:[m[K [01;36m[Knote: [m[Kcandidate: ObstacleSensor<ObstacleData>::ObstacleSensor(ros::NodeHandle&, const string*) [with ObstacleData = pcl::PointCloud<pcl::PointXYZ>; std::__cxx11::string = std::__cxx11::basic_string<char>]
+     [01;36m[KObstacleSensor[m[K(ros::NodeHandle& nh, const std::string* obstacle_data_topics)
+     [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:65:5:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kstd::__cxx11::string {aka std::__cxx11::basic_string<char>}[m[K’ to ‘[01m[Kconst string* {aka const std::__cxx11::basic_string<char>*}[m[K’
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:62:7:[m[K [01;36m[Knote: [m[Kcandidate: ObstacleSensor<pcl::PointCloud<pcl::PointXYZ> >::ObstacleSensor(const ObstacleSensor<pcl::PointCloud<pcl::PointXYZ> >&)
+ class [01;36m[KObstacleSensor[m[K {
+       [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:62:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:62:7:[m[K [01;36m[Knote: [m[Kcandidate: ObstacleSensor<pcl::PointCloud<pcl::PointXYZ> >::ObstacleSensor(ObstacleSensor<pcl::PointCloud<pcl::PointXYZ> >&&)
+[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:62:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+In file included from [01m[K/opt/ros/melodic/include/octomap_server/OctomapServer.h:49:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:24[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+make[2]: *** [CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o] Error 1
+make[1]: *** [CMakeFiles/panic_pcl.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2

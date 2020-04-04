@@ -3,6 +3,7 @@ project(airsim_ros_pkgs)
 
 # set this to path to AirSim root folder if you want your catkin workspace in a custom directory
 set(AIRSIM_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../../../../AirSim/)
+set (common_utility_src /home/airsim/project/AirSim/ros/src/common)
 
 add_subdirectory("${AIRSIM_ROOT}/cmake/rpclib_wrapper" rpclib_wrapper)
 add_subdirectory("${AIRSIM_ROOT}/cmake/AirLib" AirLib)
@@ -138,6 +139,13 @@ target_link_libraries(pd_position_controller_simple_node pd_position_controller_
 
   add_executable(follow_trajectory src/follow_trajectory_node.cpp)
   target_link_libraries(follow_trajectory airsim_ros ${catkin_LIBRARIES} AirLib common_mav)
+
+  add_executable(panic_pcl ${common_utility_src}/panic_pcl.cpp)
+  target_link_libraries(panic_pcl ${catkin_LIBRARIES} AirLib MavLinkCom rpc pthread ${OpenCV_LIBS} common_mav ${PCL_LIBRARIES})
+
+  add_executable(future_collision src/future_collision.cpp)
+  target_link_libraries(future_collision airsim_ros ${catkin_LIBRARIES} AirLib MavLinkCom rpc pthread ${OpenCV_LIBS} ${OCTOMAP_LIBRARIES})
+ 
 
 install(TARGETS
     #list of nodes

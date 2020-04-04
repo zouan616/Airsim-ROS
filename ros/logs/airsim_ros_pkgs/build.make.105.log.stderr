@@ -1,0 +1,6 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/follow_trajectory_node.cpp:23:24:[m[K [01;31m[Kerror: [m[Kstray ‘[01m[K`[m[K’ in program
+  bool fly_back = false;[01;31m[K`[m[K
+                        [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/follow_trajectory.dir/all] Error 2
+make: *** [all] Error 2

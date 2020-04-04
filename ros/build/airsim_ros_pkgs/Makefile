@@ -168,6 +168,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named future_collision
+
+# Build rule for target.
+future_collision: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 future_collision
+.PHONY : future_collision
+
+# fast build rule for target.
+future_collision/fast:
+	$(MAKE) -f CMakeFiles/future_collision.dir/build.make CMakeFiles/future_collision.dir/build
+.PHONY : future_collision/fast
+
+#=============================================================================
+# Target rules for targets named panic_pcl
+
+# Build rule for target.
+panic_pcl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 panic_pcl
+.PHONY : panic_pcl
+
+# fast build rule for target.
+panic_pcl/fast:
+	$(MAKE) -f CMakeFiles/panic_pcl.dir/build.make CMakeFiles/panic_pcl.dir/build
+.PHONY : panic_pcl/fast
+
+#=============================================================================
 # Target rules for targets named follow_trajectory
 
 # Build rule for target.
@@ -2481,6 +2507,33 @@ gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+home/airsim/project/AirSim/ros/src/common/panic_pcl.o: home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.o
+
+# target to build an object file
+home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o:
+	$(MAKE) -f CMakeFiles/panic_pcl.dir/build.make CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o
+.PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o
+
+home/airsim/project/AirSim/ros/src/common/panic_pcl.i: home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.i
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.i
+
+# target to preprocess a source file
+home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.i:
+	$(MAKE) -f CMakeFiles/panic_pcl.dir/build.make CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.i
+.PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.i
+
+home/airsim/project/AirSim/ros/src/common/panic_pcl.s: home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.s
+
+# target to generate assembly for a file
+home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s:
+	$(MAKE) -f CMakeFiles/panic_pcl.dir/build.make CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s
+.PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s
+
 src/airsim_node.o: src/airsim_node.cpp.o
 
 .PHONY : src/airsim_node.o
@@ -2615,6 +2668,33 @@ src/follow_trajectory_node.s: src/follow_trajectory_node.cpp.s
 src/follow_trajectory_node.cpp.s:
 	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.s
 .PHONY : src/follow_trajectory_node.cpp.s
+
+src/future_collision.o: src/future_collision.cpp.o
+
+.PHONY : src/future_collision.o
+
+# target to build an object file
+src/future_collision.cpp.o:
+	$(MAKE) -f CMakeFiles/future_collision.dir/build.make CMakeFiles/future_collision.dir/src/future_collision.cpp.o
+.PHONY : src/future_collision.cpp.o
+
+src/future_collision.i: src/future_collision.cpp.i
+
+.PHONY : src/future_collision.i
+
+# target to preprocess a source file
+src/future_collision.cpp.i:
+	$(MAKE) -f CMakeFiles/future_collision.dir/build.make CMakeFiles/future_collision.dir/src/future_collision.cpp.i
+.PHONY : src/future_collision.cpp.i
+
+src/future_collision.s: src/future_collision.cpp.s
+
+.PHONY : src/future_collision.s
+
+# target to generate assembly for a file
+src/future_collision.cpp.s:
+	$(MAKE) -f CMakeFiles/future_collision.dir/build.make CMakeFiles/future_collision.dir/src/future_collision.cpp.s
+.PHONY : src/future_collision.cpp.s
 
 src/motion_planner.o: src/motion_planner.cpp.o
 
@@ -2814,6 +2894,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... future_collision"
+	@echo "... panic_pcl"
 	@echo "... follow_trajectory"
 	@echo "... package_delivery_node"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
@@ -2996,6 +3078,9 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... home/airsim/project/AirSim/ros/src/common/panic_pcl.o"
+	@echo "... home/airsim/project/AirSim/ros/src/common/panic_pcl.i"
+	@echo "... home/airsim/project/AirSim/ros/src/common/panic_pcl.s"
 	@echo "... src/airsim_node.o"
 	@echo "... src/airsim_node.i"
 	@echo "... src/airsim_node.s"
@@ -3011,6 +3096,9 @@ help:
 	@echo "... src/follow_trajectory_node.o"
 	@echo "... src/follow_trajectory_node.i"
 	@echo "... src/follow_trajectory_node.s"
+	@echo "... src/future_collision.o"
+	@echo "... src/future_collision.i"
+	@echo "... src/future_collision.s"
 	@echo "... src/motion_planner.o"
 	@echo "... src/motion_planner.i"
 	@echo "... src/motion_planner.s"

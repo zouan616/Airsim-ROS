@@ -67,10 +67,10 @@ void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
 }
 
 
-geometry_msgs::Point get_start() {
+geometry_msgs::Point get_start(AirsimROSWrapper& airsim_ros_wrapper) {
     geometry_msgs::Point start;
-
-    start.x = 0; start.y = 0; start.z = 0;
+    auto pos = airsim_ros_wrapper.getPosition();
+    start.x = pos.y(); start.y = pos.x(); start.z = abs(pos.z());
     return start;
 }
 
@@ -225,11 +225,11 @@ int main(int argc, char **argv)
         State next_state = invalid;
         if(state == setup){
         	goal = get_goal();
-            start = get_start();
+            start = get_start(airsim_ros_wrapper);
             next_state = waiting;
         }
         else if(state == waiting){
-        	start = get_start();
+        	start = get_start(airsim_ros_wrapper);
             normal_traj = request_trajectory(get_trajectory_client, start, goal, twist, acceleration);
             cout << normal_traj.size() << endl;
             next_state = flying;
@@ -294,7 +294,7 @@ int main(int argc, char **argv)
                 ROS_INFO_STREAM("could not make a service all to trajectory done");
                 next_state = flying;
             }else if (follow_trajectory_status_srv_inst.response.success.data) {
-                ROS_INFO_STREAM("trajectory completed");
+                //ROS_INFO_STREAM("trajectory completed");
                 next_state = trajectory_completed; 
                 twist = follow_trajectory_status_srv_inst.response.twist;
                 acceleration = follow_trajectory_status_srv_inst.response.acceleration;
@@ -320,7 +320,7 @@ int main(int argc, char **argv)
             if (fail_ctr >fail_threshold) {
                 next_state = failed;
                 mission_status = "planning_failed_too_many_times";
-            }else if (dist(airsim_ros_wrapper.getPosition(), start) < goal_s_error_margin) {
+            }else if (dist(airsim_ros_wrapper.getPosition(), goal) < goal_s_error_margin) {
                 ROS_INFO("Delivered the package and returned!");
                 mission_status = "completed"; 
                 g_mission_status = mission_status;            
@@ -329,7 +329,7 @@ int main(int argc, char **argv)
                 ros::shutdown();
             } else { //If we've drifted too far off from the destination
                 //ROS_WARN("We're a little off...");
-                start = get_start();
+                start = get_start(airsim_ros_wrapper);
                 next_state = waiting;
             }
         }
