@@ -52,6 +52,13 @@ trajectory_t create_panic_trajectory(AirsimROSWrapper& airsim_ros_wrapper, const
 trajectory_t create_future_col_trajectory(const trajectory_t& normal_traj, double stopping_distance);
 trajectory_t create_slam_loss_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t& normal_traj, const trajectory_t& rev_normal_traj);
 
+
+
+// Spinning commands
+void spin_around(AirsimROSWrapper& airsim_ros_wrapper);
+//void scan_around(Drone &drone, int angle);
+
+
 // Utility functions
 float distance(float x, float y, float z);
 

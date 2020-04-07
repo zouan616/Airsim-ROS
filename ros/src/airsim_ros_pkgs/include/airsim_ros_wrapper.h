@@ -134,11 +134,12 @@ public:
         geometry_msgs::Pose pose();
 
         float get_yaw();
+        bool set_yaw(int y);
         bool fly_velocity(double vx, double vy, double vz, float yaw = YAW_UNCHANGED, double duration = 3);
         // *** F:DN Drone parameters functions
         float maxYawRate();
         float maxYawRateDuringFlight();
-
+        bool set_yaw_at_z(int y, double z);
 
     // function added by feiyang jin
         void takeoff_jin();

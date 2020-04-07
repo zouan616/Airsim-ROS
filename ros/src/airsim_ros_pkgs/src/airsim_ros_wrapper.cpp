@@ -75,7 +75,7 @@ float AirsimROSWrapper::get_yaw(){
     msr::airlib::Quaternionr q(pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w);
     float p, r, y;
     msr::airlib::VectorMath::toEulerianAngle(q, p, y, r);
-    return -y*180 / M_PI;
+    return y*180 / M_PI;
 }
 
 static float xy_yaw(double x, double y) {
@@ -84,28 +84,78 @@ static float xy_yaw(double x, double y) {
     return 90 - atan2(y, x)*180.0/3.14;
 }
 
+bool AirsimROSWrapper::set_yaw(int y)
+{
+    int pos_dist = (y - int(get_yaw()) + 360) % 360;
+    int yaw_diff = pos_dist <= 180 ? pos_dist : pos_dist - 360;
+
+    float duration = yaw_diff / max_yaw_rate;
+    if (duration < 0)
+        duration = -duration;
+
+    float yaw_rate = max_yaw_rate;
+    if (yaw_diff < 0)
+        yaw_rate = -yaw_rate;
+
+    try {
+        auto drivetrain = msr::airlib::DrivetrainType::MaxDegreeOfFreedom;
+        auto yawmode = msr::airlib::YawMode(true, yaw_rate);
+
+        airsim_client_.moveByVelocityAsync(0, 0, 0, duration, drivetrain, yawmode);
+
+        int duration_ms = duration*1000;
+        std::this_thread::sleep_for(std::chrono::milliseconds(duration_ms));
+    }catch(...){
+        std::cerr << "set_yaw failed" << std::endl;
+        return false;
+    }
+}
+
+
 bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, double duration)
 {
     try {
         if (yaw != YAW_UNCHANGED) {
             float target_yaw = yaw;
             if (yaw == FACE_FORWARD)
+                //target_yaw = xy_yaw(vy, vx);
                 target_yaw = xy_yaw(vx, vy);
             else if (yaw == FACE_BACKWARD) {
                 target_yaw = xy_yaw(vx, vy);
+                //target_yaw = xy_yaw(vy, vx);
                 target_yaw += 180;
                 target_yaw = target_yaw <= 180 ? target_yaw : target_yaw-360;
             }
 
+            float current_yaw = get_yaw();
             float yaw_diff = (int(target_yaw - get_yaw()) + 360) % 360;
             yaw_diff = yaw_diff <= 180 ? yaw_diff : yaw_diff - 360;
             
-            if (yaw_diff >= 5)
-                yaw_diff -= 5;
-            else if (yaw_diff <= -5)
-                yaw_diff += 5;
-            else
+
+            float yaw_threshold = 45;
+
+            if(yaw_diff >= yaw_threshold){
+                std::cout << "yaw_diff is: " << yaw_diff << std::endl;
+                std::cout << "current yaw is: " << current_yaw << std::endl;
+                std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
+                yaw_diff -= yaw_threshold;
+            }
+            else if(yaw_diff <= (-1)*yaw_threshold){
+                std::cout << "yaw_diff is: " << yaw_diff << std::endl;
+                std::cout << "yaw_diff is: " << yaw_diff << std::endl;
+                std::cout << "current yaw is: " << current_yaw << std::endl;
+                std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
+                yaw_diff += yaw_threshold;
+            }
+            else{
                 yaw_diff = 0;
+            }
+            // if (yaw_diff >= 5)
+            //     yaw_diff -= 5;
+            // else if (yaw_diff <= -5)
+            //     yaw_diff += 5;
+            // else
+            //     yaw_diff = 0;
 
             float yaw_rate = yaw_diff / duration;
 
@@ -114,9 +164,12 @@ bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, 
             else if (yaw_rate < -max_yaw_rate_during_flight)
                 yaw_rate = -max_yaw_rate_during_flight;
 
+            //auto drivetrain = msr::airlib::DrivetrainType::ForwardOnly;
             auto drivetrain = msr::airlib::DrivetrainType::MaxDegreeOfFreedom;
             auto yawmode = msr::airlib::YawMode(true, yaw_rate);
+            //std::cout << "duration is: " << duration << std::endl;
 
+            //airsim_client_.moveByVelocityAsync(vy, vx, -vz, duration, drivetrain);
             airsim_client_.moveByVelocityAsync(vy, vx, -vz, duration, drivetrain, yawmode);
         } else {
             airsim_client_.moveByVelocityAsync(vy, vx, -vz, duration);
@@ -127,6 +180,44 @@ bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, 
     }
 
     return true;
+}
+
+
+bool AirsimROSWrapper::set_yaw_at_z(int y, double z){
+    int pos_dist = (y - int(get_yaw()) + 360) % 360;
+    int yaw_diff = pos_dist <= 180 ? pos_dist : pos_dist - 360;
+
+    float duration = yaw_diff / max_yaw_rate;
+    if (duration < 0)
+        duration = -duration;
+
+    float yaw_rate = max_yaw_rate;
+    if (yaw_diff < 0)
+        yaw_rate = -yaw_rate;
+
+    try {
+        auto drivetrain = msr::airlib::DrivetrainType::MaxDegreeOfFreedom;
+        msr::airlib::YawMode yawmode(true, yaw_rate);
+
+        auto t = std::chrono::system_clock::now();
+        auto end_t = t + std::chrono::milliseconds(int(duration*1000));
+        const double t_step = 0.05; // 50 ms
+        const auto t_step_ms = std::chrono::milliseconds(int(t_step*1000));
+
+        for (; t < end_t; t += t_step_ms) {
+            double current_z = pose().position.z;
+            double v_z = (z - current_z) * 0.5;
+
+            airsim_client_.moveByVelocityAsync(0, 0, -v_z, duration, drivetrain, yawmode);
+
+            std::this_thread::sleep_until(t);
+        }
+        
+        airsim_client_.moveByVelocityAsync(0, 0, 0, 1);
+    } catch(...) {
+        std::cerr << "set_yaw failed" << std::endl;
+        return false;
+    }
 }
 
 

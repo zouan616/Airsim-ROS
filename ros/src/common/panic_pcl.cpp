@@ -101,7 +101,7 @@ public:
             }
         }
 
-        ROS_INFO("min_distance: %f", min_distance);
+        //ROS_INFO("min_distance: %f", min_distance);
 
         if (min_distance < panic_distance){
             //ROS_INFO_STREAM("min_distance"<<min_distance); 

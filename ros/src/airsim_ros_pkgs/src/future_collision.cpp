@@ -60,9 +60,7 @@ octomap::OcTree * octree = nullptr;
 traj_msg_t traj;
 double drone_height__global = 0.5;
 double drone_radius__global = 1;
-double g_pos_x;
-double g_pos_y;
-double g_pos_z;
+
 AirsimROSWrapper* airsim_ros_wrapper_pointer;
 
 //Profiling
@@ -118,7 +116,7 @@ double dist_to_collision(AirsimROSWrapper& airsim_ros_wrapper, const T& col_pos)
     auto drone_pos = airsim_ros_wrapper.getPosition();
 
 	double dx = abs(drone_pos.x() - col_pos.y);
-	double dy = abs(drone_pos.y() - col_pos.z);
+	double dy = abs(drone_pos.y() - col_pos.x);
 	double dz = abs(drone_pos.z()) - col_pos.z;
 
 	return std::sqrt(dx*dx + dy*dy + dz*dz);
@@ -187,8 +185,9 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
 
     start_hook_chk_col_t = ros::Time::now();
 
-    const double min_dist_from_collision = 100.0;
-    const std::chrono::milliseconds grace_period(1500);
+    const double min_dist_from_collision = 150.0;
+    //const std::chrono::milliseconds grace_period(500);
+    const std::chrono::milliseconds grace_period(1000);
 
     if (octree == nullptr || traj.points.size() < 1) {
         return false;

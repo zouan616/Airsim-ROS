@@ -173,6 +173,7 @@ int main(int argc, char ** argv)
     int width, length, lanes, height; // size of area to scan
     std::vector<Vector3r> path; // piecewise vertices
     mav_trajectory_generation::Trajectory scanning_trajectory; //smoothed trajectory
+    yaw_strategy_t yaw_strategy = face_forward;
 
     // visualization setup
         visualization_msgs::Marker points, line_strip, line_list, drone_point;
@@ -229,6 +230,14 @@ int main(int argc, char ** argv)
         }
 
         airsim_ros_wrapper.takeoff_jin();
+
+    // int yaw;
+    // while(true){
+    //     std::cout << "Enter yaw"<<std::endl;
+
+    //     std::cin >> yaw;
+    //     std::cout << airsim_ros_wrapper.get_yaw() << std::endl;
+    // }
 
     ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("scanning_visualization_marker", 100);
     int scanning_loop_rate = 100;
@@ -287,7 +296,7 @@ int main(int argc, char ** argv)
         }
         else if(state == flying){
             follow_trajectory(airsim_ros_wrapper, &traject_t_trajectory, nullptr, 
-                    ignore_yaw, true ,max_velocity);
+                    yaw_strategy, true ,max_velocity);
 
             //visualize drone position
             auto current_pos = airsim_ros_wrapper.getPosition();
@@ -308,33 +317,6 @@ int main(int argc, char ** argv)
         }
         state = next_state;
     }
-    
-
-
-    //mav_trajectory_generation::Segment::Vector traj_segments;
-    //scanning_trajectory.getSegments(&traj_segments);
-    // int count = 0;
-    // for(auto t=traj_segments.begin(); t != traj_segments.end(); ++t){
-    //     std::cout << "Segment index:    " << count << endl;
-
-    //     double time = (*t).getTime();
-    //     double step = time / 4;
-
-    //     for(double theTime=0; theTime<= time; theTime+=step){
-    //         std::cout << "Time: " << theTime << endl;
-    //         auto position = (*t).evaluate(theTime,0);
-    //         std::cout << position << endl;
-    //         graph::node n1 = {position.x(), position.y(), position.z()};
-    //         if(out_of_bound(n1)){
-    //             cout << "out of bound !!" << endl;
-    //             break;
-    //         }
-    //         std::cout << "--------------" << endl;
-    //         std::cout << "--------------" << endl;
-    //     }
-
-    //     count ++;
-    // }
 
 	return 0;
 }

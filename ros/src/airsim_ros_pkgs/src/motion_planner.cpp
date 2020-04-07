@@ -50,10 +50,10 @@ namespace og = ompl::geometric;
 
 double x__low_bound__global = -200, x__high_bound__global = 200;
 double y__low_bound__global = -200 , y__high_bound__global = 200;
-double z__low_bound__global = 0, z__high_bound__global = 50;
-double sampling_interval__global = 0.1;
-double v_max__global = 5, a_max__global = 5;
-float g_planning_budget = 1;
+double z__low_bound__global = 0, z__high_bound__global = 30;
+double sampling_interval__global = 0.5;
+double v_max__global = 2.5, a_max__global = 5;
+float g_planning_budget = 5;
 std::string motion_planning_core_str;
 
 octomap::OcTree * octree = nullptr;
@@ -139,7 +139,7 @@ piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point g
       // The drone is modeled as a cylinder.
       // Angles are in radians and lengths are in meters.
       
-      double height = 0.6; 
+      double height = 0.5; 
       double radius = 1; 
 
       const double angle_step = pi/4;
@@ -632,8 +632,8 @@ piecewise_trajectory OMPL_plan(geometry_msgs::Point start, geometry_msgs::Point 
     si->setup();
 
     // Set planner
-    ob::PlannerPtr planner(new PlannerType(si));
-    ss.setPlanner(planner);
+    //ob::PlannerPtr planner(new PlannerType(si));
+    //ss.setPlanner(planner);
 
     ob::ScopedState<> start_state(space);
     start_state[0] = start.x;

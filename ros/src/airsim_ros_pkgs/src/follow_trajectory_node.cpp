@@ -30,7 +30,7 @@ trajectory_t normal_traj;
 trajectory_t rev_normal_traj;
 float g_localization_status = 1.0;
 //std::string g_supervisor_mailbox; //file to write to when completed
-float g_v_max = 5;
+float g_v_max = 2.5;
 double g_fly_trajectory_time_out;
 long long g_planning_time_including_ros_overhead_acc  = 0;
 
@@ -212,7 +212,7 @@ int main(int argc, char **argv)
         trajectory_t * forward_traj = nullptr;
         trajectory_t * rev_traj = nullptr;
         bool check_position = true;
-        yaw_strategy_t yaw_strategy = follow_yaw;
+        yaw_strategy_t yaw_strategy = ignore_yaw;
 
         // panic
 	        if (should_panic) {
@@ -263,15 +263,15 @@ int main(int argc, char **argv)
         if(app_started){
             // Back up if no trajectory was found
             if (!forward_traj->empty()){
-            	yaw_strategy_t forwardy = face_forward;
-                follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, forwardy, check_position, g_v_max);
+            	//yaw_strategy_t forwardy = face_forward;
+                //follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, forwardy, check_position, g_v_max);
 
-                // follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, yaw_strategy, 
-                //     check_position, g_v_max);
+                follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, yaw_strategy, 
+                    check_position, g_v_max);
             }
             else {
             	//fly_back = true;
-            	//follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
+            	follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
             }
 
             if (forward_traj->size() > 0){

@@ -27,7 +27,7 @@ int g_main_loop_ctr = 0;
 int g_panic_ctr = 0;
 bool g_start_profiling = false; 
 
-double v_max__global = 5, a_max__global = 5, g_fly_trajectory_time_out = 1;
+double v_max__global = 3, a_max__global = 5, g_fly_trajectory_time_out = 1;
 float g_max_yaw_rate= 90;
 float g_max_yaw_rate_during_flight = 90;
 long long g_planning_time_including_ros_overhead_acc = 0;
@@ -226,6 +226,8 @@ int main(int argc, char **argv)
         if(state == setup){
         	goal = get_goal();
             start = get_start(airsim_ros_wrapper);
+
+            spin_around(airsim_ros_wrapper);
             next_state = waiting;
         }
         else if(state == waiting){
@@ -304,7 +306,8 @@ int main(int argc, char **argv)
                 next_state = trajectory_completed; 
                 twist = follow_trajectory_status_srv_inst.response.twist;
                 acceleration = follow_trajectory_status_srv_inst.response.acceleration;
-                col_coming = false; 
+                //col_coming = false; 
+                spin_around(airsim_ros_wrapper);
             }
             else{
                 next_state = flying;
@@ -314,8 +317,15 @@ int main(int argc, char **argv)
         else if(state == trajectory_completed){
             fail_ctr = normal_traj.empty() ? fail_ctr+1 : 0; 
             
-            if (normal_traj.empty()){
+            if(col_coming){
+                start = get_start(airsim_ros_wrapper);
+                next_state = waiting;
+                col_coming = false;
+            }
+            else if (normal_traj.empty()){
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                //ROS_INFO("next mission");
+                //next_state = setup;
             }
             if (fail_ctr >fail_threshold) {
                 next_state = failed;
@@ -327,8 +337,7 @@ int main(int argc, char **argv)
                 
                 next_state = setup;
                 ros::shutdown();
-            } else { //If we've drifted too far off from the destination
-                //ROS_WARN("We're a little off...");
+            } else { 
                 start = get_start(airsim_ros_wrapper);
                 next_state = waiting;
             }

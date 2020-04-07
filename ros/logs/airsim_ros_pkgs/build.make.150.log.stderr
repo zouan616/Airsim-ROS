@@ -1,0 +1,24 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:102:0:[m[K [01;31m[Kerror: [m[Kunterminated #else
+ #ifdef INFLATE
+ 
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:[m[K In function ‘[01m[Ksmooth_trajectory smoothen_the_shortest_path(piecewise_trajectory&, octomap::OcTree*, Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:360:92:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Kstd::vector<double> mav_trajectory_generation::estimateSegmentTimes(const Vector&, double, double)[m[K’
+       auto segment_times = estimateSegmentTimes(vertices, v_max__global, a_max__global, 6.5[01;31m[K)[m[K;
+                                                                                            [01;31m[K^[m[K
+In file included from [01m[K/home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/trajectory.h:26:0[m[K,
+                 from [01m[K/home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/polynomial_optimization_linear.h:32[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:11[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:15[m[K:
+[01m[K/home/airsim/catkin_ws2/src/mav_trajectory_generation/mav_trajectory_generation/include/mav_trajectory_generation/vertex.h:122:21:[m[K [01;36m[Knote: [m[Kdeclared here
+ std::vector<double> [01;36m[KestimateSegmentTimes[m[K(const Vertex::Vector& vertices,
+                     [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/melodic/include/octomap_server/OctomapServer.h:49:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/motion_planner.cpp:24[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+make[2]: *** [CMakeFiles/motion_planner.dir/src/motion_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/motion_planner.dir/all] Error 2
+make: *** [all] Error 2

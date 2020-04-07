@@ -61,14 +61,17 @@ void follow_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t * traj
         double v_y = p.vy;
         double v_z = p.vz;
 
-         
+        auto pos = airsim_ros_wrapper.getPosition();
         if (check_position) {
-            auto pos = airsim_ros_wrapper.getPosition();
             v_x += 0.2*(p.x-pos.y());
             v_y += 0.2*(p.y-pos.x());
             v_z += 0.5*(p.z+pos.z());
         }
         
+        // float current_yaw = airsim_ros_wrapper.get_yaw();
+        // double target_x = p.x;
+        // double target_y = p.y;
+
         // Calculate the yaw we should be flying with
         float yaw = p.yaw;
         if (yaw_strategy == ignore_yaw)
@@ -77,6 +80,9 @@ void follow_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t * traj
             yaw = FACE_FORWARD;
         else if (yaw_strategy == face_backward) {
             yaw = FACE_BACKWARD;
+        }
+        else if (yaw_strategy == follow_yaw){
+            // do nothing
         }
 
         // Make sure we're not going over the maximum speed
@@ -336,4 +342,31 @@ trajectory_t create_slam_loss_trajectory(AirsimROSWrapper& airsim_ros_wrapper, t
 
 float distance(float x, float y, float z) {
   return std::sqrt(x*x + y*y + z*z);
+}
+
+void spin_around(AirsimROSWrapper& airsim_ros_wrapper){
+    airsim_ros_wrapper.fly_velocity(0, 0, 0);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    ROS_INFO("Spinning around...");
+    ros::Time last_time;
+    float init_yaw = airsim_ros_wrapper.get_yaw();
+    double start_z = airsim_ros_wrapper.pose().position.z; // Get drone's current position
+
+
+    int angle_corrected;
+    for (int i = 0; i <= 360; i += 90) {
+        int angle = init_yaw + i;
+        angle_corrected  = (angle <= 180 ? angle : angle - 360);
+        airsim_ros_wrapper.set_yaw_at_z(angle_corrected, start_z);
+    }
+
+    // to correct 
+    double dz = start_z - airsim_ros_wrapper.pose().position.z;
+    double vz = dz > 0 ? 1 : -1;
+    double dt = dz > 0 ? dz : -dz;
+    
+    airsim_ros_wrapper.fly_velocity(0, 0, vz, YAW_UNCHANGED, dt);
+    std::this_thread::sleep_for(std::chrono::milliseconds(int(dt*1000.0)));
+    airsim_ros_wrapper.fly_velocity(0, 0, 0);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
