@@ -632,8 +632,9 @@ piecewise_trajectory OMPL_plan(geometry_msgs::Point start, geometry_msgs::Point 
     si->setup();
 
     // Set planner
-    //ob::PlannerPtr planner(new PlannerType(si));
-    //ss.setPlanner(planner);
+    //ob::PlannerPtr planner(new og::RRTstar(si));
+    ob::PlannerPtr planner(new PlannerType(si));
+    ss.setPlanner(planner);
 
     ob::ScopedState<> start_state(space);
     start_state[0] = start.x;

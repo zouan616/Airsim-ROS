@@ -201,7 +201,7 @@ int main(int argc, char **argv)
                                //this allows us to activate all the
                                //functionaliy in follow_trajecotry accordingly
 
-    
+    yaw_strategy_t yaw_strategy = face_forward;
     
     while (ros::ok()) {
     	ros::spinOnce();
@@ -212,7 +212,7 @@ int main(int argc, char **argv)
         trajectory_t * forward_traj = nullptr;
         trajectory_t * rev_traj = nullptr;
         bool check_position = true;
-        yaw_strategy_t yaw_strategy = ignore_yaw;
+        
 
         // panic
 	        if (should_panic) {
@@ -271,7 +271,8 @@ int main(int argc, char **argv)
             }
             else {
             	//fly_back = true;
-            	follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
+                //follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, yaw_strategy, true, g_v_max);
+            	//(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
             }
 
             if (forward_traj->size() > 0){

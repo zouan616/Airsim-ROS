@@ -135,16 +135,16 @@ bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, 
             float yaw_threshold = 45;
 
             if(yaw_diff >= yaw_threshold){
-                std::cout << "yaw_diff is: " << yaw_diff << std::endl;
-                std::cout << "current yaw is: " << current_yaw << std::endl;
-                std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
+                // std::cout << "yaw_diff is: " << yaw_diff << std::endl;
+                // std::cout << "current yaw is: " << current_yaw << std::endl;
+                // std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
                 yaw_diff -= yaw_threshold;
             }
             else if(yaw_diff <= (-1)*yaw_threshold){
-                std::cout << "yaw_diff is: " << yaw_diff << std::endl;
-                std::cout << "yaw_diff is: " << yaw_diff << std::endl;
-                std::cout << "current yaw is: " << current_yaw << std::endl;
-                std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
+                // std::cout << "yaw_diff is: " << yaw_diff << std::endl;
+                // std::cout << "yaw_diff is: " << yaw_diff << std::endl;
+                // std::cout << "current yaw is: " << current_yaw << std::endl;
+                // std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
                 yaw_diff += yaw_threshold;
             }
             else{

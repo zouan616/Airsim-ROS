@@ -1,4 +1,5 @@
 <launch>
+	<include file="$(find airsim_tutorial_pkgs)/launch/front_stereo_and_center_mono/front_stereo_and_center_mono.launch"/>
 
 	<node pkg="airsim_ros_pkgs" name="package_delivery_node" type="package_delivery_node" output="screen" />
 
