@@ -21,6 +21,8 @@ using namespace std;
 // add by feiyang jin
 	bool mission_finished = false;
 	bool fly_back = false;
+    std_msgs::Bool fly_back_msg;
+    bool global_stop_fly = false;
 
 bool slam_lost = false;
 bool col_imminent = false; //col = collision
@@ -68,31 +70,40 @@ void col_imminent_callback(const std_msgs::Bool::ConstPtr& msg) {
 void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
 {
 	ROS_INFO("call back trajectory");
-    // if (CLCT_DATA){ 
-    //     g_recieved_traj_t = ros::Time::now();  
-    //     g_msg_time_stamp = msg->header.stamp;
-    //     if (g_msg_time_stamp.sec != 0) {  
-    //         g_pt_cld_to_futurCol_commun_acc += (ros::Time::now() - msg->header.stamp).toSec()*1e9;
-    //         g_traj_ctr++; 
-    //     } 
-    // }
-    
-    normal_traj.clear(); 
-    for (auto point : msg->points){
-        multiDOFpoint traj_point;
-        traj_point.x = point.x;
-        traj_point.y = point.y;
-        traj_point.z = point.z;
-        traj_point.vx = point.vx;
-        traj_point.vy = point.vy;
-        traj_point.vz = point.vz;
-        traj_point.yaw = point.yaw;
-        traj_point.duration = point.duration;
-        normal_traj.push_back(traj_point);
+    if(!fly_back){
+        normal_traj.clear(); 
+        rev_normal_traj.clear();
+        for (auto point : msg->points){
+            multiDOFpoint traj_point;
+            traj_point.x = point.x;
+            traj_point.y = point.y;
+            traj_point.z = point.z;
+            traj_point.vx = point.vx;
+            traj_point.vy = point.vy;
+            traj_point.vz = point.vz;
+            traj_point.yaw = point.yaw;
+            traj_point.duration = point.duration;
+            normal_traj.push_back(traj_point);
+        }
+    }
+    else{
+        rev_normal_traj.clear();
+        normal_traj.clear();
+        for (auto point : msg->points){
+            multiDOFpoint traj_point;
+            traj_point.x = point.x;
+            traj_point.y = point.y;
+            traj_point.z = point.z;
+            traj_point.vx = point.vx;
+            traj_point.vy = point.vy;
+            traj_point.vz = point.vz;
+            traj_point.yaw = point.yaw;
+            traj_point.duration = point.duration;
+            rev_normal_traj.push_back(traj_point);
+        }
     }
 
-    g_got_new_trajectory = true;
-    //ROS_INFO_STREAM("finished trajectory, size is"<<normal_traj.size());  
+    g_got_new_trajectory = true; 
 }
 
 
@@ -128,7 +139,6 @@ bool follow_trajectory_status_cb(airsim_ros_pkgs::follow_trajectory_status_srv::
 
 
 airsim_ros_pkgs::multiDOF_array next_steps_msg(const trajectory_t& traj) {
-	//ROS_INFO("next_steps_msg");
     airsim_ros_pkgs::multiDOF_array array_of_point_msg;
 
     for (const auto& point : traj){
@@ -150,6 +160,11 @@ airsim_ros_pkgs::multiDOF_array next_steps_msg(const trajectory_t& traj) {
     return array_of_point_msg;
 }
 
+
+void stop_fly_callback(const std_msgs::Bool::ConstPtr& msg){
+    bool stop_fly_local = msg->data;
+    global_stop_fly = stop_fly_local;
+}
 
 int main(int argc, char **argv)
 {
@@ -195,6 +210,11 @@ int main(int argc, char **argv)
 		ros::Subscriber slam_lost_sub = n.subscribe<std_msgs::Bool>("/slam_lost", 1, slam_loss_callback);
 	    ros::Subscriber trajectory_follower_sub = n.subscribe<airsim_ros_pkgs::multiDOF_array>("normal_traj", 1, callback_trajectory);
 
+        ros::Publisher fly_back_pub = n.advertise<std_msgs::Bool>("/fly_back", 1);
+
+        ros::Subscriber stop_fly_sub = 
+            n.subscribe<std_msgs::Bool>("/stop_fly", 1, stop_fly_callback);
+
     bool app_started = false;  //decides when the first planning has occured
                                //this allows us to activate all the
                                //functionaliy in follow_trajecotry accordingly
@@ -209,7 +229,6 @@ int main(int argc, char **argv)
         trajectory_t * rev_traj = nullptr;
         bool check_position = true;
         
-
         // panic
 	        if (should_panic) {
 	            ROS_INFO("Panicking!");
@@ -235,7 +254,7 @@ int main(int argc, char **argv)
 	            created_slam_loss_traj = false;
 	        }
 
-
+        // setup trajectory
         if (!panic_traj.empty()) {
             forward_traj = &panic_traj;
             rev_traj = nullptr;
@@ -245,34 +264,32 @@ int main(int argc, char **argv)
             forward_traj = &slam_loss_traj;
             rev_traj = &normal_traj;
             check_position = false;
-        } else {
+        }
+        else {
             forward_traj = &normal_traj;
             rev_traj = &rev_normal_traj;
         }
 
         
-        if (normal_traj.size() > 0) {
+        if ((!fly_back && normal_traj.size() > 0) || (fly_back && rev_normal_traj.size() > 0)) {
             app_started = true;
         }
 
 
-        if(app_started){
+        if(app_started && !global_stop_fly){
             // Back up if no trajectory was found
             if (!forward_traj->empty()){
-            	//yaw_strategy_t forwardy = face_forward;
-                //follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, forwardy, check_position, g_v_max);
-
-                follow_trajectory(airsim_ros_wrapper, forward_traj, rev_traj, yaw_strategy, 
-                    check_position, g_v_max);
+                follow_trajectory(airsim_ros_wrapper, forward_traj, nullptr, yaw_strategy, check_position, g_v_max);
             }
             else {
-            	//fly_back = true;
-                //follow_trajectory(airsim_ros_wrapper, &rev_normal_traj, nullptr, yaw_strategy, true, g_v_max);
-            	//(airsim_ros_wrapper, &rev_normal_traj, nullptr, face_backward, true, g_v_max);
+                follow_trajectory(airsim_ros_wrapper, rev_traj, nullptr, yaw_strategy, true, g_v_max);
             }
 
             if (forward_traj->size() > 0){
                 next_steps_pub.publish(next_steps_msg(*forward_traj));
+            }
+            else if(rev_traj->size() > 0){
+                next_steps_pub.publish(next_steps_msg(*rev_traj));
             }
         }
 
@@ -281,21 +298,23 @@ int main(int argc, char **argv)
             ROS_INFO_STREAM("slam loss");
             g_localization_status = 0; 
         }
-        // else if(fly_back && trajectory_done(rev_normal_traj)){
-        // 	ROS_INFO_STREAM("mission completed");
-        // 	g_trajectory_done = true;
-        // 	mission_finished = true;
-        // 	fly_back = false;
-        // }
-        else if (app_started && trajectory_done(*forward_traj)){
-            g_trajectory_done = true;
-            ROS_INFO("trajectory done");
+        else if(app_started && fly_back && trajectory_done(*rev_traj)){
+        	ROS_INFO_STREAM("mission completed");
+        	g_trajectory_done = true;
+            app_started = false;
+        }
+        else if (app_started && !fly_back && trajectory_done(*forward_traj)){
+            fly_back = true;
+            fly_back_msg.data = true;
+            fly_back_pub.publish(fly_back_msg);
+            app_started = false;
+            g_trajectory_done = false;
+            ROS_INFO("front trajectory done");
             loop_rate.sleep();
         }
 
         g_got_new_trajectory = false;
 
     }
-	// cout << "hello" << endl;
 	return 0;
 }

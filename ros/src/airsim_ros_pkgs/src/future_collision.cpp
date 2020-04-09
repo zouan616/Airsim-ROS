@@ -59,9 +59,10 @@ bool g_got_new_traj = false;
 octomap::OcTree * octree = nullptr;
 traj_msg_t traj;
 double drone_height__global = 0.6;
-double drone_radius__global = 1;
+double drone_radius__global = 1.1;
 
 AirsimROSWrapper* airsim_ros_wrapper_pointer;
+bool global_fly_back = false;
 
 //Profiling
 int g_main_loop_ctr = 0;
@@ -148,13 +149,7 @@ void pull_octomap(const octomap_msgs::Octomap& msg)
     if (octree == nullptr) {
         ROS_ERROR("Octree could not be pulled.");
     }
-    // if (CLCT_DATA){ 
-    //     g_pt_cloud_header = msg.header.stamp; 
-        
-    //     g_pt_cloud_future_collision_acc += (ros::Time::now() - g_pt_cloud_header).toSec()*1e9;
-    //     g_octomap_rcv_ctr++;
-    // }
-    //ROS_INFO("pulling octomap !");
+
 }
 
 
@@ -186,7 +181,6 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
     start_hook_chk_col_t = ros::Time::now();
 
     const double min_dist_from_collision = 150.0;
-    //const std::chrono::milliseconds grace_period(500);
     const std::chrono::milliseconds grace_period(1000);
 
     if (octree == nullptr || traj.points.size() < 1) {
@@ -206,9 +200,6 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
             auto now = sys_clock::now();
             if (dist_to_collision(airsim_ros_wrapper, pos1) < min_dist_from_collision){
                 time_to_warn = now;
-    //            	if(CLCT_DATA){ 
-    //                 g_distance_to_collision_first_realized = dist_to_collision(drone, pos1);
-				// }
             }
             // Otherwise, give the drone a grace period to continue along its
             // path. Don't update the time_to_warn if it's already been set to
@@ -231,18 +222,19 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
     return col;
 }
 
+void fly_back_callback(const std_msgs::Bool::ConstPtr& msg){
+    bool fly_back_local = msg->data;
+    global_fly_back = fly_back_local;
+}
 
 int main(int argc, char** argv)
 {
-    //airsim 
-    
 
     ros::init(argc, argv, "future_collision");
     ros::NodeHandle n;
     ros::NodeHandle nh("~");
     AirsimROSWrapper airsim_ros_wrapperb(n, nh);
     airsim_ros_wrapper_pointer = &airsim_ros_wrapperb;
-    //std::string mapFilename(""), mapFilenameParam("");
     
     //----------------------------------------------------------------- 
 	// *** F:DN variables	
@@ -258,33 +250,14 @@ int main(int argc, char** argv)
 
     ros::Subscriber octomap_sub = nh.subscribe("/octomap_binary", 1, pull_octomap);
     ros::Subscriber new_traj_sub = nh.subscribe<trajectory_msgs::MultiDOFJointTrajectory>("/multidoftraj", 1, new_traj);
-    //ros::Subscriber traj_sub = nh.subscribe<traj_msg_t>("/next_steps", 1, boost::bind(pull_traj, airsim_ros_wrapper, _1));
     ros::Subscriber traj_sub = nh.subscribe<traj_msg_t>("/next_steps", 1, pull_traj);
     ros::Publisher col_coming_pub = nh.advertise<airsim_ros_pkgs::BoolPlusHeader>("/col_coming", 1);
+    //ros::Subscriber fly_back_sub = nh.subscribe<std_msgs::Bool>("/fly_back", 1, fly_back_callback);
 
     State state, next_state;
     next_state = state = checking_for_collision;
     
     ros::Time main_loop_start_hook_t, main_loop_end_hook_t;
-
-    // Create an octomap server
-        //OctomapServer server;
-        //ctree = server.tree_ptr();
-
-    // if (nh.getParam("map_file", mapFilenameParam)) {
-    //     if (mapFilename != "") {
-    //         ROS_WARN("map_file is specified by the argument '%s' and rosparam '%s'. now loads '%s'", mapFilename.c_str(), mapFilenameParam.c_str(), mapFilename.c_str());
-    //     } else {
-    //         mapFilename = mapFilenameParam;
-    //     }
-    // }
-
-    // if (mapFilename != "") {
-    //     if (!server.openFile(mapFilename)){
-    //         ROS_ERROR("Could not open file %s", mapFilename.c_str());
-    //         exit(1);
-    //     }
-    // }
     
     
     ros::Rate loop_rate(60);
@@ -293,6 +266,10 @@ int main(int argc, char** argv)
 
         ros::spinOnce();
         
+        if(global_fly_back){
+            ros::shutdown();
+            return 0;
+        }
         // if (CLCT_DATA){ 
         //     g_pt_cloud_header = server.rcvd_point_cld_time_stamp; 
         //     octomap_ctr = server.octomap_ctr;

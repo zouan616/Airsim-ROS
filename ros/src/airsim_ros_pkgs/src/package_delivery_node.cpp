@@ -27,23 +27,19 @@ int g_main_loop_ctr = 0;
 int g_panic_ctr = 0;
 bool g_start_profiling = false; 
 
-double v_max__global = 3, a_max__global = 5, g_fly_trajectory_time_out = 1;
+double v_max__global = 2.5, a_max__global = 5, g_fly_trajectory_time_out = 1;
 float g_max_yaw_rate= 90;
 float g_max_yaw_rate_during_flight = 90;
 long long g_planning_time_including_ros_overhead_acc = 0;
 int  g_planning_ctr = 0; 
 bool clct_data = true;
-ros::Time g_traj_time_stamp;
 
-geometry_msgs::Vector3 panic_velocity;
-string ip_addr__global;
-string localization_method;
-string stats_file_addr;
-string ns;
-std::string g_supervisor_mailbox; //file to write to when completed
+
 bool CLCT_DATA;
 bool DEBUG;
 
+bool global_fly_back = false;
+std_msgs::Bool stop_fly_msg;
 
 double dist(Vector3r t, geometry_msgs::Point m)
 {
@@ -118,6 +114,11 @@ bool trajectory_done(const trajectory_t& trajectory) {
     return trajectory.size() == 0;
 }
 
+void fly_back_callback(const std_msgs::Bool::ConstPtr& msg){
+    bool fly_back_local = msg->data;
+    global_fly_back = fly_back_local;
+}
+
 
 int main(int argc, char **argv)
 {
@@ -160,6 +161,10 @@ int main(int argc, char **argv)
     
     	ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("scanning_visualization_marker", 100);
 
+        ros::Subscriber fly_back_sub = 
+            nh.subscribe<std_msgs::Bool>("/fly_back", 1, fly_back_callback);
+
+        ros::Publisher stop_fly_pub = nh.advertise<std_msgs::Bool>("/stop_fly", 1);
 	// visulization
 		uint32_t shape = visualization_msgs::Marker::CUBE;
         visualization_msgs::Marker points, line_strip, line_list, drone_point;
@@ -216,6 +221,7 @@ int main(int argc, char **argv)
 
         //airsim_ros_wrapper.takeoff_jin();
 
+    bool already_fly_back = false;
 
 	for (State state = setup; ros::ok(); ) 
     {
@@ -223,7 +229,19 @@ int main(int argc, char **argv)
         ros::spinOnce();
         
         State next_state = invalid;
-        if(state == setup){
+        if(global_fly_back && !already_fly_back){
+            geometry_msgs::Point back_to_origin;
+            back_to_origin.x = 0;
+            back_to_origin.y = 0;
+            back_to_origin.z = 5;
+            goal = back_to_origin;
+
+            start = get_start(airsim_ros_wrapper);
+            spin_around(airsim_ros_wrapper);
+            already_fly_back = true;
+            next_state = waiting;
+        }
+        else if(state == setup){
         	goal = get_goal();
             start = get_start(airsim_ros_wrapper);
 
@@ -270,6 +288,9 @@ int main(int argc, char **argv)
             }
             trajectory_pub.publish(array_of_point_msg);
 
+            stop_fly_msg.data = false;
+            stop_fly_pub.publish(stop_fly_msg);
+
             if (!normal_traj.empty())
                 next_state = flying;
             else {
@@ -308,8 +329,10 @@ int main(int argc, char **argv)
                 next_state = trajectory_completed; 
                 twist = follow_trajectory_status_srv_inst.response.twist;
                 acceleration = follow_trajectory_status_srv_inst.response.acceleration;
-                //col_coming = false; 
                 spin_around(airsim_ros_wrapper);
+
+                stop_fly_msg.data = true;
+                stop_fly_pub.publish(stop_fly_msg);
             }
             else{
                 ROS_INFO("still flying");

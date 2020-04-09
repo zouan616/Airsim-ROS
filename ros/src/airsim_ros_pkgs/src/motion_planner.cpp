@@ -51,7 +51,7 @@ namespace og = ompl::geometric;
 double x__low_bound__global = -200, x__high_bound__global = 200;
 double y__low_bound__global = -200 , y__high_bound__global = 200;
 double z__low_bound__global = 0, z__high_bound__global = 30;
-double sampling_interval__global = 0.5;
+double sampling_interval__global = 0.1;
 double v_max__global = 2.5, a_max__global = 5;
 float g_planning_budget = 5;
 std::string motion_planning_core_str;
@@ -140,7 +140,7 @@ piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point g
       // Angles are in radians and lengths are in meters.
       
       double height = 0.6; 
-      double radius = 1; 
+      double radius = 1.1; 
 
       const double angle_step = pi/4;
       const double radius_step = radius/3;
