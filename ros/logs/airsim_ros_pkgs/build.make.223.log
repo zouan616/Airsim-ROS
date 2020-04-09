@@ -1,0 +1,150 @@
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target mav_msgs_generate_messages_lisp
+[  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target std_srvs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target mav_msgs_generate_messages_cpp
+[ 17%] Built target MavLinkCom
+[ 17%] Built target std_srvs_generate_messages_cpp
+[ 17%] Built target trajectory_msgs_generate_messages_lisp
+[ 17%] Built target geographic_msgs_generate_messages_nodejs
+[ 17%] Built target trajectory_msgs_generate_messages_nodejs
+[ 17%] Built target actionlib_msgs_generate_messages_cpp
+[ 17%] Built target nav_msgs_generate_messages_lisp
+[ 17%] Built target roscpp_generate_messages_eus
+[ 17%] Built target std_srvs_generate_messages_nodejs
+[ 17%] Built target std_msgs_generate_messages_nodejs
+[ 17%] Built target actionlib_generate_messages_lisp
+[ 17%] Built target rosgraph_msgs_generate_messages_nodejs
+[ 17%] Built target nav_msgs_generate_messages_py
+[ 17%] Built target std_msgs_generate_messages_eus
+[ 17%] Built target visualization_msgs_generate_messages_lisp
+[ 17%] Built target rosgraph_msgs_generate_messages_lisp
+[ 17%] Built target mav_planning_msgs_generate_messages_py
+[ 17%] Built target mavros_msgs_generate_messages_lisp
+[ 17%] Built target rosgraph_msgs_generate_messages_eus
+[ 17%] Built target roscpp_generate_messages_nodejs
+[ 17%] Built target sensor_msgs_generate_messages_eus
+[ 24%] Built target rpc
+[ 24%] Built target std_srvs_generate_messages_lisp
+[ 24%] Built target std_srvs_generate_messages_eus
+[ 24%] Built target std_msgs_generate_messages_py
+[ 24%] Built target roscpp_generate_messages_py
+[ 24%] Built target geometry_msgs_generate_messages_nodejs
+[ 24%] Built target geometry_msgs_generate_messages_eus
+[ 24%] Built target tf2_msgs_generate_messages_eus
+[ 24%] Built target nav_msgs_generate_messages_eus
+[ 24%] Built target visualization_msgs_generate_messages_cpp
+[ 24%] Built target visualization_msgs_generate_messages_eus
+[ 24%] Built target std_msgs_generate_messages_cpp
+[ 24%] Built target sensor_msgs_generate_messages_py
+[ 24%] Built target mav_planning_msgs_generate_messages_cpp
+[ 24%] Built target visualization_msgs_generate_messages_nodejs
+[ 24%] Built target tf2_msgs_generate_messages_py
+[ 24%] Built target visualization_msgs_generate_messages_py
+[ 24%] Built target actionlib_msgs_generate_messages_eus
+[ 24%] Built target geometry_msgs_generate_messages_lisp
+[ 24%] Built target nav_msgs_generate_messages_cpp
+[ 24%] Built target sensor_msgs_generate_messages_lisp
+[ 24%] Built target geometry_msgs_generate_messages_py
+[ 24%] Built target geometry_msgs_generate_messages_cpp
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_multiDOF
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmd
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_get_trajectory
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmdGroup
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Reset
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleQuatCmd
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_BoolPlusHeader
+[ 24%] Built target trajectory_msgs_generate_messages_cpp
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_multiDOF_array
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetLocalPosition
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Land
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GPSYaw
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_TakeoffGroup
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleEulerCmd
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Takeoff
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetGPSPosition
+[ 24%] Built target geographic_msgs_generate_messages_py
+[ 24%] Built target actionlib_generate_messages_cpp
+[ 24%] Built target sensor_msgs_generate_messages_nodejs
+[ 24%] Built target rosgraph_msgs_generate_messages_cpp
+[ 24%] Built target roscpp_generate_messages_cpp
+[ 24%] Built target actionlib_msgs_generate_messages_py
+[ 24%] Built target std_msgs_generate_messages_lisp
+[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_LandGroup
+[ 24%] Built target uuid_msgs_generate_messages_py
+[ 24%] Built target tf2_msgs_generate_messages_cpp
+[ 24%] Built target tf2_msgs_generate_messages_nodejs
+[ 24%] Built target sensor_msgs_generate_messages_cpp
+[ 24%] Built target mav_planning_msgs_generate_messages_lisp
+[ 24%] Built target tf2_msgs_generate_messages_lisp
+[ 24%] Built target nav_msgs_generate_messages_nodejs
+[ 24%] Built target mavros_msgs_generate_messages_cpp
+[ 24%] Built target mavros_msgs_generate_messages_py
+[ 24%] Built target mavros_msgs_generate_messages_nodejs
+[ 34%] Built target airsim_ros_pkgs_generate_messages_nodejs
+[ 34%] Built target geographic_msgs_generate_messages_eus
+[ 34%] Built target uuid_msgs_generate_messages_eus
+[ 34%] Built target geographic_msgs_generate_messages_cpp
+[ 34%] Built target roscpp_generate_messages_lisp
+[ 34%] Built target uuid_msgs_generate_messages_cpp
+[ 34%] Built target uuid_msgs_generate_messages_lisp
+[ 34%] Built target geographic_msgs_generate_messages_lisp
+[ 34%] Built target mav_msgs_generate_messages_eus
+[ 34%] Built target uuid_msgs_generate_messages_nodejs
+[ 34%] Built target mav_msgs_generate_messages_nodejs
+[ 34%] Built target mav_msgs_generate_messages_py
+[ 34%] Built target mav_planning_msgs_generate_messages_eus
+[ 34%] Built target trajectory_msgs_generate_messages_eus
+[ 34%] Built target mavros_msgs_generate_messages_eus
+[ 34%] Built target trajectory_msgs_generate_messages_py
+[ 34%] Built target mav_planning_msgs_generate_messages_nodejs
+[ 34%] Built target actionlib_generate_messages_eus
+[ 34%] Built target actionlib_generate_messages_py
+[ 34%] Built target rosgraph_msgs_generate_messages_py
+[ 40%] Built target MavLinkTest
+[ 46%] Built target airsim_ros_pkgs_generate_messages_cpp
+[ 48%] Built target scanning_test
+[ 59%] Built target airsim_ros_pkgs_generate_messages_lisp
+[ 78%] Built target airsim_ros_pkgs_generate_messages_eus
+[ 79%] Built target airsim_ros_pkgs_generate_messages_py
+[ 79%] Built target airsim_ros_pkgs_generate_messages
+[ 80%] Built target motion_planner_test
+[ 81%] Built target pd_position_controller_simple
+[ 87%] Built target AirLib
+[ 88%] Built target airsim_settings_parser
+[ 89%] Built target airsim_ros
+[ 90%] Built target pd_position_controller_simple_node
+[ 91%] Built target airsim_node
+[ 92%] Built target common_mav
+[ 93%] Built target future_collision
+[ 94%] Built target motion_planner
+[35m[1mScanning dependencies of target package_delivery_node[0m
+[ 95%] Built target scanning_node
+[ 96%] Built target follow_trajectory
+[ 97%] Built target panic_pcl
+[ 98%] [32mBuilding CXX object CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.o[0m
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:40:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:1[m[K:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/opt/ros/melodic/include/ros/console.h:348:176:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar*[m[K’, but argument 8 has type ‘[01m[Kint[m[K’ [[01;35m[K-Wformat=[m[K]
+     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, __VA_ARGS__[01;35m[K)[m[K
+                                                                                                                                                                                [01;35m[K^[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:351:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+     [01;36m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K(NULL, __VA_ARGS__)
+     [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:387:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:572:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+ #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+ #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/package_delivery_node.cpp:324:13:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+             [01;36m[KR[m[KOS_INFO("arrived: %s", arrived);
+             [01;36m[K^[m[K
+[100%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/package_delivery_node[0m
+[100%] Built target package_delivery_node

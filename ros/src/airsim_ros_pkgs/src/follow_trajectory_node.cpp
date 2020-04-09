@@ -29,14 +29,15 @@ bool col_imminent = false; //col = collision
 trajectory_t normal_traj;
 trajectory_t rev_normal_traj;
 float g_localization_status = 1.0;
-//std::string g_supervisor_mailbox; //file to write to when completed
 float g_v_max = 2.5;
 double g_fly_trajectory_time_out;
 long long g_planning_time_including_ros_overhead_acc  = 0;
 
 float g_max_yaw_rate = 90;
 float g_max_yaw_rate_during_flight = 90;
-bool g_trajectory_done = false;
+
+bool g_trajectory_done;
+
 bool should_panic = false;
 geometry_msgs::Vector3 panic_velocity;
 bool g_got_new_trajectory = false;
@@ -48,7 +49,6 @@ void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
 }
 
 void panic_callback(const std_msgs::Bool::ConstPtr& msg) {
-	//ROS_INFO("panic callback");
     should_panic = msg->data;
     if(should_panic){
     	ROS_INFO("should panic in follow trajectory");
@@ -56,7 +56,6 @@ void panic_callback(const std_msgs::Bool::ConstPtr& msg) {
 }
 
 void panic_velocity_callback(const geometry_msgs::Vector3::ConstPtr& msg) {
-	//ROS_INFO("panic velocity callback");
     panic_velocity = *msg;
 }
 
@@ -68,8 +67,6 @@ void col_imminent_callback(const std_msgs::Bool::ConstPtr& msg) {
 
 void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
 {
-	//mission_finished = false;
-	//fly_back = false;
 	ROS_INFO("call back trajectory");
     // if (CLCT_DATA){ 
     //     g_recieved_traj_t = ros::Time::now();  
@@ -100,7 +97,6 @@ void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
 
 
 bool trajectory_done(const trajectory_t& trajectory) {
-	trajectory.size() == 0;
     g_trajectory_done = (trajectory.size() == 0);
     return g_trajectory_done;
 }
@@ -109,8 +105,9 @@ bool trajectory_done(const trajectory_t& trajectory) {
 bool follow_trajectory_status_cb(airsim_ros_pkgs::follow_trajectory_status_srv::Request &req, 
     airsim_ros_pkgs::follow_trajectory_status_srv::Response &res)
 {
-	//ROS_INFO("follow_trajectory_status_cb");
-    res.success.data = g_trajectory_done;// || col_coming;
+    //res.success.data = true;
+    ROS_INFO("trajectory done: %i", g_trajectory_done);
+    res.success.data = g_trajectory_done;
 
     const multiDOFpoint& current_point =
         normal_traj.empty() ? rev_normal_traj.front() : normal_traj.front();
@@ -184,6 +181,7 @@ int main(int argc, char **argv)
 	    bool created_future_col_traj = false;
 	    trajectory_t future_col_traj;
 	    ros::Rate loop_rate(50);
+        g_trajectory_done = false;
 
     //publisher and subscriber
 	    ros::ServiceServer trajectory_done_service = n.advertiseService("follow_trajectory_status", follow_trajectory_status_cb);
@@ -204,10 +202,8 @@ int main(int argc, char **argv)
     yaw_strategy_t yaw_strategy = face_forward;
     
     while (ros::ok()) {
+        
     	ros::spinOnce();
-    	// if(mission_finished){
-    	// 	continue;
-    	// }
 
         trajectory_t * forward_traj = nullptr;
         trajectory_t * rev_traj = nullptr;
@@ -291,14 +287,15 @@ int main(int argc, char **argv)
         // 	mission_finished = true;
         // 	fly_back = false;
         // }
-        else if (trajectory_done(*forward_traj)){
+        else if (app_started && trajectory_done(*forward_traj)){
+            g_trajectory_done = true;
+            ROS_INFO("trajectory done");
             loop_rate.sleep();
         }
-
 
         g_got_new_trajectory = false;
 
     }
-	cout << "hello" << endl;
+	// cout << "hello" << endl;
 	return 0;
 }

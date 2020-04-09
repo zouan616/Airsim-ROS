@@ -231,13 +231,6 @@ int main(int argc, char ** argv)
 
         airsim_ros_wrapper.takeoff_jin();
 
-    // int yaw;
-    // while(true){
-    //     std::cout << "Enter yaw"<<std::endl;
-
-    //     std::cin >> yaw;
-    //     std::cout << airsim_ros_wrapper.get_yaw() << std::endl;
-    // }
 
     ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("scanning_visualization_marker", 100);
     int scanning_loop_rate = 100;

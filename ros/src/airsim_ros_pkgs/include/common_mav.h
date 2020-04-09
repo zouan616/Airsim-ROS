@@ -16,7 +16,7 @@
 
 #include "airsim_ros_wrapper.h"
 
-double max_velocity = 5;
+double max_velocity = 2.5;
 double max_accelaration = 5;
 
 // Functions and classes to manipulate and follow trajectories

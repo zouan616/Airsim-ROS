@@ -292,11 +292,14 @@ int main(int argc, char **argv)
             // Choose next state (failure, completion, or more flying)
             srv_call_status = follow_trajectory_status_client.call(follow_trajectory_status_srv_inst);
 
+            ROS_INFO("status data: %i",follow_trajectory_status_srv_inst.response.success.data);
+            int result = follow_trajectory_status_srv_inst.response.success.data;
+
             if(!srv_call_status){
                 ROS_INFO_STREAM("could not make a service all to trajectory done");
                 next_state = flying;
-            }else if (follow_trajectory_status_srv_inst.response.success.data) {
-                //ROS_INFO_STREAM("trajectory completed");
+            }else if (result == 1) {
+                ROS_INFO("going to end this mission");
                 next_state = trajectory_completed; 
                 twist = follow_trajectory_status_srv_inst.response.twist;
                 acceleration = follow_trajectory_status_srv_inst.response.acceleration;
@@ -310,34 +313,36 @@ int main(int argc, char **argv)
                 spin_around(airsim_ros_wrapper);
             }
             else{
+                ROS_INFO("still flying");
                 next_state = flying;
             }
 
         }
         else if(state == trajectory_completed){
             fail_ctr = normal_traj.empty() ? fail_ctr+1 : 0; 
-            
+
             if(col_coming){
                 start = get_start(airsim_ros_wrapper);
                 next_state = waiting;
                 col_coming = false;
             }
-            else if (normal_traj.empty()){
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
-                //ROS_INFO("next mission");
-                //next_state = setup;
-            }
-            if (fail_ctr >fail_threshold) {
-                next_state = failed;
-                mission_status = "planning_failed_too_many_times";
-            }else if (dist(airsim_ros_wrapper.getPosition(), goal) < goal_s_error_margin) {
-                ROS_INFO("Delivered the package and returned!");
+            else if(dist(airsim_ros_wrapper.getPosition(), goal) < goal_s_error_margin){
+                ROS_INFO("Delivered the package");
                 mission_status = "completed"; 
                 g_mission_status = mission_status;            
                 
                 next_state = setup;
                 ros::shutdown();
-            } else { 
+            }
+            else if (normal_traj.empty()){
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            if (fail_ctr >fail_threshold) {
+                next_state = failed;
+                mission_status = "planning_failed_too_many_times";
+            }
+            else { 
                 start = get_start(airsim_ros_wrapper);
                 next_state = waiting;
             }

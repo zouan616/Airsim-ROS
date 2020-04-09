@@ -3,6 +3,8 @@
 
 	<node pkg="airsim_ros_pkgs" name="package_delivery_node" type="package_delivery_node" output="screen" />
 
+	<node pkg="airsim_ros_pkgs" name="motion_planner" type="motion_planner"/>
+
 	<node pkg="airsim_ros_pkgs" name="future_collision" type="future_collision"/>
 
 	<node pkg="airsim_ros_pkgs" name="panic_pcl" type="panic_pcl"/>
