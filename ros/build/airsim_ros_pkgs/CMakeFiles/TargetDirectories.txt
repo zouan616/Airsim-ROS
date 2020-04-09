@@ -1,9 +1,11 @@
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/rebuild_cache.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/edit_cache.dir
-/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/test.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/future_collision.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/panic_pcl.dir
+/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/follow_trajectory_static.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/follow_trajectory.dir
+/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/test.dir
+/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/package_delivery_static.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/package_delivery_node.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir
 /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/topic_tools_generate_messages_py.dir

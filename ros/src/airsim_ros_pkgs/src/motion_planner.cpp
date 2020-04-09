@@ -139,7 +139,7 @@ piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point g
       // The drone is modeled as a cylinder.
       // Angles are in radians and lengths are in meters.
       
-      double height = 0.5; 
+      double height = 0.6; 
       double radius = 1; 
 
       const double angle_step = pi/4;
@@ -494,7 +494,7 @@ void create_response(airsim_ros_pkgs::get_trajectory::Response &res, smooth_traj
     // Sample trajectory
     mav_msgs::EigenTrajectoryPoint::Vector states;
   
-    double sample_interval = 0.1;
+    double sample_interval = 0.5;
     mav_trajectory_generation::sampleWholeTrajectory(smooth_path, sample_interval, &states);
 
     // Get starting position
@@ -632,8 +632,8 @@ piecewise_trajectory OMPL_plan(geometry_msgs::Point start, geometry_msgs::Point 
     si->setup();
 
     // Set planner
-    //ob::PlannerPtr planner(new og::RRTstar(si));
-    ob::PlannerPtr planner(new PlannerType(si));
+    ob::PlannerPtr planner(new og::RRTstar(si));
+    //ob::PlannerPtr planner(new PlannerType(si));
     ss.setPlanner(planner);
 
     ob::ScopedState<> start_state(space);

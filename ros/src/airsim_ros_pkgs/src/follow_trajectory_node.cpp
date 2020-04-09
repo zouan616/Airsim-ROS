@@ -106,7 +106,7 @@ bool follow_trajectory_status_cb(airsim_ros_pkgs::follow_trajectory_status_srv::
     airsim_ros_pkgs::follow_trajectory_status_srv::Response &res)
 {
     //res.success.data = true;
-    ROS_INFO("trajectory done: %i", g_trajectory_done);
+    //ROS_INFO("trajectory done: %i", g_trajectory_done);
     res.success.data = g_trajectory_done;
 
     const multiDOFpoint& current_point =

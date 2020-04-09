@@ -292,7 +292,6 @@ int main(int argc, char **argv)
             // Choose next state (failure, completion, or more flying)
             srv_call_status = follow_trajectory_status_client.call(follow_trajectory_status_srv_inst);
 
-            ROS_INFO("status data: %i",follow_trajectory_status_srv_inst.response.success.data);
             int result = follow_trajectory_status_srv_inst.response.success.data;
 
             if(!srv_call_status){

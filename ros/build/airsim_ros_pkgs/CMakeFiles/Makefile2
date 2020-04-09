@@ -80,7 +80,7 @@ all: CMakeFiles/future_collision.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/future_collision.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 78
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/future_collision.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/future_collision.dir/rule
@@ -122,7 +122,7 @@ all: CMakeFiles/panic_pcl.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/panic_pcl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 80
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/panic_pcl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/panic_pcl.dir/rule
@@ -143,6 +143,48 @@ clean: CMakeFiles/panic_pcl.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/follow_trajectory_static.dir
+
+# All Build rule for target.
+CMakeFiles/follow_trajectory_static.dir/all: CMakeFiles/airsim_settings_parser.dir/all
+CMakeFiles/follow_trajectory_static.dir/all: CMakeFiles/airsim_ros.dir/all
+CMakeFiles/follow_trajectory_static.dir/all: CMakeFiles/common_mav.dir/all
+CMakeFiles/follow_trajectory_static.dir/all: rpclib_wrapper/rpclib/CMakeFiles/rpc.dir/all
+CMakeFiles/follow_trajectory_static.dir/all: AirLib/CMakeFiles/AirLib.dir/all
+CMakeFiles/follow_trajectory_static.dir/all: MavLinkCom/CMakeFiles/MavLinkCom.dir/all
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/depend
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=76 "Built target follow_trajectory_static"
+.PHONY : CMakeFiles/follow_trajectory_static.dir/all
+
+# Include target in all.
+all: CMakeFiles/follow_trajectory_static.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/follow_trajectory_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/follow_trajectory_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
+.PHONY : CMakeFiles/follow_trajectory_static.dir/rule
+
+# Convenience name for target.
+follow_trajectory_static: CMakeFiles/follow_trajectory_static.dir/rule
+
+.PHONY : follow_trajectory_static
+
+# clean rule for target.
+CMakeFiles/follow_trajectory_static.dir/clean:
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/clean
+.PHONY : CMakeFiles/follow_trajectory_static.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/follow_trajectory_static.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/follow_trajectory.dir
 
 # All Build rule for target.
@@ -154,7 +196,7 @@ CMakeFiles/follow_trajectory.dir/all: AirLib/CMakeFiles/AirLib.dir/all
 CMakeFiles/follow_trajectory.dir/all: MavLinkCom/CMakeFiles/MavLinkCom.dir/all
 	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/depend
 	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=76 "Built target follow_trajectory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=75 "Built target follow_trajectory"
 .PHONY : CMakeFiles/follow_trajectory.dir/all
 
 # Include target in all.
@@ -164,7 +206,7 @@ all: CMakeFiles/follow_trajectory.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/follow_trajectory.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 80
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/follow_trajectory.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/follow_trajectory.dir/rule
@@ -185,6 +227,48 @@ clean: CMakeFiles/follow_trajectory.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/package_delivery_static.dir
+
+# All Build rule for target.
+CMakeFiles/package_delivery_static.dir/all: CMakeFiles/airsim_settings_parser.dir/all
+CMakeFiles/package_delivery_static.dir/all: CMakeFiles/airsim_ros.dir/all
+CMakeFiles/package_delivery_static.dir/all: CMakeFiles/common_mav.dir/all
+CMakeFiles/package_delivery_static.dir/all: rpclib_wrapper/rpclib/CMakeFiles/rpc.dir/all
+CMakeFiles/package_delivery_static.dir/all: AirLib/CMakeFiles/AirLib.dir/all
+CMakeFiles/package_delivery_static.dir/all: MavLinkCom/CMakeFiles/MavLinkCom.dir/all
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/depend
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=87 "Built target package_delivery_static"
+.PHONY : CMakeFiles/package_delivery_static.dir/all
+
+# Include target in all.
+all: CMakeFiles/package_delivery_static.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/package_delivery_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/package_delivery_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
+.PHONY : CMakeFiles/package_delivery_static.dir/rule
+
+# Convenience name for target.
+package_delivery_static: CMakeFiles/package_delivery_static.dir/rule
+
+.PHONY : package_delivery_static
+
+# clean rule for target.
+CMakeFiles/package_delivery_static.dir/clean:
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/clean
+.PHONY : CMakeFiles/package_delivery_static.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/package_delivery_static.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/package_delivery_node.dir
 
 # All Build rule for target.
@@ -196,7 +280,7 @@ CMakeFiles/package_delivery_node.dir/all: AirLib/CMakeFiles/AirLib.dir/all
 CMakeFiles/package_delivery_node.dir/all: MavLinkCom/CMakeFiles/MavLinkCom.dir/all
 	$(MAKE) -f CMakeFiles/package_delivery_node.dir/build.make CMakeFiles/package_delivery_node.dir/depend
 	$(MAKE) -f CMakeFiles/package_delivery_node.dir/build.make CMakeFiles/package_delivery_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=86,87 "Built target package_delivery_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=86 "Built target package_delivery_node"
 .PHONY : CMakeFiles/package_delivery_node.dir/all
 
 # Include target in all.
@@ -206,7 +290,7 @@ all: CMakeFiles/package_delivery_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/package_delivery_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 81
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/package_delivery_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/package_delivery_node.dir/rule
@@ -695,7 +779,7 @@ all: CMakeFiles/motion_planner.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/motion_planner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 78
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/motion_planner.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/motion_planner.dir/rule
@@ -800,7 +884,7 @@ all: CMakeFiles/airsim_ros_pkgs_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_ros_pkgs_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 48
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 46
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_ros_pkgs_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages.dir/rule
@@ -1129,7 +1213,7 @@ all: CMakeFiles/airsim_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 78
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_node.dir/rule
@@ -2155,7 +2239,7 @@ CMakeFiles/airsim_settings_parser.dir/all: AirLib/CMakeFiles/AirLib.dir/all
 CMakeFiles/airsim_settings_parser.dir/all: MavLinkCom/CMakeFiles/MavLinkCom.dir/all
 	$(MAKE) -f CMakeFiles/airsim_settings_parser.dir/build.make CMakeFiles/airsim_settings_parser.dir/depend
 	$(MAKE) -f CMakeFiles/airsim_settings_parser.dir/build.make CMakeFiles/airsim_settings_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=74 "Built target airsim_settings_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=72,73 "Built target airsim_settings_parser"
 .PHONY : CMakeFiles/airsim_settings_parser.dir/all
 
 # Include target in all.
@@ -2165,7 +2249,7 @@ all: CMakeFiles/airsim_settings_parser.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_settings_parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 30
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_settings_parser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_settings_parser.dir/rule
@@ -2325,7 +2409,7 @@ CMakeFiles/airsim_ros_pkgs_gencpp.dir/all: CMakeFiles/airsim_ros_pkgs_generate_m
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_ros_pkgs_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_ros_pkgs_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_ros_pkgs_gencpp.dir/rule
@@ -3007,7 +3091,7 @@ all: CMakeFiles/pd_position_controller_simple_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pd_position_controller_simple_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 80
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pd_position_controller_simple_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/pd_position_controller_simple_node.dir/rule
@@ -3277,12 +3361,12 @@ CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/all: CMakeFiles/_airsim_ros
 CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=26,27,28,29,30,31,32,33,34,35 "Built target airsim_ros_pkgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=26,27,28,29,30,31,32,33,34 "Built target airsim_ros_pkgs_generate_messages_cpp"
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_cpp.dir/rule
@@ -3552,12 +3636,12 @@ CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/all: CMakeFiles/_airsim_ro
 CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/all: CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_LandGroup.dir/all
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53,54 "Built target airsim_ros_pkgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=44,45,46,47,48,49,50,51,52 "Built target airsim_ros_pkgs_generate_messages_lisp"
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_lisp.dir/rule
@@ -4007,7 +4091,7 @@ all: CMakeFiles/airsim_ros.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_ros.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 78
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 77
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_ros.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_ros.dir/rule
@@ -4373,7 +4457,7 @@ CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/all: CMakeFiles/_airsim_
 CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/all: CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_LandGroup.dir/all
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=55,56,57,58,59,60,61,62,63 "Built target airsim_ros_pkgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=53,54,55,56,57,58,59,60,61 "Built target airsim_ros_pkgs_generate_messages_nodejs"
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4536,7 +4620,7 @@ all: CMakeFiles/pd_position_controller_simple.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pd_position_controller_simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 49
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 47
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pd_position_controller_simple.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/pd_position_controller_simple.dir/rule
@@ -5574,7 +5658,7 @@ CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/all: CMakeFiles/_airsim_ros
 CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/all: CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_LandGroup.dir/all
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/depend
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=36,37,38,39,40,41,42,43,44 "Built target airsim_ros_pkgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43 "Built target airsim_ros_pkgs_generate_messages_eus"
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5611,7 +5695,7 @@ CMakeFiles/airsim_ros_pkgs_genlisp.dir/all: CMakeFiles/airsim_ros_pkgs_generate_
 
 # Build rule for subdir invocation for target.
 CMakeFiles/airsim_ros_pkgs_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/airsim_ros_pkgs_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/airsim_ros_pkgs_genlisp.dir/rule
@@ -5785,7 +5869,7 @@ CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/all: CMakeFiles/_airsim_ros_
 CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/all: CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_LandGroup.dir/all
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/depend
 	$(MAKE) -f CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/build.make CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=64,65,66,67,68,69,70,71,72,73 "Built target airsim_ros_pkgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=62,63,64,65,66,67,68,69,70,71 "Built target airsim_ros_pkgs_generate_messages_py"
 .PHONY : CMakeFiles/airsim_ros_pkgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5853,7 +5937,7 @@ CMakeFiles/common_mav.dir/all: AirLib/CMakeFiles/AirLib.dir/all
 CMakeFiles/common_mav.dir/all: MavLinkCom/CMakeFiles/MavLinkCom.dir/all
 	$(MAKE) -f CMakeFiles/common_mav.dir/build.make CMakeFiles/common_mav.dir/depend
 	$(MAKE) -f CMakeFiles/common_mav.dir/build.make CMakeFiles/common_mav.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=75 "Built target common_mav"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=74 "Built target common_mav"
 .PHONY : CMakeFiles/common_mav.dir/all
 
 # Include target in all.
@@ -5863,7 +5947,7 @@ all: CMakeFiles/common_mav.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/common_mav.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 78
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/common_mav.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/common_mav.dir/rule
@@ -5942,7 +6026,7 @@ all: CMakeFiles/scanning_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/scanning_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 80
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 79
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/scanning_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : CMakeFiles/scanning_node.dir/rule
@@ -6248,7 +6332,7 @@ gtest/googlemock/preinstall: gtest/googlemock/gtest/preinstall
 gtest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=80,81 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=79,80 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -6280,12 +6364,12 @@ clean: gtest/googlemock/CMakeFiles/gmock_main.dir/clean
 gtest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=78,79 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=78 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/rule
@@ -6336,7 +6420,7 @@ gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMa
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule
@@ -6363,12 +6447,12 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=82 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles --progress-num=81,82 "Built target gtest"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles 0
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule

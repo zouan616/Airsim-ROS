@@ -1,0 +1,17 @@
+<launch>
+
+	<include file="$(find airsim_tutorial_pkgs)/launch/front_stereo_and_center_mono/front_stereo_and_center_mono.launch"/>
+	
+	
+
+	<node pkg="airsim_ros_pkgs" name="package_delivery_static" type="package_delivery_static" output="screen" />
+
+	<node pkg="airsim_ros_pkgs" name="motion_planner" type="motion_planner"/>
+
+	<node pkg="octomap_server" type="octomap_server_node" name="octomap_server" args="/home/airsim/ass.bt">
+		<param name="resolution" value="0.6" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="world_enu" />
+	</node>
+</launch>

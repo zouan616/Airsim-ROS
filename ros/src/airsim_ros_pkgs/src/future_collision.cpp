@@ -58,7 +58,7 @@ bool g_got_new_traj = false;
 // Global variables
 octomap::OcTree * octree = nullptr;
 traj_msg_t traj;
-double drone_height__global = 0.5;
+double drone_height__global = 0.6;
 double drone_radius__global = 1;
 
 AirsimROSWrapper* airsim_ros_wrapper_pointer;

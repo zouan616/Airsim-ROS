@@ -194,6 +194,19 @@ panic_pcl/fast:
 .PHONY : panic_pcl/fast
 
 #=============================================================================
+# Target rules for targets named follow_trajectory_static
+
+# Build rule for target.
+follow_trajectory_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 follow_trajectory_static
+.PHONY : follow_trajectory_static
+
+# fast build rule for target.
+follow_trajectory_static/fast:
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/build
+.PHONY : follow_trajectory_static/fast
+
+#=============================================================================
 # Target rules for targets named follow_trajectory
 
 # Build rule for target.
@@ -205,6 +218,19 @@ follow_trajectory: cmake_check_build_system
 follow_trajectory/fast:
 	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/build
 .PHONY : follow_trajectory/fast
+
+#=============================================================================
+# Target rules for targets named package_delivery_static
+
+# Build rule for target.
+package_delivery_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 package_delivery_static
+.PHONY : package_delivery_static
+
+# fast build rule for target.
+package_delivery_static/fast:
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/build
+.PHONY : package_delivery_static/fast
 
 #=============================================================================
 # Target rules for targets named package_delivery_node
@@ -2669,6 +2695,33 @@ src/follow_trajectory_node.cpp.s:
 	$(MAKE) -f CMakeFiles/follow_trajectory.dir/build.make CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.s
 .PHONY : src/follow_trajectory_node.cpp.s
 
+src/follow_trajectory_static.o: src/follow_trajectory_static.cpp.o
+
+.PHONY : src/follow_trajectory_static.o
+
+# target to build an object file
+src/follow_trajectory_static.cpp.o:
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o
+.PHONY : src/follow_trajectory_static.cpp.o
+
+src/follow_trajectory_static.i: src/follow_trajectory_static.cpp.i
+
+.PHONY : src/follow_trajectory_static.i
+
+# target to preprocess a source file
+src/follow_trajectory_static.cpp.i:
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.i
+.PHONY : src/follow_trajectory_static.cpp.i
+
+src/follow_trajectory_static.s: src/follow_trajectory_static.cpp.s
+
+.PHONY : src/follow_trajectory_static.s
+
+# target to generate assembly for a file
+src/follow_trajectory_static.cpp.s:
+	$(MAKE) -f CMakeFiles/follow_trajectory_static.dir/build.make CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.s
+.PHONY : src/follow_trajectory_static.cpp.s
+
 src/future_collision.o: src/future_collision.cpp.o
 
 .PHONY : src/future_collision.o
@@ -2776,6 +2829,33 @@ src/package_delivery_node.s: src/package_delivery_node.cpp.s
 src/package_delivery_node.cpp.s:
 	$(MAKE) -f CMakeFiles/package_delivery_node.dir/build.make CMakeFiles/package_delivery_node.dir/src/package_delivery_node.cpp.s
 .PHONY : src/package_delivery_node.cpp.s
+
+src/package_delivery_withMap.o: src/package_delivery_withMap.cpp.o
+
+.PHONY : src/package_delivery_withMap.o
+
+# target to build an object file
+src/package_delivery_withMap.cpp.o:
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/src/package_delivery_withMap.cpp.o
+.PHONY : src/package_delivery_withMap.cpp.o
+
+src/package_delivery_withMap.i: src/package_delivery_withMap.cpp.i
+
+.PHONY : src/package_delivery_withMap.i
+
+# target to preprocess a source file
+src/package_delivery_withMap.cpp.i:
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/src/package_delivery_withMap.cpp.i
+.PHONY : src/package_delivery_withMap.cpp.i
+
+src/package_delivery_withMap.s: src/package_delivery_withMap.cpp.s
+
+.PHONY : src/package_delivery_withMap.s
+
+# target to generate assembly for a file
+src/package_delivery_withMap.cpp.s:
+	$(MAKE) -f CMakeFiles/package_delivery_static.dir/build.make CMakeFiles/package_delivery_static.dir/src/package_delivery_withMap.cpp.s
+.PHONY : src/package_delivery_withMap.cpp.s
 
 src/pd_position_controller_simple.o: src/pd_position_controller_simple.cpp.o
 
@@ -2893,10 +2973,12 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... future_collision"
 	@echo "... panic_pcl"
+	@echo "... follow_trajectory_static"
 	@echo "... follow_trajectory"
+	@echo "... test"
+	@echo "... package_delivery_static"
 	@echo "... package_delivery_node"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... topic_tools_generate_messages_py"
@@ -3096,6 +3178,9 @@ help:
 	@echo "... src/follow_trajectory_node.o"
 	@echo "... src/follow_trajectory_node.i"
 	@echo "... src/follow_trajectory_node.s"
+	@echo "... src/follow_trajectory_static.o"
+	@echo "... src/follow_trajectory_static.i"
+	@echo "... src/follow_trajectory_static.s"
 	@echo "... src/future_collision.o"
 	@echo "... src/future_collision.i"
 	@echo "... src/future_collision.s"
@@ -3108,6 +3193,9 @@ help:
 	@echo "... src/package_delivery_node.o"
 	@echo "... src/package_delivery_node.i"
 	@echo "... src/package_delivery_node.s"
+	@echo "... src/package_delivery_withMap.o"
+	@echo "... src/package_delivery_withMap.i"
+	@echo "... src/package_delivery_withMap.s"
 	@echo "... src/pd_position_controller_simple.o"
 	@echo "... src/pd_position_controller_simple.i"
 	@echo "... src/pd_position_controller_simple.s"

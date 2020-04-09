@@ -595,7 +595,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/future_collision.dir/DependInfo.cmake"
   "CMakeFiles/panic_pcl.dir/DependInfo.cmake"
+  "CMakeFiles/follow_trajectory_static.dir/DependInfo.cmake"
   "CMakeFiles/follow_trajectory.dir/DependInfo.cmake"
+  "CMakeFiles/package_delivery_static.dir/DependInfo.cmake"
   "CMakeFiles/package_delivery_node.dir/DependInfo.cmake"
   "CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "CMakeFiles/topic_tools_generate_messages_py.dir/DependInfo.cmake"

@@ -5,8 +5,10 @@ airsim_ros_pkgs
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/libpd_position_controller_simple.so /home/airsim/project/AirSim/ros/devel/lib/libpd_position_controller_simple.so
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/libairsim_ros.so /home/airsim/project/AirSim/ros/devel/lib/libairsim_ros.so
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/motion_planner /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/motion_planner
+/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/package_delivery_static /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/package_delivery_static
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/future_collision /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/future_collision
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/scanning_node /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/scanning_node
+/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/follow_trajectory_static /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/follow_trajectory_static
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/package_delivery_node /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/package_delivery_node
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/pd_position_controller_simple_node /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/pd_position_controller_simple_node
 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/panic_pcl /home/airsim/project/AirSim/ros/devel/lib/airsim_ros_pkgs/panic_pcl
