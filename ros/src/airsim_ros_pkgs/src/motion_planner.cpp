@@ -50,8 +50,8 @@ namespace og = ompl::geometric;
 
 double x__low_bound__global = -200, x__high_bound__global = 200;
 double y__low_bound__global = -200 , y__high_bound__global = 200;
-double z__low_bound__global = 0, z__high_bound__global = 30;
-double sampling_interval__global = 0.1;
+double z__low_bound__global = 0, z__high_bound__global = 50;
+double sampling_interval__global = 0.5;
 double v_max__global = 2.5, a_max__global = 5;
 float g_planning_budget = 5;
 std::string motion_planning_core_str;
@@ -61,9 +61,8 @@ trajectory_msgs::MultiDOFJointTrajectory traj_topic;
 bool g_requested_trajectory = false;
 bool path_found = false;
 
-
-
-
+double drone_height__global = 0.6;
+double drone_radius__global = 2;
 
 
 std::function<piecewise_trajectory (geometry_msgs::Point, geometry_msgs::Point, int, int , int, octomap::OcTree *)> motion_planning_core;
@@ -98,6 +97,7 @@ piecewise_trajectory OMPL_RRTConnect(geometry_msgs::Point start, geometry_msgs::
 // ***F:DN Use the PRM sampling method from OMPL to find a piecewise path
 piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point goal, int width, int length, int n_pts_per_dir, octomap::OcTree * octree);
 
+piecewise_trajectory OMPL_RRTstar(geometry_msgs::Point start, geometry_msgs::Point goal, int width, int length, int n_pts_per_dir, octomap::OcTree * octree);
 
 #ifdef INFLATE
   bool collision(octomap::OcTree * octree, const graph::node& n1, const graph::node& n2, graph::node * end_ptr)
@@ -139,8 +139,8 @@ piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point g
       // The drone is modeled as a cylinder.
       // Angles are in radians and lengths are in meters.
       
-      double height = 0.6; 
-      double radius = 1.1; 
+      double height = drone_height__global; 
+      double radius = drone_radius__global; 
 
       const double angle_step = pi/4;
       const double radius_step = radius/3;
@@ -494,8 +494,7 @@ void create_response(airsim_ros_pkgs::get_trajectory::Response &res, smooth_traj
     // Sample trajectory
     mav_msgs::EigenTrajectoryPoint::Vector states;
   
-    double sample_interval = 0.5;
-    mav_trajectory_generation::sampleWholeTrajectory(smooth_path, sample_interval, &states);
+    mav_trajectory_generation::sampleWholeTrajectory(smooth_path, sampling_interval__global, &states);
 
     // Get starting position
     graph::node start = {states[0].position_W.x(), states[0].position_W.y(), states[0].position_W.z()};
@@ -547,10 +546,25 @@ void create_response(airsim_ros_pkgs::get_trajectory::Response &res, smooth_traj
 }
 
 
-
 // set for package delivery
 void setup(){
-  motion_planning_core = OMPL_RRTConnect;
+  // set up our planner
+  ros::param::get("/motion_planner/motion_planning_core", motion_planning_core_str);
+  if (motion_planning_core_str == "OMPL-RRT")
+      motion_planning_core = OMPL_RRT;
+  else if (motion_planning_core_str == "OMPL-RRTConnect")
+      motion_planning_core = OMPL_RRTConnect;
+  else if (motion_planning_core_str == "OMPL-PRM")
+      motion_planning_core = OMPL_PRM;
+  else if (motion_planning_core_str == "OMPL_RRTstar")
+      motion_planning_core = OMPL_RRTstar;
+
+  ros::param::get("/planning_budget", g_planning_budget);
+  ros::param::get("/motion_planner/sampling_interval", sampling_interval__global);
+  ros::param::get("/motion_planner/planner_drone_radius", drone_radius__global);
+  ros::param::get("/motion_planner/planner_drone_height", drone_height__global);
+  ros::param::get("/motion_planner/v_max", v_max__global);
+  ros::param::get("/motion_planner/a_max", a_max__global);
 }
 
 
@@ -559,6 +573,7 @@ int main(int argc, char ** argv)
     ros::init(argc, argv, "motion_planner");
     ros::NodeHandle nh;
 
+    motion_planning_core = OMPL_RRTConnect;
     setup();
 
     ros::ServiceServer service = nh.advertiseService("get_trajectory_srv", get_trajectory_fun);
@@ -585,14 +600,6 @@ int main(int argc, char ** argv)
             } 
             g_requested_trajectory = false;
             next_state = idle;
-        
-            // if (DEBUG__global) { //if debug, publish markers to be seen by rviz
-            //     smooth_traj_vis_pub.publish(smooth_traj_markers);
-            //     piecewise_traj_vis_pub.publish(piecewise_traj_markers);
-            //     graph_conn_pub.publish(graph_conn_list);
-            //     octo_pub.publish(omp);
-            //     pcl_pub.publish(pcl_ptr);
-            // }
       }
         state = next_state;
         pub_rate.sleep();
@@ -632,8 +639,8 @@ piecewise_trajectory OMPL_plan(geometry_msgs::Point start, geometry_msgs::Point 
     si->setup();
 
     // Set planner
-    ob::PlannerPtr planner(new og::RRTstar(si));
-    //ob::PlannerPtr planner(new PlannerType(si));
+    //ob::PlannerPtr planner(new og::RRTstar(si));
+    ob::PlannerPtr planner(new PlannerType(si));
     ss.setPlanner(planner);
 
     ob::ScopedState<> start_state(space);
@@ -693,4 +700,9 @@ piecewise_trajectory OMPL_RRTConnect(geometry_msgs::Point start, geometry_msgs::
 piecewise_trajectory OMPL_PRM(geometry_msgs::Point start, geometry_msgs::Point goal, int width, int length, int n_pts_per_dir, octomap::OcTree * octree)
 {
     return OMPL_plan<ompl::geometric::PRM>(start, goal, width, length, n_pts_per_dir, octree);
+}
+
+piecewise_trajectory OMPL_RRTstar(geometry_msgs::Point start, geometry_msgs::Point goal, int width, int length, int n_pts_per_dir, octomap::OcTree * octree)
+{
+    return OMPL_plan<ompl::geometric::RRTstar>(start, goal, width, length, n_pts_per_dir, octree);
 }

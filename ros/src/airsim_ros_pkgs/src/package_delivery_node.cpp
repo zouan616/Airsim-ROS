@@ -165,12 +165,15 @@ int main(int argc, char **argv)
             nh.subscribe<std_msgs::Bool>("/fly_back", 1, fly_back_callback);
 
         ros::Publisher stop_fly_pub = nh.advertise<std_msgs::Bool>("/stop_fly", 1);
+
 	// visulization
 		uint32_t shape = visualization_msgs::Marker::CUBE;
         visualization_msgs::Marker points, line_strip, line_list, drone_point;
         points.header.frame_id = line_strip.header.frame_id = line_list.header.frame_id = drone_point.header.frame_id = "world_enu";
         points.header.stamp = line_strip.header.stamp = line_list.header.stamp = drone_point.header.stamp = ros::Time::now();
-        points.ns = line_strip.ns = line_list.ns = "points_and_lines";
+        points.ns = "points";
+        line_strip.ns = "line_strip";
+        line_list.ns = "line_list";
         drone_point.ns = "drone_position";
         points.action = line_strip.action = line_list.action = drone_point.action = visualization_msgs::Marker::ADD;
         points.pose.orientation.w = line_strip.pose.orientation.w = line_list.pose.orientation.w = drone_point.pose.orientation.w= 1.0;
@@ -219,7 +222,6 @@ int main(int argc, char **argv)
             airsim_ros_wrapper.lidar_async_spinner_.start();
         }
 
-        //airsim_ros_wrapper.takeoff_jin();
 
     bool already_fly_back = false;
 

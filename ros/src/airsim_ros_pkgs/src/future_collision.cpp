@@ -30,6 +30,12 @@
 
 using namespace octomap_server;
 
+#include <visualization_msgs/Marker.h>
+// collision visualization
+visualization_msgs::Marker collision_point;
+
+
+
 // Typedefs
 typedef airsim_ros_pkgs::multiDOF_array traj_msg_t;
 typedef std::chrono::system_clock sys_clock;
@@ -54,12 +60,14 @@ int g_octomap_rcv_ctr = 0;
 ros::Duration g_pt_cloud_to_future_collision_t; 
 
 bool g_got_new_traj = false;
+bool this_traj_already_has_collision = false;
+bool g_got_nextSteps = false;
 
 // Global variables
 octomap::OcTree * octree = nullptr;
 traj_msg_t traj;
 double drone_height__global = 0.6;
-double drone_radius__global = 1.1;
+double drone_radius__global = 1.5;
 
 AirsimROSWrapper* airsim_ros_wrapper_pointer;
 bool global_fly_back = false;
@@ -71,6 +79,14 @@ long long g_pt_cld_to_octomap_commun_olverhead_acc = 0;
 
 long long octomap_integration_acc = 0;
 int octomap_ctr = 0;
+
+
+bool occupied(octomap::OcTree * octree, double x, double y, double z){
+  const double OCC_THRESH = 0.5;
+  octomap::OcTreeNode * otn = octree->search(x, y, z);
+
+  return otn != nullptr && otn->getOccupancy() >= OCC_THRESH;
+}
 
 
 template <class T>
@@ -124,19 +140,6 @@ double dist_to_collision(AirsimROSWrapper& airsim_ros_wrapper, const T& col_pos)
 }
 
 
-template <class T>
-bool in_safe_zone(const T& start, const T& pos) {
-    const double radius = drone_radius__global;
-    const double height = drone_height__global;
-
-	double dx = start.x - pos.x;
-	double dy = start.y - pos.y;
-	double dz = start.z - pos.z;
-
-    return (std::sqrt(dx*dx + dy*dy) < radius && std::abs(dz) < height);
-}
-
-
 void pull_octomap(const octomap_msgs::Octomap& msg)
 {
     if (octree != nullptr) {
@@ -153,9 +156,9 @@ void pull_octomap(const octomap_msgs::Octomap& msg)
 }
 
 
-void new_traj(const trajectory_msgs::MultiDOFJointTrajectory::ConstPtr& msg) {
-    g_got_new_traj = true;
-}
+// void new_traj(const trajectory_msgs::MultiDOFJointTrajectory::ConstPtr& msg) {
+//     g_got_new_traj = true;
+// }
 
 
 void pull_traj(const traj_msg_t::ConstPtr& msg)
@@ -172,13 +175,13 @@ void pull_traj(const traj_msg_t::ConstPtr& msg)
         point.y += y_offset;
         point.z += z_offset;
     }
+    g_got_nextSteps = true;
+
 }
 
 
 bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_point& time_to_warn)
 {
-
-    start_hook_chk_col_t = ros::Time::now();
 
     const double min_dist_from_collision = 150.0;
     const std::chrono::milliseconds grace_period(1000);
@@ -194,6 +197,15 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
         auto& pos2 = traj.points[i+1]; // .transforms[0].translation;
 
         if (collision(octree, pos1, pos2)) {
+            ROS_INFO("collision pos: %f, %f, %f", traj.points[i].x, traj.points[i].y, traj.points[i].z);
+            //ROS_INFO("pos2: %f, %f, %f", traj.points[i+1].x, traj.points[i+1].y, traj.points[i+1].z);
+            geometry_msgs::Point p;
+            p.x = pos1.x;
+            p.y = pos1.y;
+            p.z = pos1.z;
+
+            collision_point.points.push_back(p);
+
             col = true;
 
             // Check whether the drone is very close to the point of collision
@@ -215,10 +227,6 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
     if (!col)
         time_to_warn = never;
     
-    end_hook_chk_col_t = ros::Time::now(); 
-    g_checking_collision_t = end_hook_chk_col_t;
-    g_checking_collision_kernel_acc += ((end_hook_chk_col_t - start_hook_chk_col_t).toSec()*1e9);
-    g_check_collision_ctr++;
     return col;
 }
 
@@ -227,12 +235,36 @@ void fly_back_callback(const std_msgs::Bool::ConstPtr& msg){
     global_fly_back = fly_back_local;
 }
 
+void mySigintHandler(int sig)
+{
+  // Do some custom action.
+  // For example, publish a stop message to some other nodes.
+  
+  // All the default sigint handler does is call shutdown()
+  ros::shutdown();
+}
+
+
+void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg){
+    g_got_new_traj = true;
+    this_traj_already_has_collision = false;
+}
+
+
+void setup(){
+    ros::param::get("/future_collision/drone_radius", drone_radius__global);
+    ros::param::get("/future_collision/drone_height", drone_height__global);
+}
+
 int main(int argc, char** argv)
 {
-
-    ros::init(argc, argv, "future_collision");
+    ros::init(argc, argv, "future_collision", ros::init_options::NoSigintHandler);
     ros::NodeHandle n;
     ros::NodeHandle nh("~");
+    // Override the default ros sigint handler.
+    signal(SIGINT, mySigintHandler);
+    setup();
+
     AirsimROSWrapper airsim_ros_wrapperb(n, nh);
     airsim_ros_wrapper_pointer = &airsim_ros_wrapperb;
     
@@ -249,52 +281,54 @@ int main(int argc, char** argv)
     std_msgs::Bool col_imminent_msg;
 
     ros::Subscriber octomap_sub = nh.subscribe("/octomap_binary", 1, pull_octomap);
-    ros::Subscriber new_traj_sub = nh.subscribe<trajectory_msgs::MultiDOFJointTrajectory>("/multidoftraj", 1, new_traj);
+    //ros::Subscriber new_traj_sub = nh.subscribe<trajectory_msgs::MultiDOFJointTrajectory>("/multidoftraj", 1, new_traj);
     ros::Subscriber traj_sub = nh.subscribe<traj_msg_t>("/next_steps", 1, pull_traj);
     ros::Publisher col_coming_pub = nh.advertise<airsim_ros_pkgs::BoolPlusHeader>("/col_coming", 1);
     //ros::Subscriber fly_back_sub = nh.subscribe<std_msgs::Bool>("/fly_back", 1, fly_back_callback);
+    ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("collision_visualization_marker", 100);
+    ros::Subscriber trajectory_follower_sub = n.subscribe<airsim_ros_pkgs::multiDOF_array>("normal_traj", 1, callback_trajectory);
 
     State state, next_state;
     next_state = state = checking_for_collision;
     
-    ros::Time main_loop_start_hook_t, main_loop_end_hook_t;
-    
-    
+    // collision point visulization
+        collision_point.header.frame_id = "world_enu";
+        collision_point.header.stamp = ros::Time::now();
+        collision_point.ns = "collision_position";
+        collision_point.action = visualization_msgs::Marker::ADD;
+        collision_point.pose.orientation.w= 1.0;
+
+        collision_point.id = 3;
+
+        collision_point.type = visualization_msgs::Marker::POINTS;
+
+        collision_point.scale.x = 5;
+        collision_point.scale.y = 5;
+
+        collision_point.color.r = 255;
+        collision_point.color.b = 255;
+        collision_point.color.g = 255;
+        collision_point.color.a = 0.5;
+
     ros::Rate loop_rate(60);
     while (ros::ok()) {
-        main_loop_start_hook_t = ros::Time::now();
+        marker_pub.publish(collision_point);
 
         ros::spinOnce();
-        
-        if(global_fly_back){
-            ros::shutdown();
-            return 0;
-        }
-        // if (CLCT_DATA){ 
-        //     g_pt_cloud_header = server.rcvd_point_cld_time_stamp; 
-        //     octomap_ctr = server.octomap_ctr;
-        //     octomap_integration_acc = server.octomap_integration_acc; 
-        //     g_pt_cld_to_octomap_commun_olverhead_acc = server.pt_cld_octomap_commun_overhead_acc;
-        // }
 
         // State machine 
         if (state == checking_for_collision) {
             collision_coming = check_for_collisions(airsim_ros_wrapperb, time_to_warn);
-            if (collision_coming) {
+            if (collision_coming && !this_traj_already_has_collision) {
                 next_state = waiting_for_response;
 
                 col_coming_msg.header.stamp = g_pt_cloud_header;
                 col_coming_msg.data = collision_coming;
                 col_coming_pub.publish(col_coming_msg);
                 g_got_new_traj = false; 
-
-                // Profiling 
-                // if(CLCT_DATA){ 
-                //     g_pt_cloud_to_future_collision_t = start_hook_chk_col_t - g_pt_cloud_header;
-                // } 
-                // if(DEBUG) {
-                //     ROS_INFO_STREAM("pt cloud to start of checking collision in future collision"<< g_pt_cloud_to_future_collision_t);
-                // }
+                this_traj_already_has_collision = true;
+                g_got_nextSteps = false;
+                
             }
         }else if (state == waiting_for_response) {
             if (g_got_new_traj){
@@ -303,9 +337,6 @@ int main(int argc, char** argv)
         }
         
         state = next_state;
-        
-        main_loop_end_hook_t = ros::Time::now();
-        g_future_collision_main_loop += (main_loop_end_hook_t - main_loop_start_hook_t).toSec()*1e9; 
         
         loop_rate.sleep();
     }
