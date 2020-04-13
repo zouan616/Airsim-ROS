@@ -41,6 +41,8 @@ bool DEBUG;
 bool global_fly_back = false;
 std_msgs::Bool stop_fly_msg;
 
+int traj_id = 0;
+
 double dist(Vector3r t, geometry_msgs::Point m)
 {
     // We must convert between the two coordinate systems
@@ -288,6 +290,9 @@ int main(int argc, char **argv)
                 array_of_point_msg.points.push_back(point_msg); 
 
             }
+            array_of_point_msg.traj_id = traj_id;
+            traj_id += 1;
+            array_of_point_msg.header.stamp = ros::Time::now();
             trajectory_pub.publish(array_of_point_msg);
 
             stop_fly_msg.data = false;

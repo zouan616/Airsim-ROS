@@ -9,10 +9,11 @@ import airsim_ros_pkgs.msg
 import std_msgs.msg
 
 class multiDOF_array(genpy.Message):
-  _md5sum = "46f0390774f0861beff7c17c9f478a6b"
+  _md5sum = "675df5877c8751b56870c5fe16bc088b"
   _type = "airsim_ros_pkgs/multiDOF_array"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """multiDOF[] points
+int64 traj_id
 Header header
 ================================================================================
 MSG: airsim_ros_pkgs/multiDOF
@@ -43,8 +44,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['points','header']
-  _slot_types = ['airsim_ros_pkgs/multiDOF[]','std_msgs/Header']
+  __slots__ = ['points','traj_id','header']
+  _slot_types = ['airsim_ros_pkgs/multiDOF[]','int64','std_msgs/Header']
 
   def __init__(self, *args, **kwds):
     """
@@ -54,7 +55,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       points,header
+       points,traj_id,header
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -65,10 +66,13 @@ string frame_id
       #message fields cannot be None, assign default values for those that are
       if self.points is None:
         self.points = []
+      if self.traj_id is None:
+        self.traj_id = 0
       if self.header is None:
         self.header = std_msgs.msg.Header()
     else:
       self.points = []
+      self.traj_id = 0
       self.header = std_msgs.msg.Header()
 
   def _get_types(self):
@@ -89,7 +93,7 @@ string frame_id
         _x = val1
         buff.write(_get_struct_11d().pack(_x.x, _x.y, _x.z, _x.vx, _x.vy, _x.vz, _x.ax, _x.ay, _x.az, _x.yaw, _x.duration))
       _x = self
-      buff.write(_get_struct_3I().pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+      buff.write(_get_struct_q3I().pack(_x.traj_id, _x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
       _x = self.header.frame_id
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -123,8 +127,8 @@ string frame_id
         self.points.append(val1)
       _x = self
       start = end
-      end += 12
-      (_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      end += 20
+      (_x.traj_id, _x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _get_struct_q3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -152,7 +156,7 @@ string frame_id
         _x = val1
         buff.write(_get_struct_11d().pack(_x.x, _x.y, _x.z, _x.vx, _x.vy, _x.vz, _x.ax, _x.ay, _x.az, _x.yaw, _x.duration))
       _x = self
-      buff.write(_get_struct_3I().pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+      buff.write(_get_struct_q3I().pack(_x.traj_id, _x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
       _x = self.header.frame_id
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -187,8 +191,8 @@ string frame_id
         self.points.append(val1)
       _x = self
       start = end
-      end += 12
-      (_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      end += 20
+      (_x.traj_id, _x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _get_struct_q3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -212,9 +216,9 @@ def _get_struct_11d():
     if _struct_11d is None:
         _struct_11d = struct.Struct("<11d")
     return _struct_11d
-_struct_3I = None
-def _get_struct_3I():
-    global _struct_3I
-    if _struct_3I is None:
-        _struct_3I = struct.Struct("<3I")
-    return _struct_3I
+_struct_q3I = None
+def _get_struct_q3I():
+    global _struct_q3I
+    if _struct_q3I is None:
+        _struct_q3I = struct.Struct("<q3I")
+    return _struct_q3I

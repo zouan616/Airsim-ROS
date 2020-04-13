@@ -21,6 +21,7 @@ class multiDOF_array {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.points = null;
+      this.traj_id = null;
       this.header = null;
     }
     else {
@@ -29,6 +30,12 @@ class multiDOF_array {
       }
       else {
         this.points = [];
+      }
+      if (initObj.hasOwnProperty('traj_id')) {
+        this.traj_id = initObj.traj_id
+      }
+      else {
+        this.traj_id = 0;
       }
       if (initObj.hasOwnProperty('header')) {
         this.header = initObj.header
@@ -47,6 +54,8 @@ class multiDOF_array {
     obj.points.forEach((val) => {
       bufferOffset = multiDOF.serialize(val, buffer, bufferOffset);
     });
+    // Serialize message field [traj_id]
+    bufferOffset = _serializer.int64(obj.traj_id, buffer, bufferOffset);
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
     return bufferOffset;
@@ -63,6 +72,8 @@ class multiDOF_array {
     for (let i = 0; i < len; ++i) {
       data.points[i] = multiDOF.deserialize(buffer, bufferOffset)
     }
+    // Deserialize message field [traj_id]
+    data.traj_id = _deserializer.int64(buffer, bufferOffset);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
     return data;
@@ -72,7 +83,7 @@ class multiDOF_array {
     let length = 0;
     length += 88 * object.points.length;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 4;
+    return length + 12;
   }
 
   static datatype() {
@@ -82,13 +93,14 @@ class multiDOF_array {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '46f0390774f0861beff7c17c9f478a6b';
+    return '675df5877c8751b56870c5fe16bc088b';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     multiDOF[] points
+    int64 traj_id
     Header header
     ================================================================================
     MSG: airsim_ros_pkgs/multiDOF
@@ -136,6 +148,13 @@ class multiDOF_array {
     }
     else {
       resolved.points = []
+    }
+
+    if (msg.traj_id !== undefined) {
+      resolved.traj_id = msg.traj_id;
+    }
+    else {
+      resolved.traj_id = 0
     }
 
     if (msg.header !== undefined) {

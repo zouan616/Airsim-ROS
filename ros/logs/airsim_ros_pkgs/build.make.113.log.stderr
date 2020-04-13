@@ -1,7 +1,0 @@
-[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:[m[K In member function ‘[01m[Kvoid ObstacleSensor<ObstacleData>::callback_front(const typename ObstacleData::ConstPtr&)[m[K’:
-[01m[K/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp:83:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kstart_hook_t[m[K’
-         [01;31m[Kstart_hook_t[m[K = ros::Time::now();
-         [01;31m[K^~~~~~~~~~~~[m[K
-make[2]: *** [CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o] Error 1
-make[1]: *** [CMakeFiles/panic_pcl.dir/all] Error 2
-make: *** [all] Error 2

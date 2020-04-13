@@ -61,8 +61,10 @@ ros::Duration g_pt_cloud_to_future_collision_t;
 
 bool g_got_new_traj = false;
 bool this_traj_already_has_collision = false;
-bool g_got_nextSteps = false;
-
+ros::Time traj_timestamp;
+ros::Time nextSteps_timestamp;
+int traj_id = 0;
+int nextSteps_id = 0;
 // Global variables
 octomap::OcTree * octree = nullptr;
 traj_msg_t traj;
@@ -156,11 +158,6 @@ void pull_octomap(const octomap_msgs::Octomap& msg)
 }
 
 
-// void new_traj(const trajectory_msgs::MultiDOFJointTrajectory::ConstPtr& msg) {
-//     g_got_new_traj = true;
-// }
-
-
 void pull_traj(const traj_msg_t::ConstPtr& msg)
 {
     auto pos = airsim_ros_wrapper_pointer->getPosition();
@@ -175,13 +172,23 @@ void pull_traj(const traj_msg_t::ConstPtr& msg)
         point.y += y_offset;
         point.z += z_offset;
     }
-    g_got_nextSteps = true;
-
+    nextSteps_timestamp = msg->header.stamp;
+    nextSteps_id = msg->traj_id;
 }
 
 
 bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_point& time_to_warn)
 {
+
+    if(traj_id != nextSteps_id){
+        //ROS_INFO("traj_id and nextSteps_id doesn't match !");
+        return false;
+    }
+
+    if(nextSteps_timestamp.sec < traj_timestamp.sec){
+        //ROS_INFO("this is old next steps, ignore");
+        return false;
+    }
 
     const double min_dist_from_collision = 150.0;
     const std::chrono::milliseconds grace_period(1000);
@@ -198,7 +205,6 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
 
         if (collision(octree, pos1, pos2)) {
             ROS_INFO("collision pos: %f, %f, %f", traj.points[i].x, traj.points[i].y, traj.points[i].z);
-            //ROS_INFO("pos2: %f, %f, %f", traj.points[i+1].x, traj.points[i+1].y, traj.points[i+1].z);
             geometry_msgs::Point p;
             p.x = pos1.x;
             p.y = pos1.y;
@@ -224,8 +230,12 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
         }
     }
 
-    if (!col)
+    if (!col){
         time_to_warn = never;
+    }
+    else{
+        ROS_INFO("collision coming !");
+    }
     
     return col;
 }
@@ -235,19 +245,12 @@ void fly_back_callback(const std_msgs::Bool::ConstPtr& msg){
     global_fly_back = fly_back_local;
 }
 
-void mySigintHandler(int sig)
-{
-  // Do some custom action.
-  // For example, publish a stop message to some other nodes.
-  
-  // All the default sigint handler does is call shutdown()
-  ros::shutdown();
-}
-
 
 void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg){
     g_got_new_traj = true;
     this_traj_already_has_collision = false;
+    traj_timestamp = msg->header.stamp;
+    traj_id = msg->traj_id;
 }
 
 
@@ -261,8 +264,6 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "future_collision", ros::init_options::NoSigintHandler);
     ros::NodeHandle n;
     ros::NodeHandle nh("~");
-    // Override the default ros sigint handler.
-    signal(SIGINT, mySigintHandler);
     setup();
 
     AirsimROSWrapper airsim_ros_wrapperb(n, nh);
@@ -310,6 +311,7 @@ int main(int argc, char** argv)
         collision_point.color.g = 255;
         collision_point.color.a = 0.5;
 
+
     ros::Rate loop_rate(60);
     while (ros::ok()) {
         marker_pub.publish(collision_point);
@@ -327,8 +329,9 @@ int main(int argc, char** argv)
                 col_coming_pub.publish(col_coming_msg);
                 g_got_new_traj = false; 
                 this_traj_already_has_collision = true;
-                g_got_nextSteps = false;
-                
+            }
+            else if(collision_coming && this_traj_already_has_collision){
+                ROS_INFO("this one already has collision, not published");
             }
         }else if (state == waiting_for_response) {
             if (g_got_new_traj){

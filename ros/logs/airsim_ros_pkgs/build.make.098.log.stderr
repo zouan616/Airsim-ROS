@@ -1,9 +1,0 @@
-CMakeFiles/future_collision.dir/src/future_collision.cpp.o: In function `octomap_msgs::fullMsgToMap(octomap_msgs::Octomap_<std::allocator<void> > const&)':
-future_collision.cpp:(.text+0x64): undefined reference to `octomap::AbstractOcTree::createTree(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double)'
-CMakeFiles/future_collision.dir/src/future_collision.cpp.o: In function `octomap_msgs::binaryMsgToMap(octomap_msgs::Octomap_<std::allocator<void> > const&)':
-future_collision.cpp:(.text+0x210): undefined reference to `octomap::ColorOcTree::ColorOcTree(double)'
-future_collision.cpp:(.text+0x257): undefined reference to `octomap::OcTree::OcTree(double)'
-collect2: error: ld returned 1 exit status
-make[2]: *** [/home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/future_collision] Error 1
-make[1]: *** [CMakeFiles/future_collision.dir/all] Error 2
-make: *** [all] Error 2

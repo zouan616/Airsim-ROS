@@ -1,6 +1,0 @@
-[31m[1mCMake Error[0m at /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/CMakeLists.txt:110 (target_link_libraries):
-  Cannot specify link libraries for target "scanning_node" which is not built
-  by this project.
-
-
-make: *** [cmake_check_build_system] Error 1

@@ -27,10 +27,12 @@ struct multiDOF_array_
 
   multiDOF_array_()
     : points()
+    , traj_id(0)
     , header()  {
     }
   multiDOF_array_(const ContainerAllocator& _alloc)
     : points(_alloc)
+    , traj_id(0)
     , header(_alloc)  {
   (void)_alloc;
     }
@@ -39,6 +41,9 @@ struct multiDOF_array_
 
    typedef std::vector< ::airsim_ros_pkgs::multiDOF_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::airsim_ros_pkgs::multiDOF_<ContainerAllocator> >::other >  _points_type;
   _points_type points;
+
+   typedef int64_t _traj_id_type;
+  _traj_id_type traj_id;
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
@@ -73,6 +78,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::airsim_ros_pkgs::multiDOF_array_<ContainerAllocator1> & lhs, const ::airsim_ros_pkgs::multiDOF_array_<ContainerAllocator2> & rhs)
 {
   return lhs.points == rhs.points &&
+    lhs.traj_id == rhs.traj_id &&
     lhs.header == rhs.header;
 }
 
@@ -130,12 +136,12 @@ struct MD5Sum< ::airsim_ros_pkgs::multiDOF_array_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "46f0390774f0861beff7c17c9f478a6b";
+    return "675df5877c8751b56870c5fe16bc088b";
   }
 
   static const char* value(const ::airsim_ros_pkgs::multiDOF_array_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x46f0390774f0861bULL;
-  static const uint64_t static_value2 = 0xeff7c17c9f478a6bULL;
+  static const uint64_t static_value1 = 0x675df5877c8751b5ULL;
+  static const uint64_t static_value2 = 0x6870c5fe16bc088bULL;
 };
 
 template<class ContainerAllocator>
@@ -155,6 +161,7 @@ struct Definition< ::airsim_ros_pkgs::multiDOF_array_<ContainerAllocator> >
   static const char* value()
   {
     return "multiDOF[] points\n"
+"int64 traj_id\n"
 "Header header\n"
 "================================================================================\n"
 "MSG: airsim_ros_pkgs/multiDOF\n"
@@ -203,6 +210,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.points);
+      stream.next(m.traj_id);
       stream.next(m.header);
     }
 
@@ -230,6 +238,8 @@ struct Printer< ::airsim_ros_pkgs::multiDOF_array_<ContainerAllocator> >
       s << indent;
       Printer< ::airsim_ros_pkgs::multiDOF_<ContainerAllocator> >::stream(s, indent + "    ", v.points[i]);
     }
+    s << indent << "traj_id: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.traj_id);
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);

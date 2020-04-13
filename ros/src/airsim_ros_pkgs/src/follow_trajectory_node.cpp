@@ -45,6 +45,8 @@ geometry_msgs::Vector3 panic_velocity;
 bool g_got_new_trajectory = false;
 ros::Time g_recieved_traj_t;
 
+int traj_id = 0;
+
 void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
 	ROS_INFO("slam loss callback");
     slam_lost = msg->data;
@@ -103,6 +105,8 @@ void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
         }
     }
 
+    traj_id = msg->traj_id;
+
     g_got_new_trajectory = true; 
 }
 
@@ -138,7 +142,7 @@ bool follow_trajectory_status_cb(airsim_ros_pkgs::follow_trajectory_status_srv::
 }
 
 
-airsim_ros_pkgs::multiDOF_array next_steps_msg(const trajectory_t& traj) {
+airsim_ros_pkgs::multiDOF_array next_steps_msg(const trajectory_t& traj, const int true_id) {
     airsim_ros_pkgs::multiDOF_array array_of_point_msg;
 
     for (const auto& point : traj){
@@ -157,6 +161,8 @@ airsim_ros_pkgs::multiDOF_array next_steps_msg(const trajectory_t& traj) {
         array_of_point_msg.points.push_back(point_msg); 
     }
 
+    array_of_point_msg.traj_id = true_id;
+    array_of_point_msg.header.stamp = ros::Time::now();
     return array_of_point_msg;
 }
 
@@ -276,6 +282,8 @@ int main(int argc, char **argv)
         }
 
 
+        // make sure if new traj come, we do not conflict
+        const int id_for_this_traj = traj_id;
         if(app_started && !global_stop_fly){
             // Back up if no trajectory was found
             if (!forward_traj->empty()){
@@ -286,10 +294,10 @@ int main(int argc, char **argv)
             }
 
             if (forward_traj->size() > 0){
-                next_steps_pub.publish(next_steps_msg(*forward_traj));
+                next_steps_pub.publish(next_steps_msg(*forward_traj,id_for_this_traj));
             }
             else if(rev_traj->size() > 0){
-                next_steps_pub.publish(next_steps_msg(*rev_traj));
+                next_steps_pub.publish(next_steps_msg(*rev_traj,id_for_this_traj));
             }
         }
 
