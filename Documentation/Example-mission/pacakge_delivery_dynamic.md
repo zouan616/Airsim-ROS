@@ -27,3 +27,5 @@ At this point, the drone should alreay fly in the air, and RVIZ should show the 
 Now give the drone a coordinate to fly to. Currently it **does not** check the coordinate validity, so even if the destination is unaccessible it will still try to fly to it.
 A good test is coordinate **0 70 10**, which is right behind the wall that is facing the drone.
 
+The ros graph of package delivery dynamic is here:
+![Image of package delivery](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/package_delivery_ros.svg)
