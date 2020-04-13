@@ -19,21 +19,17 @@
 using namespace std;
 
 // add by feiyang jin
-	bool mission_finished = false;
 	bool fly_back = false;
     std_msgs::Bool fly_back_msg;
     bool global_stop_fly = false;
 
 bool slam_lost = false;
-bool col_imminent = false; //col = collision
 
 
 trajectory_t normal_traj;
 trajectory_t rev_normal_traj;
 float g_localization_status = 1.0;
 float g_v_max = 2.5;
-double g_fly_trajectory_time_out;
-long long g_planning_time_including_ros_overhead_acc  = 0;
 
 float g_max_yaw_rate = 90;
 float g_max_yaw_rate_during_flight = 90;
@@ -43,29 +39,20 @@ bool g_trajectory_done;
 bool should_panic = false;
 geometry_msgs::Vector3 panic_velocity;
 bool g_got_new_trajectory = false;
-ros::Time g_recieved_traj_t;
 
 int traj_id = 0;
 
+
 void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
-	ROS_INFO("slam loss callback");
     slam_lost = msg->data;
 }
 
 void panic_callback(const std_msgs::Bool::ConstPtr& msg) {
     should_panic = msg->data;
-    if(should_panic){
-    	ROS_INFO("should panic in follow trajectory");
-    }
 }
 
 void panic_velocity_callback(const geometry_msgs::Vector3::ConstPtr& msg) {
     panic_velocity = *msg;
-}
-
-void col_imminent_callback(const std_msgs::Bool::ConstPtr& msg) {
-	ROS_INFO("col imminent call back");
-    col_imminent = msg->data;
 }
 
 

@@ -19,13 +19,7 @@ int g_col_com_ctr = 0;
 bool should_panic = false;
 bool slam_lost = false;
 bool col_coming = false;
-bool clcted_col_coming_data = true;
 
-long long g_accumulate_loop_time = 0; //it is in ms
-long long g_panic_rlzd_t_accumulate = 0;
-int g_main_loop_ctr = 0;
-int g_panic_ctr = 0;
-bool g_start_profiling = false; 
 
 double v_max__global = 2.5, a_max__global = 5, g_fly_trajectory_time_out = 1;
 float g_max_yaw_rate= 90;
@@ -42,6 +36,7 @@ bool global_fly_back = false;
 std_msgs::Bool stop_fly_msg;
 
 int traj_id = 0;
+int planning_fail_count = 0;
 
 double dist(Vector3r t, geometry_msgs::Point m)
 {
@@ -51,12 +46,6 @@ double dist(Vector3r t, geometry_msgs::Point m)
 
 void col_coming_callback(const airsim_ros_pkgs::BoolPlusHeader::ConstPtr& msg) {
     col_coming = msg->data;
-    if (CLCT_DATA){ 
-        col_coming_time_stamp = msg->header.stamp;
-        g_pt_cld_to_pkg_delivery_commun_acc += (ros::Time::now() - msg->header.stamp).toSec()*1e9;
-        g_col_com_ctr++;
-    }
-
 }
 
 
@@ -93,7 +82,7 @@ trajectory_t request_trajectory(ros::ServiceClient& client, geometry_msgs::Point
     srv.request.goal = goal;
     srv.request.twist  = twist; 
     srv.request.acceleration= acceleration; 
-    int fail_ctr = 0;
+    
     
    while(true){ 
        if(client.call(srv)) {
@@ -256,8 +245,19 @@ int main(int argc, char **argv)
         	start = get_start(airsim_ros_wrapper);
             normal_traj = request_trajectory(get_trajectory_client, start, goal, twist, acceleration);
             cout << normal_traj.size() << endl;
+            if(normal_traj.size() == 0){
+                planning_fail_count += 1;
+                if(planning_fail_count > 10){
+                    // TODO: make the mission failed
+                }
+                state = waiting;
+                continue;
+            }
+
+            planning_fail_count = 0;
             next_state = flying;
 
+            // visulization for loop
             for(int i = 0; i < normal_traj.size(); i++){
                 auto j = normal_traj[i];
                 geometry_msgs::Point p;
@@ -267,12 +267,12 @@ int main(int argc, char **argv)
                 points.points.push_back(p);
                 line_strip.points.push_back(p);
 
-                // The line list needs two points for each line
                 line_list.points.push_back(p);
                 p.z += 1.0;
                 line_list.points.push_back(p);
             }
 
+            // flying trajectory for loop
             airsim_ros_pkgs::multiDOF_array array_of_point_msg;
             for (auto point : normal_traj){
                 airsim_ros_pkgs::multiDOF point_msg;

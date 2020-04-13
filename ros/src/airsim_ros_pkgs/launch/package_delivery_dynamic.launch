@@ -24,12 +24,10 @@
 		<param name="a_max" value="$(arg a_max)"/>
 	</node>
 	
-	<!--
 	<node pkg="airsim_ros_pkgs" name="future_collision" type="future_collision">
         <param name="drone_radius" value="$(arg future_col_drone_radius)"/>
         <param name="drone_height" value="$(arg future_col_drone_height)"/>
 	</node>
-	-->
 
 	<node pkg="airsim_ros_pkgs" name="panic_pcl" type="panic_pcl"/>
 

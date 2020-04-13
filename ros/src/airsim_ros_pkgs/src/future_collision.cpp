@@ -18,7 +18,6 @@
 #include <octomap_msgs/conversions.h>
 
 // MAVBench headers
-//#include "timer.h"
 #include <airsim_ros_pkgs/BoolPlusHeader.h>
 #include <airsim_ros_pkgs/multiDOF_array.h>
 
@@ -35,7 +34,6 @@ using namespace octomap_server;
 visualization_msgs::Marker collision_point;
 
 
-
 // Typedefs
 typedef airsim_ros_pkgs::multiDOF_array traj_msg_t;
 typedef std::chrono::system_clock sys_clock;
@@ -43,44 +41,26 @@ typedef std::chrono::time_point<sys_clock> sys_clock_time_point;
 static const sys_clock_time_point never = sys_clock_time_point::min();
 
 // Profiling variables
-ros::Time start_hook_chk_col_t, end_hook_chk_col_t;                                          
-long long g_checking_collision_kernel_acc = 0;
-ros::Time g_checking_collision_t;
-long long g_future_collision_main_loop = 0;
-int g_check_collision_ctr = 0;
-double g_distance_to_collision_first_realized = 0;
 bool CLCT_DATA = false;
 bool DEBUG = false;
 ros::Time g_pt_cloud_header;    //this is used to figure out the octomap msg that 
                                 //collision was detected in
 
-long long g_pt_cloud_future_collision_acc = 0;
-int g_octomap_rcv_ctr = 0;
-
-ros::Duration g_pt_cloud_to_future_collision_t; 
-
+// Global variables
 bool g_got_new_traj = false;
 bool this_traj_already_has_collision = false;
 ros::Time traj_timestamp;
 ros::Time nextSteps_timestamp;
 int traj_id = 0;
 int nextSteps_id = 0;
-// Global variables
+
+
 octomap::OcTree * octree = nullptr;
 traj_msg_t traj;
 double drone_height__global = 0.6;
 double drone_radius__global = 1.5;
 
 AirsimROSWrapper* airsim_ros_wrapper_pointer;
-bool global_fly_back = false;
-
-//Profiling
-int g_main_loop_ctr = 0;
-long long g_accumulate_loop_time = 0; //it is in ms
-long long g_pt_cld_to_octomap_commun_olverhead_acc = 0;
-
-long long octomap_integration_acc = 0;
-int octomap_ctr = 0;
 
 
 bool occupied(octomap::OcTree * octree, double x, double y, double z){
@@ -240,11 +220,6 @@ bool check_for_collisions(AirsimROSWrapper& airsim_ros_wrapper, sys_clock_time_p
     return col;
 }
 
-void fly_back_callback(const std_msgs::Bool::ConstPtr& msg){
-    bool fly_back_local = msg->data;
-    global_fly_back = fly_back_local;
-}
-
 
 void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg){
     g_got_new_traj = true;
@@ -282,10 +257,10 @@ int main(int argc, char** argv)
     std_msgs::Bool col_imminent_msg;
 
     ros::Subscriber octomap_sub = nh.subscribe("/octomap_binary", 1, pull_octomap);
-    //ros::Subscriber new_traj_sub = nh.subscribe<trajectory_msgs::MultiDOFJointTrajectory>("/multidoftraj", 1, new_traj);
+
     ros::Subscriber traj_sub = nh.subscribe<traj_msg_t>("/next_steps", 1, pull_traj);
     ros::Publisher col_coming_pub = nh.advertise<airsim_ros_pkgs::BoolPlusHeader>("/col_coming", 1);
-    //ros::Subscriber fly_back_sub = nh.subscribe<std_msgs::Bool>("/fly_back", 1, fly_back_callback);
+
     ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("collision_visualization_marker", 100);
     ros::Subscriber trajectory_follower_sub = n.subscribe<airsim_ros_pkgs::multiDOF_array>("normal_traj", 1, callback_trajectory);
 
