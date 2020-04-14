@@ -233,7 +233,7 @@ int main(int argc, char ** argv)
     ros::NodeHandle nh;
 
     //octomap and ompl testing
-	  OcTree tree ("/home/airsim/airsimUpdate.bt");  // create empty tree with resolution 0.1
+	  OcTree tree ("../launch/as.bt");  // create empty tree with resolution 0.1
 		cout << "Octomap testing: " << tree.volume() << endl;
 		octree = &tree;
 

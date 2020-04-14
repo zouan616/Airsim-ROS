@@ -41,8 +41,6 @@ typedef std::chrono::time_point<sys_clock> sys_clock_time_point;
 static const sys_clock_time_point never = sys_clock_time_point::min();
 
 // Profiling variables
-bool CLCT_DATA = false;
-bool DEBUG = false;
 ros::Time g_pt_cloud_header;    //this is used to figure out the octomap msg that 
                                 //collision was detected in
 

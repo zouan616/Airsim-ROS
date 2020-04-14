@@ -48,12 +48,13 @@ using PointCloud = pcl::PointCloud<pcl::PointXYZ>;
 namespace ob = ompl::base;
 namespace og = ompl::geometric;
 
+// TODO: change the bound to something meaningful
 double x__low_bound__global = -200, x__high_bound__global = 200;
 double y__low_bound__global = -200 , y__high_bound__global = 200;
-double z__low_bound__global = 0, z__high_bound__global = 50;
+double z__low_bound__global = 0, z__high_bound__global = 40;
 double sampling_interval__global = 0.5;
-double v_max__global = 2.5, a_max__global = 5;
-float g_planning_budget = 5;
+double v_max__global = 3, a_max__global = 5;
+float g_planning_budget = 4;
 std::string motion_planning_core_str;
 
 octomap::OcTree * octree = nullptr;
@@ -639,8 +640,8 @@ piecewise_trajectory OMPL_plan(geometry_msgs::Point start, geometry_msgs::Point 
     si->setup();
 
     // Set planner
-    //ob::PlannerPtr planner(new og::RRTstar(si));
-    ob::PlannerPtr planner(new PlannerType(si));
+    ob::PlannerPtr planner(new og::RRTstar(si));
+    //ob::PlannerPtr planner(new PlannerType(si));
     ss.setPlanner(planner);
 
     ob::ScopedState<> start_state(space);

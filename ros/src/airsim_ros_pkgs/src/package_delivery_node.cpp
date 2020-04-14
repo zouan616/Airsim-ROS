@@ -12,25 +12,14 @@
 enum State { setup, waiting, flying, trajectory_completed, failed, invalid };
 
 std::string g_mission_status = "time_out";
-ros::Time col_coming_time_stamp; 
-long long g_pt_cld_to_pkg_delivery_commun_acc = 0;
-int g_col_com_ctr = 0;
 
 bool should_panic = false;
 bool slam_lost = false;
 bool col_coming = false;
 
-
 double v_max__global = 2.5, a_max__global = 5, g_fly_trajectory_time_out = 1;
 float g_max_yaw_rate= 90;
 float g_max_yaw_rate_during_flight = 90;
-long long g_planning_time_including_ros_overhead_acc = 0;
-int  g_planning_ctr = 0; 
-bool clct_data = true;
-
-
-bool CLCT_DATA;
-bool DEBUG;
 
 bool global_fly_back = false;
 std_msgs::Bool stop_fly_msg;
@@ -244,7 +233,9 @@ int main(int argc, char **argv)
         else if(state == waiting){
         	start = get_start(airsim_ros_wrapper);
             normal_traj = request_trajectory(get_trajectory_client, start, goal, twist, acceleration);
+            
             cout << normal_traj.size() << endl;
+
             if(normal_traj.size() == 0){
                 planning_fail_count += 1;
                 if(planning_fail_count > 10){
@@ -258,38 +249,39 @@ int main(int argc, char **argv)
             next_state = flying;
 
             // visulization for loop
-            for(int i = 0; i < normal_traj.size(); i++){
-                auto j = normal_traj[i];
-                geometry_msgs::Point p;
-                p.x = j.x;
-                p.y = j.y;
-                p.z = j.z;
-                points.points.push_back(p);
-                line_strip.points.push_back(p);
+                for(int i = 0; i < normal_traj.size(); i++){
+                    auto j = normal_traj[i];
+                    geometry_msgs::Point p;
+                    p.x = j.x;
+                    p.y = j.y;
+                    p.z = j.z;
+                    points.points.push_back(p);
+                    line_strip.points.push_back(p);
 
-                line_list.points.push_back(p);
-                p.z += 1.0;
-                line_list.points.push_back(p);
-            }
+                    line_list.points.push_back(p);
+                    p.z += 1.0;
+                    line_list.points.push_back(p);
+                }
 
             // flying trajectory for loop
             airsim_ros_pkgs::multiDOF_array array_of_point_msg;
-            for (auto point : normal_traj){
-                airsim_ros_pkgs::multiDOF point_msg;
-                point_msg.x = point.x;
-                point_msg.y = point.y;
-                point_msg.z = point.z;
-                point_msg.vx = point.vx;
-                point_msg.vy = point.vy;
-                point_msg.vz = point.vz;
-                point_msg.ax = point.ax;
-                point_msg.ay = point.ay;
-                point_msg.az = point.az;
-                point_msg.yaw = point.yaw;
-                point_msg.duration = point.duration;
-                array_of_point_msg.points.push_back(point_msg); 
+                for (auto point : normal_traj){
+                    airsim_ros_pkgs::multiDOF point_msg;
+                    point_msg.x = point.x;
+                    point_msg.y = point.y;
+                    point_msg.z = point.z;
+                    point_msg.vx = point.vx;
+                    point_msg.vy = point.vy;
+                    point_msg.vz = point.vz;
+                    point_msg.ax = point.ax;
+                    point_msg.ay = point.ay;
+                    point_msg.az = point.az;
+                    point_msg.yaw = point.yaw;
+                    point_msg.duration = point.duration;
+                    array_of_point_msg.points.push_back(point_msg); 
 
-            }
+                }
+
             array_of_point_msg.traj_id = traj_id;
             traj_id += 1;
             array_of_point_msg.header.stamp = ros::Time::now();
@@ -323,10 +315,10 @@ int main(int argc, char **argv)
             int result = follow_trajectory_status_srv_inst.response.success.data;
 
             if(!srv_call_status){
-                ROS_INFO_STREAM("could not make a service all to trajectory done");
+                ROS_INFO_STREAM("could not make a service call to follow trajectory");
                 next_state = flying;
             }else if (result == 1) {
-                ROS_INFO("going to end this mission");
+                ROS_INFO("going to end this mission because follow trajectory says mission completed");
                 next_state = trajectory_completed; 
                 twist = follow_trajectory_status_srv_inst.response.twist;
                 acceleration = follow_trajectory_status_srv_inst.response.acceleration;

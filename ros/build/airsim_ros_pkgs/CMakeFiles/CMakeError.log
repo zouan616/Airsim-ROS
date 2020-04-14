@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_339ae/fast"
-/usr/bin/make -f CMakeFiles/cmTC_339ae.dir/build.make CMakeFiles/cmTC_339ae.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6ac9f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6ac9f.dir/build.make CMakeFiles/cmTC_6ac9f.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_339ae.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_339ae.dir/CheckSymbolExists.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_339ae
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_339ae.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_339ae.dir/CheckSymbolExists.c.o  -o cmTC_339ae 
-CMakeFiles/cmTC_339ae.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_6ac9f.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6ac9f.dir/CheckSymbolExists.c.o   -c /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_6ac9f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ac9f.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_6ac9f.dir/CheckSymbolExists.c.o  -o cmTC_6ac9f 
+CMakeFiles/cmTC_6ac9f.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_339ae.dir/build.make:97: recipe for target 'cmTC_339ae' failed
-make[1]: *** [cmTC_339ae] Error 1
+CMakeFiles/cmTC_6ac9f.dir/build.make:97: recipe for target 'cmTC_6ac9f' failed
+make[1]: *** [cmTC_6ac9f] Error 1
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_339ae/fast' failed
-make: *** [cmTC_339ae/fast] Error 2
+Makefile:126: recipe for target 'cmTC_6ac9f/fast' failed
+make: *** [cmTC_6ac9f/fast] Error 2
 
 File /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5dd96/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5dd96.dir/build.make CMakeFiles/cmTC_5dd96.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_5b358/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5b358.dir/build.make CMakeFiles/cmTC_5b358.dir/build
 make[1]: Entering directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5dd96.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5dd96.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5dd96
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5dd96.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5dd96.dir/CheckFunctionExists.c.o  -o cmTC_5dd96 -lpthreads 
+Building C object CMakeFiles/cmTC_5b358.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5b358.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5b358
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b358.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5b358.dir/CheckFunctionExists.c.o  -o cmTC_5b358 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_5dd96.dir/build.make:97: recipe for target 'cmTC_5dd96' failed
-make[1]: *** [cmTC_5dd96] Error 1
+CMakeFiles/cmTC_5b358.dir/build.make:97: recipe for target 'cmTC_5b358' failed
+make[1]: *** [cmTC_5b358] Error 1
 make[1]: Leaving directory '/home/airsim/project/AirSim/ros/build/airsim_ros_pkgs/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_5dd96/fast' failed
-make: *** [cmTC_5dd96/fast] Error 2
+Makefile:126: recipe for target 'cmTC_5b358/fast' failed
+make: *** [cmTC_5b358/fast] Error 2
 
 
