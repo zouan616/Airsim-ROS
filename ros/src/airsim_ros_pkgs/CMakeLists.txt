@@ -108,7 +108,7 @@ add_dependencies(pd_position_controller_simple ${${PROJECT_NAME}_EXPORTED_TARGET
 add_dependencies(pd_position_controller_simple ${catkin_EXPORTED_TARGETS})
 
 add_library(airsim_ros src/airsim_ros_wrapper.cpp)
-add_dependencies(airsim_ros ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(airsim_ros ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} airsim_ros_pkgs_generate_messages_cpp)
 target_link_libraries(airsim_ros ${catkin_LIBRARIES} ${OpenCV_LIBS} yaml-cpp AirLib airsim_settings_parser)
 
   # library created by feiyang jin

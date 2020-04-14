@@ -68,14 +68,6 @@ void col_imminent_callback(const std_msgs::Bool::ConstPtr& msg) {
 void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
 {
 	ROS_INFO("call back trajectory");
-    // if (CLCT_DATA){ 
-    //     g_recieved_traj_t = ros::Time::now();  
-    //     g_msg_time_stamp = msg->header.stamp;
-    //     if (g_msg_time_stamp.sec != 0) {  
-    //         g_pt_cld_to_futurCol_commun_acc += (ros::Time::now() - msg->header.stamp).toSec()*1e9;
-    //         g_traj_ctr++; 
-    //     } 
-    // }
     
     normal_traj.clear(); 
     for (auto point : msg->points){
@@ -91,8 +83,7 @@ void callback_trajectory(const airsim_ros_pkgs::multiDOF_array::ConstPtr& msg)
         normal_traj.push_back(traj_point);
     }
 
-    g_got_new_trajectory = true;
-    //ROS_INFO_STREAM("finished trajectory, size is"<<normal_traj.size());  
+    g_got_new_trajectory = true; 
 }
 
 
@@ -279,14 +270,7 @@ int main(int argc, char **argv)
         else if(fly_back && trajectory_done(rev_normal_traj)){
         	g_trajectory_done = true;
             loop_rate.sleep();
-        	//mission_finished = true;
-        	//fly_back = false;
         }
-        // else if (app_started && trajectory_done(*forward_traj)){
-        //     g_trajectory_done = true;
-        //     ROS_INFO("trajectory done");
-        //     loop_rate.sleep();
-        // }
 
         g_got_new_trajectory = false;
 

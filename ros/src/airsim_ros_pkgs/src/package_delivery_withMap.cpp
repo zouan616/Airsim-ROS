@@ -13,36 +13,16 @@ enum State { setup, waiting, flying, trajectory_completed, failed, invalid };
 
 std::string g_mission_status = "time_out";
 ros::Time col_coming_time_stamp; 
-long long g_pt_cld_to_pkg_delivery_commun_acc = 0;
-int g_col_com_ctr = 0;
 
 bool should_panic = false;
 bool slam_lost = false;
 bool col_coming = false;
-bool clcted_col_coming_data = true;
-
-long long g_accumulate_loop_time = 0; //it is in ms
-long long g_panic_rlzd_t_accumulate = 0;
-int g_main_loop_ctr = 0;
-int g_panic_ctr = 0;
-bool g_start_profiling = false; 
 
 double v_max__global = 3, a_max__global = 5, g_fly_trajectory_time_out = 1;
 float g_max_yaw_rate= 90;
 float g_max_yaw_rate_during_flight = 90;
-long long g_planning_time_including_ros_overhead_acc = 0;
-int  g_planning_ctr = 0; 
-bool clct_data = true;
-ros::Time g_traj_time_stamp;
 
 geometry_msgs::Vector3 panic_velocity;
-string ip_addr__global;
-string localization_method;
-string stats_file_addr;
-string ns;
-std::string g_supervisor_mailbox; //file to write to when completed
-bool CLCT_DATA;
-bool DEBUG;
 
 
 double dist(Vector3r t, geometry_msgs::Point m)
@@ -53,12 +33,6 @@ double dist(Vector3r t, geometry_msgs::Point m)
 
 void col_coming_callback(const airsim_ros_pkgs::BoolPlusHeader::ConstPtr& msg) {
     col_coming = msg->data;
-    if (CLCT_DATA){ 
-        col_coming_time_stamp = msg->header.stamp;
-        g_pt_cld_to_pkg_delivery_commun_acc += (ros::Time::now() - msg->header.stamp).toSec()*1e9;
-        g_col_com_ctr++;
-    }
-
 }
 
 
@@ -214,9 +188,6 @@ int main(int argc, char **argv)
             airsim_ros_wrapper.lidar_async_spinner_.start();
         }
 
-        //airsim_ros_wrapper.takeoff_jin();
-
-
     for (State state = setup; ros::ok(); ) 
     {
         pub_rate.sleep();
@@ -307,8 +278,7 @@ int main(int argc, char **argv)
                 ROS_INFO_STREAM("collisoin coming");
                 next_state = trajectory_completed; 
                 twist = follow_trajectory_status_srv_inst.response.twist;
-                acceleration = follow_trajectory_status_srv_inst.response.acceleration;
-                //col_coming = false; 
+                acceleration = follow_trajectory_status_srv_inst.response.acceleration; 
                 spin_around(airsim_ros_wrapper);
             }
             else{
@@ -329,7 +299,6 @@ int main(int argc, char **argv)
                 ROS_INFO("Delivered the package");
                 mission_status = "completed"; 
                 g_mission_status = mission_status;            
-                //next_state = setup;
                 ros::shutdown();
             }
             else if (normal_traj.empty()){
