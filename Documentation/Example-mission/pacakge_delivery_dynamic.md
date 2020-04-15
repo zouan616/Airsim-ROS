@@ -30,4 +30,4 @@ A good test is coordinate **0 70 10**, which is right behind the wall that is fa
 or **-80 -100 5**, which is to far to the drone left behind. 
 
 The ros graph of package delivery dynamic is here:
-![Image of package delivery](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/package_delivery_ros.svg)
+![Image of package delivery](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/package_delivery_ros.png)
