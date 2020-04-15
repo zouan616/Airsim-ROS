@@ -19,13 +19,15 @@ Open a new terminal and run the following commands
  $ roslaunch airsim_ros_pkgs airsim_node.launch
  ## Open a new Tab,
  $ rosrun airsim_ros_pkgs follow_trajectory
- ## Open another new Tab
+ ## Now, wait for the drone to completely take off, and then open another new terminal
  $ roslaunch airsim_ros_pkgs package_delivery_dynamic.launch
 ```
 At this point, the drone should alreay fly in the air, and RVIZ should show the corresponding Octomap generated.
 
 Now give the drone a coordinate to fly to. Currently it **does not** check the coordinate validity, so even if the destination is unaccessible it will still try to fly to it.
 A good test is coordinate **0 70 10**, which is right behind the wall that is facing the drone.
+
+or **-80 -100 5**, which is to far to the drone left behind. 
 
 The ros graph of package delivery dynamic is here:
 ![Image of package delivery](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/package_delivery_ros.svg)
