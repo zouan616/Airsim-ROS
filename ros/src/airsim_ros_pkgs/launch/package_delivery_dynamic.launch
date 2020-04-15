@@ -16,7 +16,7 @@
 
 	
 	<node pkg="airsim_ros_pkgs" name="motion_planner" type="motion_planner">
-		<param name="motion_planning_core" value="OMPL_RRTConnect"/>
+		<param name="motion_planning_core" value="OMPL_RRTstar"/>
 		<param name="sampling_interval" value="0.5"/>
         <param name="planner_drone_radius" value="$(arg planner_drone_radius)"/>
         <param name="planner_drone_height" value="$(arg planner_drone_height)"/>
