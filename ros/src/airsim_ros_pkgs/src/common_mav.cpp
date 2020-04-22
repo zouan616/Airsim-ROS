@@ -67,10 +67,6 @@ void follow_trajectory(AirsimROSWrapper& airsim_ros_wrapper, trajectory_t * traj
             v_y += 0.2*(p.y-pos.x());
             v_z += 0.5*(p.z+pos.z());
         }
-        
-        // float current_yaw = airsim_ros_wrapper.get_yaw();
-        // double target_x = p.x;
-        // double target_y = p.y;
 
         // Calculate the yaw we should be flying with
         float yaw = p.yaw;

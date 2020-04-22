@@ -118,11 +118,9 @@ bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, 
         if (yaw != YAW_UNCHANGED) {
             float target_yaw = yaw;
             if (yaw == FACE_FORWARD)
-                //target_yaw = xy_yaw(vy, vx);
                 target_yaw = xy_yaw(vx, vy);
             else if (yaw == FACE_BACKWARD) {
                 target_yaw = xy_yaw(vx, vy);
-                //target_yaw = xy_yaw(vy, vx);
                 target_yaw += 180;
                 target_yaw = target_yaw <= 180 ? target_yaw : target_yaw-360;
             }
@@ -132,30 +130,19 @@ bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, 
             yaw_diff = yaw_diff <= 180 ? yaw_diff : yaw_diff - 360;
             
 
-            float yaw_threshold = 45;
+            // add by feiyang jin
+            // because if do not set, the drone will just turn left and right very quickly
+            float yaw_threshold = 30;
 
             if(yaw_diff >= yaw_threshold){
-                // std::cout << "yaw_diff is: " << yaw_diff << std::endl;
-                // std::cout << "current yaw is: " << current_yaw << std::endl;
-                // std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
                 yaw_diff -= yaw_threshold;
             }
             else if(yaw_diff <= (-1)*yaw_threshold){
-                // std::cout << "yaw_diff is: " << yaw_diff << std::endl;
-                // std::cout << "yaw_diff is: " << yaw_diff << std::endl;
-                // std::cout << "current yaw is: " << current_yaw << std::endl;
-                // std::cout << "target_yaw is: " << target_yaw << std::endl << std::endl ;
                 yaw_diff += yaw_threshold;
             }
             else{
                 yaw_diff = 0;
             }
-            // if (yaw_diff >= 5)
-            //     yaw_diff -= 5;
-            // else if (yaw_diff <= -5)
-            //     yaw_diff += 5;
-            // else
-            //     yaw_diff = 0;
 
             float yaw_rate = yaw_diff / duration;
 
@@ -164,12 +151,9 @@ bool AirsimROSWrapper::fly_velocity(double vx, double vy, double vz, float yaw, 
             else if (yaw_rate < -max_yaw_rate_during_flight)
                 yaw_rate = -max_yaw_rate_during_flight;
 
-            //auto drivetrain = msr::airlib::DrivetrainType::ForwardOnly;
             auto drivetrain = msr::airlib::DrivetrainType::MaxDegreeOfFreedom;
             auto yawmode = msr::airlib::YawMode(true, yaw_rate);
-            //std::cout << "duration is: " << duration << std::endl;
 
-            //airsim_client_.moveByVelocityAsync(vy, vx, -vz, duration, drivetrain);
             airsim_client_.moveByVelocityAsync(vy, vx, -vz, duration, drivetrain, yawmode);
         } else {
             airsim_client_.moveByVelocityAsync(vy, vx, -vz, duration);

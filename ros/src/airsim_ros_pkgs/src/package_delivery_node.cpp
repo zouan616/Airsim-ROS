@@ -14,7 +14,6 @@ enum State { setup, waiting, flying, trajectory_completed, failed, invalid };
 std::string g_mission_status = "time_out";
 
 bool should_panic = false;
-bool slam_lost = false;
 bool col_coming = false;
 
 double v_max__global = 2.5, a_max__global = 5, g_fly_trajectory_time_out = 1;
@@ -35,11 +34,6 @@ double dist(Vector3r t, geometry_msgs::Point m)
 
 void col_coming_callback(const airsim_ros_pkgs::BoolPlusHeader::ConstPtr& msg) {
     col_coming = msg->data;
-}
-
-
-void slam_loss_callback (const std_msgs::Bool::ConstPtr& msg) {
-    slam_lost = msg->data;
 }
 
 
@@ -129,8 +123,6 @@ int main(int argc, char **argv)
     // publisher and subscribers
 		ros::ServiceClient get_trajectory_client = nh.serviceClient<airsim_ros_pkgs::get_trajectory>("get_trajectory_srv");
 	    
-        ros::Subscriber slam_lost_sub = nh.subscribe<std_msgs::Bool>("/slam_lost", 1, slam_loss_callback);
-
 	    ros::ServiceClient follow_trajectory_status_client = 
       		nh.serviceClient<airsim_ros_pkgs::follow_trajectory_status_srv>("/follow_trajectory_status", true);
 
