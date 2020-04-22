@@ -44,3 +44,9 @@ Now you need to give the drone an area to scan with width, length, number of lan
 A typical area would be "10 30 5 10".
 
 Once you give the command, the trajectory will be generated and shown in RVIZ; the drone will follow the trajecotry to fly.
+
+## Ending
+If you do not end all the things in sequence, airsim may crash. To finish everything cleanly,
+1. Stop the simulation in Unreal
+
+2. Stop each terminal by ctrl-c
