@@ -50,3 +50,13 @@ If you do not end all the things in sequence, airsim may crash. To finish everyt
 1. Stop the simulation in Unreal
 
 2. Stop each terminal by ctrl-c
+
+## ROS node graph
+
+
+## Analysis
+Gneral node involved: airsim_node, depth_to_pointcloud_manager, airsim_depth2cloud, ned_to_enu_pub
+
+Mission-Specific node involved: [scanning_node](https://github.com/zouan616/Airsim-ROS/blob/master/ros/src/airsim_ros_pkgs/src/scanning_node.cpp), octomap_server
+
+As scanning mission is supposed to run on a collision-free environment, it does not need future collision node. Furthermore, motion planner is not included neither: the trajectory is designed by hand. 
