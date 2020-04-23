@@ -35,12 +35,18 @@ or **-80 -100 5**, which is to far to the drone left behind.
 The task has two parts, first, the drone will fly to the coordinate given by you. Then, it will fly back to the start point.
 Think this as real life scenario, once the drone delivered the package we want it to fly back automatically. 
 
-The ros graph of package delivery dynamic is here:
-![Image of package delivery](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/package_delivery_ros.png)
-
 ## Ending
 Once the terminal for package_delivery_dynamic.launch says **Delivered the package**, the mission is finished. 
 If you do not end all the things in sequence, airsim may crash. To finish everything cleanly,
 1. Stop the simulation in Unreal
 
 2. Stop each terminal by ctrl-c
+
+## ROS node graph
+![Image of package delivery](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/package_delivery_ros.png)
+
+## Analysis
+General node involved: airsim_node, depth_to_pointcloud_manager, airsim_depth2cloud, ned_to_enu_pub
+Mission-Specific node involved: package_delivery_node, octomap_server, panic_pcl, follow_trajectory, future collision, motion planner
+
+Motion planner node first gives a trajectory based on inital map. As the drone builds its environment gradually, the planned trajectory may have collision. **future collision node** helps to detect collision. Once it finds potential collsion, it publishes the message so that package_delivery_node will ask motion planner to replanning. follow_trajectory is the node that actully controls the drone to fly.
