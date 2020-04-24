@@ -47,6 +47,7 @@ If you do not end all the things in sequence, airsim may crash. To finish everyt
 
 ## Analysis
 General node involved: airsim_node, depth_to_pointcloud_manager, airsim_depth2cloud, ned_to_enu_pub
+
 Mission-Specific node involved: package_delivery_node, octomap_server, panic_pcl, follow_trajectory, future collision, motion planner
 
-Motion planner node first gives a trajectory based on inital map. As the drone builds its environment gradually, the planned trajectory may have collision. **future collision node** helps to detect collision. Once it finds potential collsion, it publishes the message so that package_delivery_node will ask motion planner to replanning. follow_trajectory is the node that actully controls the drone to fly.
+After you give the destination coordinate, motion planner node first gives a trajectory based on initial map. As the drone builds its environment gradually, the planned trajectory may have collision. **future collision node** helps to detect collision by consistently checking collision. Once it finds potential collsion, it publishes the message so that package_delivery_node will ask motion planner to replanning. follow_trajectory is the node that actully controls the drone to fly.
