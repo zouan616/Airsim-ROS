@@ -1,9 +1,13 @@
+# Demo
+[Scanning demo](https://drive.google.com/open?id=1TCkpnr4zaBVI_QtsMdepNsQwx7OrNMiI)
+
 # Prerequisites
 Beside [Airsim_ros_pkgs](https://github.com/microsoft/AirSim/tree/master/ros/src/airsim_ros_pkgs), there are three other packages you need to install by yourself.
 
 1. [OMPL](https://ompl.kavrakilab.org/)
 
 2. [mav_trajectory_generation](https://github.com/ethz-asl/mav_trajectory_generation)
+(This one may have some problems when installing. Check the issues in its github)
 
 3. [octomap](https://github.com/OctoMap/octomap). You also need to install the ROS-integration for octomap, the package is [octomap_mapping](http://wiki.ros.org/octomap_mapping)
 
