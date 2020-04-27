@@ -15,11 +15,35 @@ Beside [Airsim_ros_pkgs](https://github.com/microsoft/AirSim/tree/master/ros/src
 Once you finish all the prerequisites, download the "ros" folder in this repository, and replace the "ros" folder in Airsim directory with it.
 Then run the following commands in Airsim directory:
 
-cd ros
+```Shell
+$ cd ros
+$ catkin clean
+$ catkin build
+```
 
-catkin clean
+## Error may happen
+You may encounter an issue similar to this 
+```shell
+/AirSim/AirLib/include/common/common_utils/json.hpp:6057:62: error: wrong number of template arguments (1, should be 2)
+                     return *lhs.m_value.array < *rhs.m_value.array;
+```
+This is a common issue and can be easily googled. For your convenience, change the line in json.hpp to 
 
-catkin build
+**return (\*lhs.m_value.array) < \*rhs.m_value.array;**
+
+will make this compile.
+
+## Update on 04/27/2020
+As Airsim has an recent update, which changes something related to its ros package, my version of airsim_ros_pkgs may fail to build. The solution is go to the [CMakeLists.txt](https://github.com/zouan616/Airsim-ROS/blob/master/ros/src/airsim_ros_pkgs/CMakeLists.txt), and make the following change:
+
+Add the following immediately after **set(CMAKE_CXX_STANDARD 11)**
+
+```shell
+set(CXX_EXP_LIB "-nostdinc++ -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -nodefaultlibs 
+-l/usr/lib/x86_64-linux-gnu/libc++.so -l/usr/lib/x86_64-linux-gnu/libc++abi.so
+-lm -lc -lgcc_s -lgcc  
+-lstdc++fs -fmax-errors=10 -Wnoexcept -Wstrict-null-sentinel")
+```
 
 # Running scanning example
 ## Set airsim settings.json
