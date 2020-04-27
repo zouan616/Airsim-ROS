@@ -29,4 +29,4 @@ This finishes the set up, to start this example, you need to:
 To save the map, type **rosrun octomap_server octomap_saver airsim_example.bt**
 
 The ros graph of building octomap with airsim-ros-wrapper is here:
-![Image of airsim and octomap](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/octomap_airsim.png)
+![Image of airsim and octomap](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/Image/octomap_airsim.png)
