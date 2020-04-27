@@ -80,7 +80,7 @@ If you do not end all the things in sequence, airsim may crash. To finish everyt
 2. Stop each terminal by ctrl-c
 
 ## ROS node graph
-![scanning ros graph](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/General/scanning_rosGraph.png)
+![scanning ros graph](https://github.com/zouan616/Airsim-ROS/blob/master/Documentation/Image/scanning_rosGraph.png)
 
 ## Analysis
 Gneral node involved: airsim_node, depth_to_pointcloud_manager, airsim_depth2cloud, ned_to_enu_pub
