@@ -36,7 +36,7 @@ will make this compile.
 ## Update on 04/27/2020
 As Airsim has an recent update, which changes something related to its ros package, my version of airsim_ros_pkgs may fail to build. The solution is go to the [CMakeLists.txt](https://github.com/zouan616/Airsim-ROS/blob/master/ros/src/airsim_ros_pkgs/CMakeLists.txt), and make the following change:
 
-Add the following immediately after **set(CMAKE_CXX_STANDARD 11)**
+Add the following immediately below **set(CMAKE_CXX_STANDARD 11)**
 
 ```shell
 set(CXX_EXP_LIB "-nostdinc++ -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -nodefaultlibs 
