@@ -1,3 +1,14 @@
+# AirSim
+Developer: Microsoft
+
+Repository: [AirSim github](https://github.com/microsoft/AirSim)
+
+AirSim is a simulator for drones, cars and more, built on Unreal Engine. Some knowledge import to know for AirSim:
+
+1. **Coordinate system**, this is very important ! See the explanation [here](https://microsoft.github.io/AirSim/apis/#coordinate-system)
+2. [Sensors API](https://microsoft.github.io/AirSim/sensors/)
+3. [SImpleFlight](https://microsoft.github.io/AirSim/simple_flight/#simple_flight), which is the default flight controller. 
+
 # airsim_ros_pkgs and airsim_tutorial_pkgs
 Developer: Microsoft
 
