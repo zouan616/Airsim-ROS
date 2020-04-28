@@ -16,6 +16,8 @@ a35ac541977d17bc0172761a0ffd5c67 /home/airsim/project/AirSim/ros/devel/.private/
 2ee328bf4ce84a3ae183f87cbaa6b053 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/get_trajectory.h
 de712b3a609903ca31d31b2dfe93a394 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF.h
 d2d017c055c176d54727c6848fa0b9a1 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/multiDOF_array.h
+eed7c4e02b327a0e0fc5cc553d97d70b /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/profiling_data_srv.h
+8c022c8daf8ab6cb6f0ddb9d46d89da8 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/include/airsim_ros_pkgs/start_profiling_srv.h
 fa26d28cc2385575eddc92f8af56403b /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/msg/_BoolPlusHeader.py
 555880a0bddf8ab274802824e4c0f6ab /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/msg/_GPSYaw.py
 63d66b19f6ffa07315bc227bd0c71ee8 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/msg/_GimbalAngleEulerCmd.py
@@ -35,6 +37,8 @@ b7045d3c47fda2969aa5601b6230dcb5 /home/airsim/project/AirSim/ros/devel/.private/
 56f89e865a256911457d03eb1eb97dd3 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/__init__.py
 4fb2c958d30b1a5e8b78746c111296cd /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_follow_trajectory_status_srv.py
 2c22005526323dae3a2609618f8289cb /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_get_trajectory.py
+d190f20bee0b2357255383250bdba4d7 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_profiling_data_srv.py
+f4406e6bd98d469aeec4d30187c1ac65 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/python2.7/dist-packages/airsim_ros_pkgs/srv/_start_profiling_srv.py
 a36178e41a0bfeeee77b9129191b752f /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/msg/BoolPlusHeader.lisp
 1ed338b632a0878741ff4bb7509336c4 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/msg/GPSYaw.lisp
 1b2e3a3d52e9e0f161225c2d6c639ec5 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/msg/GimbalAngleEulerCmd.lisp
@@ -52,6 +56,8 @@ e3126162a9cfe4df7565c92365589e69 /home/airsim/project/AirSim/ros/devel/.private/
 49ebd63bee4e4ca4afd69223eb20b485 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/TakeoffGroup.lisp
 2732c1098f0d89fff992c65d55e6233a /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.lisp
 7e50afcb905ae24c57c78b0ef7358c8c /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/get_trajectory.lisp
+1feed4f3e4b82d6dba08bbd50ce882e9 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/profiling_data_srv.lisp
+71d773cc1dc239cad788f1dee149d73a /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/common-lisp/ros/airsim_ros_pkgs/srv/start_profiling_srv.lisp
 23cef494d148e3d6df0679737d34b26c /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/BoolPlusHeader.js
 c8e8122a5742db1288f9fde1a9c0c04c /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/GPSYaw.js
 33ec42a9f1b2f473fa6c1e5bd06bb7ba /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/msg/GimbalAngleEulerCmd.js
@@ -69,6 +75,8 @@ da63677ebebc67eceb3ccb1ebf2e35ff /home/airsim/project/AirSim/ros/devel/.private/
 d531ebf0bddf0a9736b1d9d5b838d3f0 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/TakeoffGroup.js
 c8bf8fcc211ba26b0dd9fe0ea8bc7c81 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.js
 5efe40e00a8b191f195ff2d5241ba3a9 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/get_trajectory.js
+48d1a160593791349ee87d44a88d6b36 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/profiling_data_srv.js
+b5d8891d96ef30b0d318e8b953ef55fe /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/gennodejs/ros/airsim_ros_pkgs/srv/start_profiling_srv.js
 4d17ca23b82ae98f404436e8f6d43f7b /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/manifest.l
 336475b7851b77edf000a84df326acfe /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/msg/BoolPlusHeader.l
 d2b0e02b7a26f5ae661e8d1bb7c21da2 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/msg/GPSYaw.l
@@ -87,6 +95,8 @@ c12eb997ad7e755d3b999da652ec4b72 /home/airsim/project/AirSim/ros/devel/.private/
 9bf00448c83bd5d2d1351d41fdd057c1 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/TakeoffGroup.l
 8cc7f481db39c5d0caf77426955cf9b3 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/follow_trajectory_status_srv.l
 005bec450512919608166264d2269183 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/get_trajectory.l
+675009496583fd8c49dd561e45af3bb7 /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/profiling_data_srv.l
+1bcc64f191a81d878729dd063c5b8c8f /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/share/roseus/ros/airsim_ros_pkgs/srv/start_profiling_srv.l
 9de4ab9ff6cb1896100feef85e18b27e CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_BoolPlusHeader
 de51974b2b356bee9788647f34883d10 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_GPSYaw
 fc949a75677fbbe7dc91fe8de50a3752 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleEulerCmd
@@ -104,6 +114,8 @@ c80879ebd9ec498da9aa897734bb03c5 CMakeFiles/_airsim_ros_pkgs_generate_messages_c
 4f80566aef604dec7ead76e73ae86bd1 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_get_trajectory
 aca8b7cf6fe32b28c165e7a3cb7247d5 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_multiDOF
 54a8da8b2c78b30546be11161bd28b99 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_multiDOF_array
+04b4fecf686544e98c083c0c806e7e80 CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_profiling_data_srv
+47e3b2ee394fdf170a9e61a9c969056a CMakeFiles/_airsim_ros_pkgs_generate_messages_check_deps_start_profiling_srv
 a48e602bad4bcb7e14822776f8dc891a CMakeFiles/airsim_ros_pkgs_generate_messages_cpp
 a48e602bad4bcb7e14822776f8dc891a CMakeFiles/airsim_ros_pkgs_generate_messages_eus
 a48e602bad4bcb7e14822776f8dc891a CMakeFiles/airsim_ros_pkgs_generate_messages_lisp

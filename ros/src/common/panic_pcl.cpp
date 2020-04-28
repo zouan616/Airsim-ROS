@@ -26,37 +26,6 @@ long long g_panic_kernel_acc = 0;
 long long g_panic_main_loop = 0;
 int g_panic_ctr;
 
-// void log_data_before_shutting_down(){
-
-//     std::string ns = ros::this_node::getName();
-//     profile_manager::profiling_data_srv profiling_data_srv_inst;
-    
-//     profiling_data_srv_inst.request.key = "panic_kernel";
-//     profiling_data_srv_inst.request.value = (((double)g_panic_kernel_acc)/1e9)/g_panic_ctr;
-//     if (ros::service::waitForService("/record_profiling_data", 10)){ 
-//         if(!ros::service::call("/record_profiling_data",profiling_data_srv_inst)){
-//             ROS_ERROR_STREAM("could not probe data using stats manager");
-//             ros::shutdown();
-//         }
-//     }
-
-//     profiling_data_srv_inst.request.key = "panic_main_loop";
-//     profiling_data_srv_inst.request.value = (((double)g_panic_main_loop)/1e9)/g_panic_ctr;
-//     if (ros::service::waitForService("/record_profiling_data", 10)){ 
-//         if(!ros::service::call("/record_profiling_data",profiling_data_srv_inst)){
-//             ROS_ERROR_STREAM("could not probe data using stats manager");
-//             ros::shutdown();
-//         }
-//     }
-// }
-
-// void sigIntHandlerPrivate(int signo){
-//     if (signo == SIGINT) {
-//         log_data_before_shutting_down(); 
-//         ros::shutdown();
-//     }
-//     exit(0);
-// }
 
 template<class ObstacleData>
 class ObstacleSensor {

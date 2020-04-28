@@ -76,6 +76,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/external/rpclib/rpclib-2.2.1/include"
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/MavLinkCom/include"
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/MavLinkCom/common_utils"
+  "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/ros/src/common"
   "/home/airsim/project/AirSim/external/rpclib/rpclib-2.2.1/include"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"

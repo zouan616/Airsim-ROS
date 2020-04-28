@@ -1,147 +1,412 @@
 [  0%] Built target actionlib_msgs_generate_messages_nodejs
-[  0%] Built target std_srvs_generate_messages_py
 [  0%] Built target mav_msgs_generate_messages_cpp
-[  0%] Built target mav_msgs_generate_messages_lisp
 [  0%] Built target actionlib_msgs_generate_messages_lisp
-[ 17%] Built target MavLinkCom
-[ 17%] Built target actionlib_generate_messages_nodejs
-[ 17%] Built target trajectory_msgs_generate_messages_nodejs
-[ 17%] Built target actionlib_msgs_generate_messages_cpp
-[ 17%] Built target geographic_msgs_generate_messages_nodejs
-[ 17%] Built target std_srvs_generate_messages_cpp
-[ 17%] Built target trajectory_msgs_generate_messages_lisp
-[ 17%] Built target nav_msgs_generate_messages_lisp
-[ 17%] Built target roscpp_generate_messages_eus
-[ 17%] Built target actionlib_generate_messages_lisp
-[ 17%] Built target std_msgs_generate_messages_nodejs
-[ 17%] Built target nav_msgs_generate_messages_py
-[ 17%] Built target std_srvs_generate_messages_nodejs
-[ 17%] Built target visualization_msgs_generate_messages_lisp
-[ 17%] Built target std_msgs_generate_messages_eus
-[ 17%] Built target rosgraph_msgs_generate_messages_eus
-[ 17%] Built target rosgraph_msgs_generate_messages_nodejs
-[ 17%] Built target roscpp_generate_messages_nodejs
-[ 17%] Built target mav_planning_msgs_generate_messages_py
-[ 17%] Built target rosgraph_msgs_generate_messages_lisp
-[ 17%] Built target mavros_msgs_generate_messages_lisp
-[ 24%] Built target rpc
-[ 24%] Built target std_srvs_generate_messages_lisp
-[ 24%] Built target sensor_msgs_generate_messages_eus
-[ 24%] Built target std_srvs_generate_messages_eus
-[ 24%] Built target std_msgs_generate_messages_py
-[ 24%] Built target geometry_msgs_generate_messages_eus
-[ 24%] Built target roscpp_generate_messages_py
-[ 24%] Built target geometry_msgs_generate_messages_nodejs
-[ 24%] Built target tf2_msgs_generate_messages_eus
-[ 24%] Built target visualization_msgs_generate_messages_cpp
-[ 24%] Built target nav_msgs_generate_messages_eus
-[ 24%] Built target visualization_msgs_generate_messages_eus
-[ 24%] Built target sensor_msgs_generate_messages_py
-[ 24%] Built target mav_planning_msgs_generate_messages_cpp
-[ 24%] Built target std_msgs_generate_messages_cpp
-[ 24%] Built target actionlib_msgs_generate_messages_eus
-[ 24%] Built target geometry_msgs_generate_messages_lisp
-[ 24%] Built target visualization_msgs_generate_messages_nodejs
-[ 24%] Built target tf2_msgs_generate_messages_py
-[ 24%] Built target visualization_msgs_generate_messages_py
-[ 24%] Built target sensor_msgs_generate_messages_lisp
-[ 24%] Built target geometry_msgs_generate_messages_py
-[ 24%] Built target nav_msgs_generate_messages_cpp
-[ 24%] Built target geometry_msgs_generate_messages_cpp
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmd
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmdGroup
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_multiDOF
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Reset
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_get_trajectory
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleQuatCmd
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
-[ 24%] Built target trajectory_msgs_generate_messages_cpp
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_BoolPlusHeader
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetLocalPosition
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_multiDOF_array
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Land
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_TakeoffGroup
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GPSYaw
-[ 24%] Built target roscpp_generate_messages_cpp
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleEulerCmd
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetGPSPosition
-[ 24%] Built target actionlib_generate_messages_cpp
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Takeoff
-[ 24%] Built target sensor_msgs_generate_messages_nodejs
-[ 24%] Built target geographic_msgs_generate_messages_py
-[ 24%] Built target _airsim_ros_pkgs_generate_messages_check_deps_LandGroup
-[ 24%] Built target std_msgs_generate_messages_lisp
-[ 24%] Built target rosgraph_msgs_generate_messages_cpp
-[ 24%] Built target uuid_msgs_generate_messages_py
-[ 24%] Built target actionlib_msgs_generate_messages_py
-[ 24%] Built target tf2_msgs_generate_messages_cpp
-[ 24%] Built target tf2_msgs_generate_messages_nodejs
-[ 24%] Built target sensor_msgs_generate_messages_cpp
-[ 24%] Built target mav_planning_msgs_generate_messages_lisp
-[ 24%] Built target nav_msgs_generate_messages_nodejs
-[ 24%] Built target mavros_msgs_generate_messages_cpp
-[ 24%] Built target mavros_msgs_generate_messages_nodejs
-[ 24%] Built target tf2_msgs_generate_messages_lisp
-[ 24%] Built target mavros_msgs_generate_messages_py
-[ 34%] Built target airsim_ros_pkgs_generate_messages_nodejs
-[ 34%] Built target geographic_msgs_generate_messages_cpp
-[ 34%] Built target geographic_msgs_generate_messages_lisp
-[ 34%] Built target geographic_msgs_generate_messages_eus
-[ 34%] Built target uuid_msgs_generate_messages_cpp
-[ 34%] Built target uuid_msgs_generate_messages_eus
-[ 34%] Built target uuid_msgs_generate_messages_lisp
-[ 34%] Built target roscpp_generate_messages_lisp
-[ 34%] Built target mav_msgs_generate_messages_py
-[ 34%] Built target mav_msgs_generate_messages_eus
-[ 34%] Built target mav_msgs_generate_messages_nodejs
-[ 34%] Built target trajectory_msgs_generate_messages_py
-[ 34%] Built target mavros_msgs_generate_messages_eus
-[ 34%] Built target mav_planning_msgs_generate_messages_eus
-[ 34%] Built target uuid_msgs_generate_messages_nodejs
-[ 34%] Built target trajectory_msgs_generate_messages_eus
-[ 34%] Built target actionlib_generate_messages_eus
-[ 34%] Built target rosgraph_msgs_generate_messages_py
-[ 38%] Built target MavLinkTest
-[ 46%] Built target airsim_ros_pkgs_generate_messages_py
-[ 46%] Built target mav_planning_msgs_generate_messages_nodejs
-[ 46%] Built target actionlib_generate_messages_py
-[ 56%] Built target airsim_ros_pkgs_generate_messages_cpp
-[ 60%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/scanning_test[0m
-[ 67%] Built target airsim_ros_pkgs_generate_messages_lisp
-[ 76%] Built target airsim_ros_pkgs_generate_messages_eus
+[  0%] Built target std_srvs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target geographic_msgs_generate_messages_nodejs
+[  0%] Built target mav_msgs_generate_messages_lisp
+[ 14%] Built target MavLinkCom
+[ 14%] Built target actionlib_msgs_generate_messages_cpp
+[ 14%] Built target trajectory_msgs_generate_messages_nodejs
+[ 14%] Built target nav_msgs_generate_messages_lisp
+[ 14%] Built target std_srvs_generate_messages_cpp
+[ 14%] Built target roscpp_generate_messages_eus
+[ 14%] Built target actionlib_generate_messages_lisp
+[ 14%] Built target trajectory_msgs_generate_messages_lisp
+[ 14%] Built target std_srvs_generate_messages_nodejs
+[ 14%] Built target std_msgs_generate_messages_nodejs
+[ 14%] Built target nav_msgs_generate_messages_py
+[ 14%] Built target visualization_msgs_generate_messages_lisp
+[ 14%] Built target std_msgs_generate_messages_eus
+[ 14%] Built target mav_planning_msgs_generate_messages_py
+[ 14%] Built target rosgraph_msgs_generate_messages_lisp
+[ 14%] Built target rosgraph_msgs_generate_messages_eus
+[ 14%] Built target roscpp_generate_messages_nodejs
+[ 14%] Built target rosgraph_msgs_generate_messages_nodejs
+[ 14%] Built target sensor_msgs_generate_messages_eus
+[ 14%] Built target mavros_msgs_generate_messages_lisp
+[ 14%] Built target std_srvs_generate_messages_eus
+[ 14%] Built target std_srvs_generate_messages_lisp
+[ 14%] Built target geometry_msgs_generate_messages_nodejs
+[ 14%] Built target std_msgs_generate_messages_py
+[ 14%] Built target roscpp_generate_messages_py
+[ 14%] Built target geometry_msgs_generate_messages_eus
+[ 14%] Built target visualization_msgs_generate_messages_cpp
+[ 14%] Built target nav_msgs_generate_messages_eus
+[ 14%] Built target tf2_msgs_generate_messages_eus
+[ 14%] Built target visualization_msgs_generate_messages_eus
+[ 14%] Built target actionlib_msgs_generate_messages_eus
+[ 14%] Built target sensor_msgs_generate_messages_py
+[ 14%] Built target std_msgs_generate_messages_cpp
+[ 14%] Built target mav_planning_msgs_generate_messages_cpp
+[ 14%] Built target geometry_msgs_generate_messages_py
+[ 14%] Built target visualization_msgs_generate_messages_nodejs
+[ 14%] Built target visualization_msgs_generate_messages_py
+[ 14%] Built target tf2_msgs_generate_messages_py
+[ 14%] Built target sensor_msgs_generate_messages_lisp
+[ 14%] Built target geometry_msgs_generate_messages_lisp
+[ 14%] Built target nav_msgs_generate_messages_cpp
+[ 22%] Built target rpc
+[ 22%] Built target geometry_msgs_generate_messages_cpp
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_profiling_data_srv
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_multiDOF
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmdGroup
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Reset
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_VelCmd
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_get_trajectory
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_follow_trajectory_status_srv
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_BoolPlusHeader
+[ 22%] Built target trajectory_msgs_generate_messages_cpp
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_multiDOF_array
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetLocalPosition
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleQuatCmd
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Land
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GPSYaw
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_TakeoffGroup
+[ 22%] Built target actionlib_generate_messages_cpp
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_start_profiling_srv
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_SetGPSPosition
+[ 22%] Built target roscpp_generate_messages_cpp
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_GimbalAngleEulerCmd
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_Takeoff
+[ 22%] Built target _airsim_ros_pkgs_generate_messages_check_deps_LandGroup
+[ 22%] Built target geographic_msgs_generate_messages_py
+[ 22%] Built target sensor_msgs_generate_messages_nodejs
+[ 22%] Built target rosgraph_msgs_generate_messages_cpp
+[ 22%] Built target uuid_msgs_generate_messages_py
+[ 22%] Built target actionlib_msgs_generate_messages_py
+[ 22%] Built target sensor_msgs_generate_messages_cpp
+[ 22%] Built target tf2_msgs_generate_messages_nodejs
+[ 22%] Built target tf2_msgs_generate_messages_cpp
+[ 22%] Built target std_msgs_generate_messages_lisp
+[ 22%] Built target mav_planning_msgs_generate_messages_lisp
+[ 22%] Built target tf2_msgs_generate_messages_lisp
+[ 22%] Built target nav_msgs_generate_messages_nodejs
+[ 22%] Built target mavros_msgs_generate_messages_nodejs
+[ 22%] Built target mavros_msgs_generate_messages_py
+[ 22%] Built target mavros_msgs_generate_messages_cpp
+[ 22%] Built target geographic_msgs_generate_messages_cpp
+[ 31%] Built target airsim_ros_pkgs_generate_messages_nodejs
+[ 31%] Built target geographic_msgs_generate_messages_eus
+[ 31%] Built target geographic_msgs_generate_messages_lisp
+[ 31%] Built target uuid_msgs_generate_messages_cpp
+[ 31%] Built target uuid_msgs_generate_messages_lisp
+[ 31%] Built target uuid_msgs_generate_messages_eus
+[ 31%] Built target roscpp_generate_messages_lisp
+[ 31%] Built target uuid_msgs_generate_messages_nodejs
+[ 31%] Built target mav_msgs_generate_messages_eus
+[ 31%] Built target mav_msgs_generate_messages_nodejs
+[ 31%] Built target mav_msgs_generate_messages_py
+[ 31%] Built target trajectory_msgs_generate_messages_eus
+[ 31%] Built target trajectory_msgs_generate_messages_py
+[ 31%] Built target mavros_msgs_generate_messages_eus
+[ 31%] Built target mav_planning_msgs_generate_messages_eus
+[ 31%] Built target mav_planning_msgs_generate_messages_nodejs
+[ 31%] Built target rosgraph_msgs_generate_messages_py
+[ 31%] Built target actionlib_generate_messages_eus
+[ 31%] Built target actionlib_generate_messages_py
+[ 34%] Built target MavLinkTest
+[ 43%] Built target airsim_ros_pkgs_generate_messages_eus
+[ 44%] Built target scanning_test
+[ 55%] Built target airsim_ros_pkgs_generate_messages_cpp
+[ 65%] Built target airsim_ros_pkgs_generate_messages_lisp
+[ 76%] Built target airsim_ros_pkgs_generate_messages_py
 [ 76%] Built target airsim_ros_pkgs_generate_messages
-[ 77%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/motion_planner_test[0m
+[ 77%] Built target motion_planner_test
 [ 78%] Built target pd_position_controller_simple
 [ 84%] Built target AirLib
-[ 85%] [32m[1mLinking CXX shared library /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/libairsim_settings_parser.so[0m
-[ 85%] Built target motion_planner_test
-[ 86%] Built target airsim_settings_parser
-[35m[1mScanning dependencies of target airsim_ros[0m
-[ 87%] Built target scanning_test
-[ 87%] [32mBuilding CXX object CMakeFiles/airsim_ros.dir/src/airsim_ros_wrapper.cpp.o[0m
-[ 88%] [32m[1mLinking CXX shared library /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/libairsim_ros.so[0m
-[ 88%] Built target airsim_ros
-[35m[1mScanning dependencies of target common_mav[0m
-[ 89%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/pd_position_controller_simple_node[0m
-[ 90%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/airsim_node[0m
-[ 91%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/future_collision[0m
-[ 92%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/motion_planner[0m
-[ 92%] [32mBuilding CXX object CMakeFiles/common_mav.dir/src/common_mav.cpp.o[0m
-[ 92%] Built target pd_position_controller_simple_node
-[ 92%] Built target airsim_node
-[ 92%] Built target motion_planner
-[ 92%] Built target future_collision
-[ 93%] [32m[1mLinking CXX shared library /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/libcommon_mav.so[0m
-[ 93%] Built target common_mav
-[ 93%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/scanning_node[0m
-[ 94%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/follow_trajectory[0m
-[ 96%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/package_delivery_static[0m
-[ 96%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/package_delivery_node[0m
-[ 97%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/follow_trajectory_static[0m
-[ 98%] [32m[1mLinking CXX executable /home/airsim/project/AirSim/ros/devel/.private/airsim_ros_pkgs/lib/airsim_ros_pkgs/panic_pcl[0m
-[ 98%] Built target follow_trajectory_static
-[ 98%] Built target package_delivery_node
-[ 98%] Built target package_delivery_static
-[ 98%] Built target follow_trajectory
-[100%] Built target scanning_node
-[100%] Built target panic_pcl
+[ 85%] Built target airsim_settings_parser
+[ 86%] Built target airsim_ros
+[ 87%] Built target pd_position_controller_simple_node
+[ 88%] Built target airsim_node
+[ 89%] Built target common_mav
+[ 90%] Built target future_collision
+[ 91%] Built target motion_planner
+[35m[1mScanning dependencies of target profile_manager[0m
+[ 93%] Built target package_delivery_static
+[ 93%] Built target follow_trajectory
+[ 94%] Built target follow_trajectory_static
+[ 95%] Built target scanning_node
+[ 96%] Built target package_delivery_node
+[ 97%] Built target panic_pcl
+[ 97%] [32mBuilding CXX object CMakeFiles/profile_manager.dir/src/profile_manager.cpp.o[0m
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:31:14:[m[K [01;31m[Kerror: [m[K‘[01m[KFlightStats[m[K’ in namespace ‘[01m[Kmsr::airlib[m[K’ does not name a type
+ msr::airlib::[01;31m[KFlightStats[m[K g_init_stats, g_end_stats;
+              [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:36:1:[m[K [01;31m[Kerror: [m[Kreference to ‘[01m[Kvector[m[K’ is ambiguous
+ [01;31m[Kvector[m[K<KeyValuePairStruct> g_highlevel_application_stats;
+ [01;31m[K^~~~~~[m[K
+In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/vehicles/multirotor/api/MultirotorRpcLibClient.hpp:7:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_settings_parser.h:9[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:9[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:12[m[K:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/common/Common.hpp:52:30:[m[K [01;36m[Knote: [m[Kcandidates are: template<class T> using vector = std::vector<T>
+ using vector = std::vector<T>[01;36m[K;[m[K
+                              [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/7/vector:64:0[m[K,
+                 from [01m[K/usr/include/boost/math/special_functions/math_fwd.hpp:26[m[K,
+                 from [01m[K/usr/include/boost/math/special_functions/round.hpp:15[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/usr/include/c++/7/bits/stl_vector.h:216:11:[m[K [01;36m[Knote: [m[K                template<class _Tp, class _Alloc> class std::vector
+     class [01;36m[Kvector[m[K : protected _Vector_base<_Tp, _Alloc>
+           [01;36m[K^~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:[m[K In function ‘[01m[Kvoid output_flight_summary()[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:349:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_end_stats[m[K’ was not declared in this scope
+     stats_ss << "\t\"distance_travelled\": " << [01;31m[Kg_end_stats[m[K.distance_traveled - g_init_stats.distance_traveled<< "," << endl;
+                                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:349:49:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kg_topics_stats[m[K’
+     stats_ss << "\t\"distance_travelled\": " << [01;36m[Kg_end_stats[m[K.distance_traveled - g_init_stats.distance_traveled<< "," << endl;
+                                                 [01;36m[K^~~~~~~~~~~[m[K
+                                                 [32m[Kg_topics_stats[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:349:81:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_init_stats[m[K’ was not declared in this scope
+     stats_ss << "\t\"distance_travelled\": " << g_end_stats.distance_traveled - [01;31m[Kg_init_stats[m[K.distance_traveled<< "," << endl;
+                                                                                 [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:349:81:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kinitstate[m[K’
+     stats_ss << "\t\"distance_travelled\": " << g_end_stats.distance_traveled - [01;36m[Kg_init_stats[m[K.distance_traveled<< "," << endl;
+                                                                                 [01;36m[K^~~~~~~~~~~~[m[K
+                                                                                 [32m[Kinitstate[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:362:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_highlevel_application_stats[m[K’ was not declared in this scope
+     for (auto result_el: [01;31m[Kg_highlevel_application_stats[m[K) {
+                          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:362:26:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kg_localization_status[m[K’
+     for (auto result_el: [01;36m[Kg_highlevel_application_stats[m[K) {
+                          [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+                          [32m[Kg_localization_status[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:404:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_stats_fname[m[K’ was not declared in this scope
+     update_stats_file([01;31m[Kg_stats_fname[m[K, stats_ss.str());
+                       [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:404:23:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kgethostname[m[K’
+     update_stats_file([01;36m[Kg_stats_fname[m[K, stats_ss.str());
+                       [01;36m[K^~~~~~~~~~~~~[m[K
+                       [32m[Kgethostname[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:[m[K At global scope:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:408:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kprofile_manager[m[K’ has not been declared
+ bool start_profiling_cb([01;31m[Kprofile_manager[m[K::start_profiling_srv::Request &req, profile_manager::start_profiling_srv::Response &res){
+                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:408:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kreq[m[K’ was not declared in this scope
+ bool start_profiling_cb(profile_manager::start_profiling_srv::Request &[01;31m[Kreq[m[K, profile_manager::start_profiling_srv::Response &res){
+                                                                        [01;31m[K^~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:408:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kprofile_manager[m[K’ has not been declared
+ bool start_profiling_cb(profile_manager::start_profiling_srv::Request &req, [01;31m[Kprofile_manager[m[K::start_profiling_srv::Response &res){
+                                                                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:408:125:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope
+ bool start_profiling_cb(profile_manager::start_profiling_srv::Request &req, profile_manager::start_profiling_srv::Response &[01;31m[Kres[m[K){
+                                                                                                                             [01;31m[K^~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:408:125:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Krs[m[K’
+ bool start_profiling_cb(profile_manager::start_profiling_srv::Request &req, profile_manager::start_profiling_srv::Response &[01;36m[Kres[m[K){
+                                                                                                                             [01;36m[K^~~[m[K
+                                                                                                                             [32m[Krs[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:408:128:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K-fpermissive[m[K]
+ bool start_profiling_cb(profile_manager::start_profiling_srv::Request &req, profile_manager::start_profiling_srv::Response &res[01;31m[K)[m[K{
+                                                                                                                                [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:418:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kprofile_manager[m[K’ has not been declared
+ bool record_profiling_data_cb([01;31m[Kprofile_manager[m[K::profiling_data_srv::Request &req, profile_manager::profiling_data_srv::Response &res)
+                               [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:418:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kreq[m[K’ was not declared in this scope
+ bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &[01;31m[Kreq[m[K, profile_manager::profiling_data_srv::Response &res)
+                                                                             [01;31m[K^~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:418:82:[m[K [01;31m[Kerror: [m[K‘[01m[Kprofile_manager[m[K’ has not been declared
+ bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &req, [01;31m[Kprofile_manager[m[K::profiling_data_srv::Response &res)
+                                                                                  [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:418:129:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope
+ bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &req, profile_manager::profiling_data_srv::Response &[01;31m[Kres[m[K)
+                                                                                                                                 [01;31m[K^~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:418:129:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Krs[m[K’
+ bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &req, profile_manager::profiling_data_srv::Response &[01;36m[Kres[m[K)
+                                                                                                                                 [01;36m[K^~~[m[K
+                                                                                                                                 [32m[Krs[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:418:132:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K-fpermissive[m[K]
+ bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &req, profile_manager::profiling_data_srv::Response &res[01;31m[K)[m[K
+                                                                                                                                    [01;31m[K^[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::NodeHandle::advertiseService(const char [22], bool&)[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;31m[K)[m[K;
+                                                                                                                             [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), T*)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), T *obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), T*)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), T *obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), const boost::shared_ptr<X>&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), const boost::shared_ptr<T>& obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), const boost::shared_ptr<X>&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), const boost::shared_ptr<T>& obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(MReq&, MRes&))
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(MReq&, MRes&))
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(ros::ServiceEvent<MReq, MRes>&))
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(ServiceEvent<MReq, MRes>&))
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(MReq&, MRes&)>&, const VoidConstPtr&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(MReq&, MRes&)>& callback,
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(MReq&, MRes&)>[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class S> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(S&)>&, const VoidConstPtr&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(S&)>& callback,
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:482:125:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(S&)>[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer record_profiling_data_service = nh.advertiseService("record_profiling_data", record_profiling_data_cb[01;36m[K)[m[K;
+                                                                                                                             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[Kcandidate: ros::ServiceServer ros::NodeHandle::advertiseService(ros::AdvertiseServiceOptions&)
+   ServiceServer [01;36m[KadvertiseService[m[K(AdvertiseServiceOptions& ops);
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::NodeHandle::advertiseService(const char [16], bool&)[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;31m[K)[m[K;
+                                                                                                   [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), T*)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), T *obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), T*)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), T *obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), const boost::shared_ptr<X>&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), const boost::shared_ptr<T>& obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), const boost::shared_ptr<X>&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), const boost::shared_ptr<T>& obj)
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (T::*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(MReq&, MRes&))
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(MReq&, MRes&))
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(ros::ServiceEvent<MReq, MRes>&))
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(ServiceEvent<MReq, MRes>&))
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(MReq&, MRes&)>&, const VoidConstPtr&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(MReq&, MRes&)>& callback,
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(MReq&, MRes&)>[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[Kcandidate: template<class S> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(S&)>&, const VoidConstPtr&)
+   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(S&)>& callback,
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:483:99:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(S&)>[m[K’ and ‘[01m[Kbool[m[K’
+     ros::ServiceServer start_profiling = nh.advertiseService("start_profiling", start_profiling_cb[01;36m[K)[m[K;
+                                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[Kcandidate: ros::ServiceServer ros::NodeHandle::advertiseService(ros::AdvertiseServiceOptions&)
+   ServiceServer [01;36m[KadvertiseService[m[K(AdvertiseServiceOptions& ops);
+                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:513:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass AirsimROSWrapper[m[K’ has no member named ‘[01m[KgetFlightStats[m[K’
+         if (g_drone->[01;31m[KgetFlightStats[m[K().collision_count > 1) {
+                      [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:532:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_end_stats[m[K’ was not declared in this scope
+     [01;31m[Kg_end_stats[m[K = g_drone->getFlightStats();
+     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:532:5:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kg_topics_stats[m[K’
+     [01;36m[Kg_end_stats[m[K = g_drone->getFlightStats();
+     [01;36m[K^~~~~~~~~~~[m[K
+     [32m[Kg_topics_stats[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:532:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass AirsimROSWrapper[m[K’ has no member named ‘[01m[KgetFlightStats[m[K’
+     g_end_stats = g_drone->[01;31m[KgetFlightStats[m[K();
+                            [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:534:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_highlevel_application_stats[m[K’ was not declared in this scope
+     [01;31m[Kg_highlevel_application_stats[m[K.push_back(
+     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:534:5:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kg_localization_status[m[K’
+     [01;36m[Kg_highlevel_application_stats[m[K.push_back(
+     [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+     [32m[Kg_localization_status[m[K
+CMakeFiles/profile_manager.dir/build.make:62: recipe for target 'CMakeFiles/profile_manager.dir/src/profile_manager.cpp.o' failed
+make[2]: *** [CMakeFiles/profile_manager.dir/src/profile_manager.cpp.o] Error 1
+CMakeFiles/Makefile2:158: recipe for target 'CMakeFiles/profile_manager.dir/all' failed
+make[1]: *** [CMakeFiles/profile_manager.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2

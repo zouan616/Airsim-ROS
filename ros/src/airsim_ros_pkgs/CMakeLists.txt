@@ -77,6 +77,8 @@ add_service_files(
   SetLocalPosition.srv
   get_trajectory.srv
   follow_trajectory_status_srv.srv
+  profiling_data_srv.srv
+  start_profiling_srv.srv
 )
 
 generate_messages(
@@ -102,6 +104,7 @@ include_directories(
   ${AIRSIM_ROOT}/MavLinkCom/common_utils
   ${OpenCV_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
+  ${common_utility_src}
 )
 
 add_library(airsim_settings_parser src/airsim_settings_parser.cpp)
@@ -156,6 +159,22 @@ target_link_libraries(pd_position_controller_simple_node pd_position_controller_
   add_executable(future_collision src/future_collision.cpp)
   target_link_libraries(future_collision airsim_ros ${catkin_LIBRARIES} AirLib MavLinkCom rpc pthread ${OpenCV_LIBS} ${OCTOMAP_LIBRARIES})
  
+  # profile manager
+  # added 04/27/2020
+  #[[if(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64")
+    include_directories(/usr/local/cuda/include)
+    link_directories(/usr/lib/nvidia-384)
+    add_definitions(-DUSE_INTEL -DUSE_NVML)
+    add_executable(profile_manager src/profile_manager.cpp ${common_utility_src}/Profiling.cpp  ${common_utility_src}/timer.cpp)
+    target_link_libraries(profile_manager  ${catkin_LIBRARIES}  AirLib MavLinkCom rpc pthread nvidia-ml airsim_ros MavLinkCom pthread ${OpenCV_LIBS} common_mav)
+  else(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64")
+    add_executable(profile_manager src/profile_manager.cpp 
+    ${common_utility_src}/Profiling.cpp ${common_utility_src}/timer.cpp)
+    target_link_libraries(profile_manager  ${catkin_LIBRARIES}  AirLib MavLinkCom rpc pthread airsim_ros MavLinkCom pthread ${OpenCV_LIBS} common_mav)
+  endif(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64")
+
+  add_dependencies(profile_manager ${catkin_EXPORTED_TARGETS} airsim_ros_pkgs_generate_messages_cpp)]]
+
 
 install(TARGETS
     #list of nodes

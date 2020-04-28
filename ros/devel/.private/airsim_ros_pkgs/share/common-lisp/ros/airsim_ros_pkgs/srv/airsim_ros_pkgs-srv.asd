@@ -25,4 +25,8 @@
     (:file "_package_follow_trajectory_status_srv" :depends-on ("_package"))
     (:file "get_trajectory" :depends-on ("_package_get_trajectory"))
     (:file "_package_get_trajectory" :depends-on ("_package"))
+    (:file "profiling_data_srv" :depends-on ("_package_profiling_data_srv"))
+    (:file "_package_profiling_data_srv" :depends-on ("_package"))
+    (:file "start_profiling_srv" :depends-on ("_package_start_profiling_srv"))
+    (:file "_package_start_profiling_srv" :depends-on ("_package"))
   ))

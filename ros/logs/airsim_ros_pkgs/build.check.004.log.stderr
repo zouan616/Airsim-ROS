@@ -1,0 +1,21 @@
+** WARNING ** io features related to ensenso will be disabled
+** WARNING ** io features related to davidSDK will be disabled
+** WARNING ** io features related to dssdk will be disabled
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+** WARNING ** io features related to libusb-1.0 will be disabled
+** WARNING ** visualization features related to ensenso will be disabled
+** WARNING ** visualization features related to davidSDK will be disabled
+** WARNING ** visualization features related to dssdk will be disabled
+** WARNING ** visualization features related to rssdk will be disabled
+[31m[1mCMake Error[0m at /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/CMakeLists.txt:176 (add_dependencies):
+  Cannot add target-level dependencies to non-existent target
+  "profile_managersensor_msgs_generate_messages_cpp".
+
+  The add_dependencies works for top-level logical targets created by the
+  add_executable, add_library, or add_custom_target commands.  If you want to
+  add file-level dependencies see the DEPENDS option of the add_custom_target
+  and add_custom_command commands.
+
+
+make: *** [cmake_check_build_system] Error 1

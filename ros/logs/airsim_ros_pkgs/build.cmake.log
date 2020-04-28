@@ -162,7 +162,7 @@ but not all the files it references.
 [36m--[0m BUILD_SHARED_LIBS is on
 [36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 [36m--[0m Found ompl: /home/airsim/include
-[36m--[0m airsim_ros_pkgs: 8 messages, 9 services
+[36m--[0m airsim_ros_pkgs: 8 messages, 11 services
 [36m--[0m Configuring done
 [36m--[0m Generating done
 [36m--[0m Build files have been written to: /home/airsim/project/AirSim/ros/build/airsim_ros_pkgs
