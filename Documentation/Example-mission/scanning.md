@@ -7,7 +7,7 @@ Beside [Airsim_ros_pkgs](https://github.com/microsoft/AirSim/tree/master/ros/src
 1. [OMPL](https://ompl.kavrakilab.org/)
 
 2. [mav_trajectory_generation](https://github.com/ethz-asl/mav_trajectory_generation)
-(This one may have some problems when installing. Check the issues in its github)
+(This one may have some problems when installing. Check [Oren's issue](https://github.com/ethz-asl/mav_trajectory_generation/issues/105))
 
 3. [octomap](https://github.com/OctoMap/octomap). You also need to install the ROS-integration for octomap, the package is [octomap_mapping](http://wiki.ros.org/octomap_mapping)
 
@@ -58,16 +58,26 @@ set(CXX_EXP_LIB "-nostdinc++ -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gn
 ## Start airsim
 Now, start the block environment and running. If you do not know how, follow [Airsim tutorial](https://microsoft.github.io/AirSim/unreal_blocks/)
 
-## Running
+## Running by launch file
 Open a new terminal and run the following commands
 ```shell
  $ roslaunch airsim_ros_pkgs airsim_node.launch
  ## Open a new Tab,
  $ roslaunch airsim_ros_pkgs scanning.launch
 ```
+
+## Running by seperating different nodes (if fail to run first method)
+Open 4 terminal tabs and run each command in an individual tab
+```shell
+ $ roslaunch airsim_ros_pkgs airsim_node.launch
+ $ roslaunch airsim_tutorial_pkgs front_stereo_and_center_mono.launch
+ $ roslaunch airsim_ros_pkgs octomap_server.launch
+ $ rosrun airsim_ros_pkgs scanning_node
+```
+
 At this point, the drone should alreay fly in the air, and RVIZ should show the corresponding Octomap generated. 
 
-Now you need to give the drone an area to scan with width, length, number of lanes and height. Because scanning mission **does not** contain objection detection and collision checking
+Now you need to give the drone an area to scan with width, length, number of lanes and height (in the tab of scanning.launch or scanning_node). Because scanning mission **does not** contain objection detection and collision checking
 (actually, this application should be running in a obstacle free environemnt such as a farmland), you need to be careful with the width and length.
 A typical area would be "10 30 5 10".
 
