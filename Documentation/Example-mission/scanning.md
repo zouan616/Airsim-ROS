@@ -66,7 +66,7 @@ Open a new terminal and run the following commands
  $ roslaunch airsim_ros_pkgs scanning.launch
 ```
 
-## Running by seperating different nodes (if fail to run first method)
+## Running by separating different nodes (if fail to run first method)
 Open 4 terminal tabs and run each command in an individual tab
 ```shell
  $ roslaunch airsim_ros_pkgs airsim_node.launch
@@ -74,7 +74,7 @@ Open 4 terminal tabs and run each command in an individual tab
  $ roslaunch airsim_ros_pkgs octomap_server.launch
  $ rosrun airsim_ros_pkgs scanning_node
 ```
-
+## Give command
 At this point, the drone should alreay fly in the air, and RVIZ should show the corresponding Octomap generated. 
 
 Now you need to give the drone an area to scan with width, length, number of lanes and height (in the tab of scanning.launch or scanning_node). Because scanning mission **does not** contain objection detection and collision checking
