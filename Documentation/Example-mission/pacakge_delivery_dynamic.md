@@ -16,7 +16,7 @@ Once the drone flies to the goal coordinate, it will fly back to the start point
 ## Start airsim
 Start the block environment and running. If you do not know how, follow [Airsim tutorial](https://microsoft.github.io/AirSim/unreal_blocks/)
 
-## Running
+## Running by launch file
 Open a new terminal and run the following commands
 ```shell
  $ roslaunch airsim_ros_pkgs airsim_node.launch
@@ -28,6 +28,21 @@ Open a new terminal and run the following commands
  ## Now, wait for the drone to completely take off, and then open another new terminal
  $ roslaunch airsim_ros_pkgs package_delivery_dynamic.launch
 ```
+## Running by seperating each node(if last method fails)
+The latest AirSim ROS will likely report a "null quarternion" issue. This happens in front_stereo_and_center_mono.launch, and will affect the octomap building process. If it keeps reporting the errors, do the following to run the mission
+1. Open [package_delivery_dynamic.launch](https://github.com/zouan616/Airsim-ROS/blob/master/ros/src/airsim_ros_pkgs/launch/package_delivery_dynamic.launch)
+2. Delete the tag **<include file=\"$(find airsim_tutorial_pkgs)/launch/front_stereo_and_center_mono/front_stereo_and_center_mono.launch\"/>**
+3. Delete the node tag for octomap_server and everything between.
+
+Now you are ready to run the mission by running each node individually in different terminals
+```shell
+$ roslaunch airsim_ros_pkgs airsim_node.launch
+$ roslaunch airsim_tutorial_pkgs front_stereo_and_center_mono.launch
+$ roslaunch airsim_ros_pkgs octomap_server.launch
+$ rosrun airsim_ros_pkgs follow_trajectory
+$ roslaunch airsim_ros_pkgs package_delivery_dynamic.launch
+```
+
 At this point, the drone should alreay fly in the air, and RVIZ should show the corresponding Octomap generated.
 
 Now give the drone a coordinate to fly to. Currently it **does not** check the coordinate validity, so even if the destination is unaccessible it will still try to fly to it.
@@ -53,4 +68,4 @@ General node involved: airsim_node, depth_to_pointcloud_manager, airsim_depth2cl
 
 Mission-Specific node involved: package_delivery_node, octomap_server, panic_pcl, follow_trajectory, future collision, motion planner
 
-After you give the destination coordinate, motion planner node first gives a trajectory based on initial map. As the drone builds its environment gradually, the planned trajectory may have collision. **future collision node** helps to detect collision by consistently checking collision. Once it finds potential collsion, it publishes the message so that package_delivery_node will ask motion planner to replanning. follow_trajectory is the node that actully controls the drone to fly.
+After you give the destination coordinate, motion planner node first gives a trajectory based on initial map. As the drone builds its environment gradually, the planned trajectory may have collision. **future collision node** helps to detect collision by consistently checking collision. Once it finds potential collsion, it publishes the message(through topic "/col_coming") so that package_delivery_node will ask motion planner to replanning. follow_trajectory is the node that actully controls the drone to fly, and it will stop if collision message is published
