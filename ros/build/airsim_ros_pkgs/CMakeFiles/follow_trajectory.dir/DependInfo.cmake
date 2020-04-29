@@ -22,6 +22,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"airsim_ros_pkgs\""
   "RPCLIB_MSGPACK=clmdep_msgpack"
+  "USE_INTEL"
+  "USE_NVML"
   "qh_QHpointer"
   "vtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)"
   "vtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)"
@@ -73,6 +75,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/MavLinkCom/include"
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/MavLinkCom/common_utils"
   "/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/ros/src/common"
+  "/usr/local/cuda/include"
   "/home/airsim/project/AirSim/external/rpclib/rpclib-2.2.1/include"
   )
 

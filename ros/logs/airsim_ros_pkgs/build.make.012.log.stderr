@@ -1,0 +1,11 @@
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:[m[K In function ‘[01m[Kvoid output_flight_summary()[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:378:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_stats_fname[m[K’ was not declared in this scope
+     update_stats_file([01;31m[Kg_stats_fname[m[K, stats_ss.str());
+                       [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/profile_manager.cpp:378:23:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kgethostname[m[K’
+     update_stats_file([01;36m[Kg_stats_fname[m[K, stats_ss.str());
+                       [01;36m[K^~~~~~~~~~~~~[m[K
+                       [32m[Kgethostname[m[K
+make[2]: *** [CMakeFiles/profile_manager.dir/src/profile_manager.cpp.o] Error 1
+make[1]: *** [CMakeFiles/profile_manager.dir/all] Error 2
+make: *** [all] Error 2

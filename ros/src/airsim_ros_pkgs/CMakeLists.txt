@@ -12,18 +12,15 @@ add_subdirectory("${AIRSIM_ROOT}/cmake/MavLinkCom" MavLinkCom)
 set(CMAKE_CXX_STANDARD 11)
 
 
-
- 
 set(RPC_LIB_INCLUDES " ${AIRSIM_ROOT}/external/rpclib/rpclib-2.2.1/include")
 set(RPC_LIB rpc) # name of .a file with lib prefix
 message(STATUS "found RPC_LIB_INCLUDES=${RPC_LIB_INCLUDES}")
-
-set(OpenCV_INCLUDE_DIRS "/usr/include/opencv4;/usr/include")
 
 # todo eigen3 in AirLib already
 # find_package(Eigen3 REQUIRED) 
 find_package(Boost REQUIRED)
 find_package(OpenCV REQUIRED)
+
 
 # package add by feiyang jin
 # pcl is for octomap_server
@@ -35,6 +32,7 @@ find_package(OpenCV REQUIRED)
   find_package(octomap REQUIRED)
   find_package(octomap_server REQUIRED)
   find_package(ompl REQUIRED)
+
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
@@ -115,7 +113,7 @@ add_dependencies(pd_position_controller_simple ${${PROJECT_NAME}_EXPORTED_TARGET
 add_dependencies(pd_position_controller_simple ${catkin_EXPORTED_TARGETS})
 
 add_library(airsim_ros src/airsim_ros_wrapper.cpp)
-add_dependencies(airsim_ros ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} airsim_ros_pkgs_generate_messages_cpp)
+add_dependencies(airsim_ros ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(airsim_ros ${catkin_LIBRARIES} ${OpenCV_LIBS} yaml-cpp AirLib airsim_settings_parser)
 
   # library created by feiyang jin
@@ -158,10 +156,10 @@ target_link_libraries(pd_position_controller_simple_node pd_position_controller_
 
   add_executable(future_collision src/future_collision.cpp)
   target_link_libraries(future_collision airsim_ros ${catkin_LIBRARIES} AirLib MavLinkCom rpc pthread ${OpenCV_LIBS} ${OCTOMAP_LIBRARIES})
- 
+
   # profile manager
   # added 04/27/2020
-  #[[if(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64")
+  if(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64")
     include_directories(/usr/local/cuda/include)
     link_directories(/usr/lib/nvidia-384)
     add_definitions(-DUSE_INTEL -DUSE_NVML)
@@ -173,7 +171,7 @@ target_link_libraries(pd_position_controller_simple_node pd_position_controller_
     target_link_libraries(profile_manager  ${catkin_LIBRARIES}  AirLib MavLinkCom rpc pthread airsim_ros MavLinkCom pthread ${OpenCV_LIBS} common_mav)
   endif(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64")
 
-  add_dependencies(profile_manager ${catkin_EXPORTED_TARGETS} airsim_ros_pkgs_generate_messages_cpp)]]
+  add_dependencies(profile_manager ${catkin_EXPORTED_TARGETS} airsim_ros_pkgs_generate_messages_cpp)
 
 
 install(TARGETS

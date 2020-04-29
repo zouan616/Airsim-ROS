@@ -28,12 +28,12 @@ string g_mission_status = "failed";
 string g_localization_status = "healthy";
 float g_coverage = 0;
 bool g_end_requested = false;
-msr::airlib::FlightStats g_init_stats, g_end_stats;
+
 string g_ns; 
 string g_localization_method;
-
+string g_stats_fname;
 //profiling variable
-vector<KeyValuePairStruct> g_highlevel_application_stats;
+std::vector<KeyValuePairStruct> g_highlevel_application_stats;
 std::map <std::string, statsStruct> g_topics_stats;
 std::map <std::string, statsStruct> g_topics_stats_filterd;
 bool g_start_profiling_data = false;
@@ -330,14 +330,6 @@ void output_flight_summary(void){
     
     //Flight Stats dependent metrics
     stats_ss << "{"<<endl;
-    stats_ss << "\t\"distance_travelled\": " << g_end_stats.distance_traveled - g_init_stats.distance_traveled<< "," << endl;
-    stats_ss << "\t\"flight_time\": " << g_end_stats.flight_time - g_init_stats.flight_time<< "," << endl;
-    stats_ss << "\t\"collision_count\": " << g_end_stats.collision_count  - g_init_stats.collision_count << "," << endl;
-    
-    stats_ss << "\t\"initial_voltage\": " << g_init_stats.voltage << "," << endl;
-    stats_ss << "\t\"end_voltage\": " << g_end_stats.voltage << "," << endl;
-    stats_ss << "\t\"StateOfCharge\": " << 100 - (g_init_stats.state_of_charge  - g_end_stats.state_of_charge) << "," << endl;
-    stats_ss << "\t\"rotor energy consumed \": " << g_end_stats.energy_consumed - g_init_stats.energy_consumed << ","<<endl; 
 
     // the rest of metrics 
      
@@ -353,7 +345,6 @@ void output_flight_summary(void){
     }
      
   
-    total_energy_consumed +=  (g_end_stats.energy_consumed - g_init_stats.energy_consumed);
     stats_ss << "\t\"" <<"total_energy_consumed"<<'"'<<":" << total_energy_consumed << "," << endl;
     // topic rates
     stats_ss << "\t\""  <<"topic_statistics"<<'"'<<":{" << endl;
@@ -388,7 +379,7 @@ void output_flight_summary(void){
 }
 
 
-bool start_profiling_cb(profile_manager::start_profiling_srv::Request &req, profile_manager::start_profiling_srv::Response &res){
+bool start_profiling_cb(airsim_ros_pkgs::start_profiling_srv::Request &req, airsim_ros_pkgs::start_profiling_srv::Response &res){
  if (g_start_profiling_data) {
      res.start = true;
  }else{
@@ -398,7 +389,7 @@ bool start_profiling_cb(profile_manager::start_profiling_srv::Request &req, prof
 }
 
 
-bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &req, profile_manager::profiling_data_srv::Response &res)
+bool record_profiling_data_cb(airsim_ros_pkgs::profiling_data_srv::Request &req, airsim_ros_pkgs::profiling_data_srv::Response &res)
 { 
     if (g_drone == NULL) {
         ROS_ERROR_STREAM("drone object is not initialized");
@@ -406,7 +397,6 @@ bool record_profiling_data_cb(profile_manager::profiling_data_srv::Request &req,
     }
 
     if(req.key == "start_profiling"){  
-        g_init_stats = g_drone->getFlightStats();
         xs_gpu.start = xs_cpu.start = std::chrono::system_clock::now();
         xs_gpu.running = xs_cpu.running = true;
         #ifdef USE_INTEL
@@ -490,11 +480,6 @@ int main(int argc, char **argv)
         #ifndef USE_INTEL
         read_cpu_power_sample(&xs_cpu);
         #endif // NOT USE_INTEL
-        
-        //collectSLAMData(g_localization_method);
-
-        if (g_drone->getFlightStats().collision_count > 1) {
-        }
 
         loop_rate.sleep();
         ros::spinOnce();
@@ -511,8 +496,6 @@ int main(int argc, char **argv)
     #else
     cpu_compute_energy = xs_cpu.sum;
     #endif // USE_INTEL
-    
-    g_end_stats = g_drone->getFlightStats();
      
     g_highlevel_application_stats.push_back(
             KeyValuePairStruct("gpu_compute_energy", gpu_compute_energy));

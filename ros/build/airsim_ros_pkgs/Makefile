@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named profile_manager
+
+# Build rule for target.
+profile_manager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 profile_manager
+.PHONY : profile_manager
+
+# fast build rule for target.
+profile_manager/fast:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/build
+.PHONY : profile_manager/fast
+
+#=============================================================================
 # Target rules for targets named future_collision
 
 # Build rule for target.
@@ -2559,6 +2572,33 @@ gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+home/airsim/project/AirSim/ros/src/common/Profiling.o: home/airsim/project/AirSim/ros/src/common/Profiling.cpp.o
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/Profiling.o
+
+# target to build an object file
+home/airsim/project/AirSim/ros/src/common/Profiling.cpp.o:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/home/airsim/project/AirSim/ros/src/common/Profiling.cpp.o
+.PHONY : home/airsim/project/AirSim/ros/src/common/Profiling.cpp.o
+
+home/airsim/project/AirSim/ros/src/common/Profiling.i: home/airsim/project/AirSim/ros/src/common/Profiling.cpp.i
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/Profiling.i
+
+# target to preprocess a source file
+home/airsim/project/AirSim/ros/src/common/Profiling.cpp.i:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/home/airsim/project/AirSim/ros/src/common/Profiling.cpp.i
+.PHONY : home/airsim/project/AirSim/ros/src/common/Profiling.cpp.i
+
+home/airsim/project/AirSim/ros/src/common/Profiling.s: home/airsim/project/AirSim/ros/src/common/Profiling.cpp.s
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/Profiling.s
+
+# target to generate assembly for a file
+home/airsim/project/AirSim/ros/src/common/Profiling.cpp.s:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/home/airsim/project/AirSim/ros/src/common/Profiling.cpp.s
+.PHONY : home/airsim/project/AirSim/ros/src/common/Profiling.cpp.s
+
 home/airsim/project/AirSim/ros/src/common/panic_pcl.o: home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o
 
 .PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.o
@@ -2585,6 +2625,33 @@ home/airsim/project/AirSim/ros/src/common/panic_pcl.s: home/airsim/project/AirSi
 home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s:
 	$(MAKE) -f CMakeFiles/panic_pcl.dir/build.make CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s
 .PHONY : home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.s
+
+home/airsim/project/AirSim/ros/src/common/timer.o: home/airsim/project/AirSim/ros/src/common/timer.cpp.o
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/timer.o
+
+# target to build an object file
+home/airsim/project/AirSim/ros/src/common/timer.cpp.o:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/home/airsim/project/AirSim/ros/src/common/timer.cpp.o
+.PHONY : home/airsim/project/AirSim/ros/src/common/timer.cpp.o
+
+home/airsim/project/AirSim/ros/src/common/timer.i: home/airsim/project/AirSim/ros/src/common/timer.cpp.i
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/timer.i
+
+# target to preprocess a source file
+home/airsim/project/AirSim/ros/src/common/timer.cpp.i:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/home/airsim/project/AirSim/ros/src/common/timer.cpp.i
+.PHONY : home/airsim/project/AirSim/ros/src/common/timer.cpp.i
+
+home/airsim/project/AirSim/ros/src/common/timer.s: home/airsim/project/AirSim/ros/src/common/timer.cpp.s
+
+.PHONY : home/airsim/project/AirSim/ros/src/common/timer.s
+
+# target to generate assembly for a file
+home/airsim/project/AirSim/ros/src/common/timer.cpp.s:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/home/airsim/project/AirSim/ros/src/common/timer.cpp.s
+.PHONY : home/airsim/project/AirSim/ros/src/common/timer.cpp.s
 
 src/airsim_node.o: src/airsim_node.cpp.o
 
@@ -2937,6 +3004,33 @@ src/pd_position_controller_simple_node.cpp.s:
 	$(MAKE) -f CMakeFiles/pd_position_controller_simple_node.dir/build.make CMakeFiles/pd_position_controller_simple_node.dir/src/pd_position_controller_simple_node.cpp.s
 .PHONY : src/pd_position_controller_simple_node.cpp.s
 
+src/profile_manager.o: src/profile_manager.cpp.o
+
+.PHONY : src/profile_manager.o
+
+# target to build an object file
+src/profile_manager.cpp.o:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/src/profile_manager.cpp.o
+.PHONY : src/profile_manager.cpp.o
+
+src/profile_manager.i: src/profile_manager.cpp.i
+
+.PHONY : src/profile_manager.i
+
+# target to preprocess a source file
+src/profile_manager.cpp.i:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/src/profile_manager.cpp.i
+.PHONY : src/profile_manager.cpp.i
+
+src/profile_manager.s: src/profile_manager.cpp.s
+
+.PHONY : src/profile_manager.s
+
+# target to generate assembly for a file
+src/profile_manager.cpp.s:
+	$(MAKE) -f CMakeFiles/profile_manager.dir/build.make CMakeFiles/profile_manager.dir/src/profile_manager.cpp.s
+.PHONY : src/profile_manager.cpp.s
+
 src/scanning_node.o: src/scanning_node.cpp.o
 
 .PHONY : src/scanning_node.o
@@ -2999,6 +3093,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... profile_manager"
 	@echo "... future_collision"
 	@echo "... panic_pcl"
 	@echo "... follow_trajectory_static"
@@ -3188,9 +3283,15 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... home/airsim/project/AirSim/ros/src/common/Profiling.o"
+	@echo "... home/airsim/project/AirSim/ros/src/common/Profiling.i"
+	@echo "... home/airsim/project/AirSim/ros/src/common/Profiling.s"
 	@echo "... home/airsim/project/AirSim/ros/src/common/panic_pcl.o"
 	@echo "... home/airsim/project/AirSim/ros/src/common/panic_pcl.i"
 	@echo "... home/airsim/project/AirSim/ros/src/common/panic_pcl.s"
+	@echo "... home/airsim/project/AirSim/ros/src/common/timer.o"
+	@echo "... home/airsim/project/AirSim/ros/src/common/timer.i"
+	@echo "... home/airsim/project/AirSim/ros/src/common/timer.s"
 	@echo "... src/airsim_node.o"
 	@echo "... src/airsim_node.i"
 	@echo "... src/airsim_node.s"
@@ -3230,6 +3331,9 @@ help:
 	@echo "... src/pd_position_controller_simple_node.o"
 	@echo "... src/pd_position_controller_simple_node.i"
 	@echo "... src/pd_position_controller_simple_node.s"
+	@echo "... src/profile_manager.o"
+	@echo "... src/profile_manager.i"
+	@echo "... src/profile_manager.s"
 	@echo "... src/scanning_node.o"
 	@echo "... src/scanning_node.i"
 	@echo "... src/scanning_node.s"

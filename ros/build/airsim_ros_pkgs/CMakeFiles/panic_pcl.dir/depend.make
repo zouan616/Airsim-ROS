@@ -1271,4 +1271,10 @@ CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp
 CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/include/x86_64-linux-gnu/sys/timeb.h
 CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/include/x86_64-linux-gnu/sys/types.h
 CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/include/x86_64-linux-gnu/sys/uio.h
+CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/local/cuda/include/crt/host_defines.h
+CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/local/cuda/include/cuda_fp16.h
+CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/local/cuda/include/cuda_fp16.hpp
+CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/local/cuda/include/host_defines.h
+CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/local/cuda/include/math_constants.h
+CMakeFiles/panic_pcl.dir/home/airsim/project/AirSim/ros/src/common/panic_pcl.cpp.o: /usr/local/cuda/include/vector_types.h
 

@@ -1,0 +1,22 @@
+In file included from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/common/Settings.hpp:14:0[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/common/AirSimSettings.hpp:12[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_settings_parser.h:13[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/airsim_ros_wrapper.h:9[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:17[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:1[m[K:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/common/common_utils/json.hpp:[m[K In function ‘[01m[Kbool nlohmann::operator<(nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer>::const_reference, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer>::const_reference)[m[K’:
+[01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/../../../../AirSim/AirLib/include/common/common_utils/json.hpp:6057:62:[m[K [01;31m[Kerror: [m[Kwrong number of template arguments (1, should be 2)
+                     return *lhs.m_value.array < *rhs.m_value.[01;31m[Karray[m[K;
+                                                              [01;31m[K^~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/tuple:39:0[m[K,
+                 from [01m[K/usr/include/c++/7/bits/stl_map.h:63[m[K,
+                 from [01m[K/usr/include/c++/7/map:61[m[K,
+                 from [01m[K/opt/ros/melodic/include/trajectory_msgs/MultiDOFJointTrajectory.h:11[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/include/common_mav.h:7[m[K,
+                 from [01m[K/home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/src/common_mav.cpp:1[m[K:
+[01m[K/usr/include/c++/7/array:94:12:[m[K [01;36m[Knote: [m[Kprovided for ‘[01m[Ktemplate<class _Tp, long unsigned int _Nm> struct std::array[m[K’
+     struct [01;36m[Karray[m[K
+            [01;36m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/common_mav.dir/src/common_mav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/common_mav.dir/all] Error 2
+make: *** [all] Error 2

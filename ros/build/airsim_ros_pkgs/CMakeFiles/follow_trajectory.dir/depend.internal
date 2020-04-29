@@ -1282,3 +1282,9 @@ CMakeFiles/follow_trajectory.dir/src/follow_trajectory_node.cpp.o
  /usr/include/x86_64-linux-gnu/sys/timeb.h
  /usr/include/x86_64-linux-gnu/sys/types.h
  /usr/include/x86_64-linux-gnu/sys/uio.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/vector_types.h

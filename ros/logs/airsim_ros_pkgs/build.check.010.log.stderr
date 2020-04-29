@@ -8,10 +8,3 @@
 ** WARNING ** visualization features related to davidSDK will be disabled
 ** WARNING ** visualization features related to dssdk will be disabled
 ** WARNING ** visualization features related to rssdk will be disabled
-[31m[1mCMake Error[0m at /home/airsim/project/AirSim/ros/src/airsim_ros_pkgs/CMakeLists.txt:176 (add_dependencies):
-  The dependency target
-  "std_msgs_generate_messages_pyairsim_ros_pkgs_generate_messages_cpp" of
-  target "profile_manager" does not exist.
-
-
-make: *** [cmake_check_build_system] Error 1

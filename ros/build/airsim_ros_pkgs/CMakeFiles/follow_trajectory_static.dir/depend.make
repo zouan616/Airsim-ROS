@@ -1281,4 +1281,10 @@ CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr
 CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/include/x86_64-linux-gnu/sys/timeb.h
 CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/include/x86_64-linux-gnu/sys/types.h
 CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/include/x86_64-linux-gnu/sys/uio.h
+CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/local/cuda/include/crt/host_defines.h
+CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/local/cuda/include/cuda_fp16.h
+CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/local/cuda/include/cuda_fp16.hpp
+CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/local/cuda/include/host_defines.h
+CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/local/cuda/include/math_constants.h
+CMakeFiles/follow_trajectory_static.dir/src/follow_trajectory_static.cpp.o: /usr/local/cuda/include/vector_types.h
 
