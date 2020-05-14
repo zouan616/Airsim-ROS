@@ -18,6 +18,8 @@ The latest Airsim-ROS now includes a battery model for the drone. Because the po
 
 3. Build it as you build AirSim(first **./setup.sh** then **./build.sh** )
 
-This will build the AirSim Version with power model included. To use it, you need to change your settings.json to include the power model parameter. You can directly copy this file into you directory (/home/username/Documents/AirSim).
+This will build the AirSim Version with power model included. To use it, you need to change your settings.json to include the power model parameter. You can directly copy [this file](https://github.com/zouan616/Airsim-ROS/blob/master/settings.json) into you directory (/home/username/Documents/AirSim).
+
+Now, running example mission requires follow the same step as before. To see the documentations for both communication protocols and example missions, please go to **Documentation**
   
   
