@@ -12,7 +12,6 @@ Beside [Airsim_ros_pkgs](https://github.com/microsoft/AirSim/tree/master/ros/src
 3. [octomap](https://github.com/OctoMap/octomap). You also need to install the ROS-integration for octomap, the package is [octomap_mapping](http://wiki.ros.org/octomap_mapping)
 
 # Setup
-Once you finish all the prerequisites, download the "ros" folder in this repository, and replace the "ros" folder in Airsim directory with it.
 Then run the following commands in Airsim directory:
 
 ```Shell
@@ -46,15 +45,6 @@ set(CXX_EXP_LIB "-nostdinc++ -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gn
 ```
 
 # Running scanning example
-## Set airsim settings.json
-```shell
- $ source PATH_TO/AirSim/ros/devel/setup.bash
- $ roscd airsim_tutorial_pkgs
- $ cp settings/front_stereo_and_center_mono.json ~/Documents/AirSim/settings.json
- 
-##This setting contains the necessary sensors to generate Point-Cloud
-```
-
 ## Start airsim
 Now, start the block environment and running. If you do not know how, follow [Airsim tutorial](https://microsoft.github.io/AirSim/unreal_blocks/)
 
