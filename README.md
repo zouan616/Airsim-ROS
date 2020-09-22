@@ -9,7 +9,7 @@ This reposityory and its code is mainly modified from [MAVbench](https://github.
 
 To see the documentations for both communication protocols and example missions, please go to **Documentation**
 
-# Update on May 14 2019
+# Update on May 14 2020
 The latest Airsim-ROS now includes a battery model for the drone. Because the power model is a feature directly added on Airsim, it is not enough to just modify the ros package of it. A lot of files has been changed in AirSim/AirLib folder to support the power model. Now to use this version, follow the steps below:
 
 1. go to https://github.com/FeiyangJin/airsim-ros-backup
